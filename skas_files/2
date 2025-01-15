@@ -1,0 +1,39 @@
+#lhc_status_container #status-icon {
+    background-color:#ffffff!important;
+    border-color:#ffffff!important;
+}
+
+
+
+
+
+    #lhc_status_container #status-icon:not(.close-status){
+        background-image: url(https://aisha.sains.com.my/var/storagetheme/2024y/08/07/2/ad9f74b1a66d2748f2d30e53e2ecff6f.png)!important;
+        background-repeat: no-repeat!important;
+        background-position: center center!important;
+    }
+    #lhc_status_container #status-icon:not(.close-status):before{
+        content:''!important;
+    }
+
+
+
+/*a#status-icon {*/
+    
+/*height: 49px !important;*/
+    
+/*width: 49px !important;*/
+    
+/*margin-top: -8px;*/
+    
+/*position: absolute;*/
+    
+/*margin-left: -13px;*/
+/*}*/
+/*#lhc_status_container #status-icon {*/
+/*    background-color:#0c8fc4!important;*/
+/*    border-color: #e3e3e300!important;*/
+/*}*/
+#lhc_status_container #status-icon:not(.close-status) {
+ 
+  background-size: cover !important;}

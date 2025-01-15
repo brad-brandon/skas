@@ -1,0 +1,4985 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0028)https://www.sarawak.gov.my/# -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_GB" lang="en_GB">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style type="text/css" media="print">
+		.dropShadow {
+			visibility: hidden;
+		}
+	</style>
+	<script charset="utf-8" src="./skas_files/56316ef15c97a79880c3.js.download" crossorigin="anonymous"></script>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1216.0" data-gr-ext-installed="" cz-shortcut-listen="true"><input type="hidden"
+		value="en_GB" id="language_chat">
+
+
+	<link rel="stylesheet" type="text/css" id="seg-dark-mode" href="https://www.sarawak.gov.my/">
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Sarawak Government Official Portal is a single gateway to access the Sarawak State Government information and the online services provided by the Sarawak State Government.">
+	<meta name="title" content="The Official Portal of the Sarawak Government">
+	<link rel="stylesheet" href="./skas_files/glyphicons.css">
+	<link rel="stylesheet" href="./skas_files/flaticon.css">
+	<link rel="stylesheet" href="./skas_files/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="SHORTCUT ICON" href="https://www.sarawak.gov.my/media/images/Banner/sarawak_crest_icon.ico">
+	<title>The Official Portal of the Sarawak Government</title>
+	<script type="text/javascript" crossorigin="anonymous" async="" src="./skas_files/index.js.download"></script>
+	<script type="text/javascript" src="./skas_files/jquery-1.11.1.min.js.download"></script>
+	<link rel="stylesheet" type="text/css" href="./skas_files/bootstrap.min.css">
+	<script type="text/javascript" src="./skas_files/bootstrap.min.js.download"></script>
+
+	<link rel="stylesheet" type="text/css" href="./skas_files/share.css">
+	<link rel="stylesheet" type="text/css" href="./skas_files/share_color.css">
+	<link rel="stylesheet" type="text/css" href="./skas_files/module.css">
+	<link rel="stylesheet" type="text/css" href="./skas_files/module_color.css">
+	<script language="javascript" type="text/javascript" src="./skas_files/moonlight.js.download"></script>
+	<link rel="stylesheet" href="./skas_files/jquery.ui.all.css">
+	<script src="./skas_files/jquery.ui.core.js.download"></script>
+	<script src="./skas_files/jquery.ui.widget.js.download"></script>
+	<link rel="stylesheet" href="./skas_files/dhtmlwindow.css" type="text/css">
+	<script type="text/javascript" src="./skas_files/dhtmlwindow.js.download"></script>
+	<div id="dhtmlwindowholder"><span style="display:none">.</span></div>
+	<script type="text/javascript" src="./skas_files/iscroll.js.download"></script>
+
+	<style type="text/css" media="all">
+		#wrapper {
+			position: absolute;
+			z-index: 1;
+			top: 0px;
+			bottom: 0px;
+			left: 0;
+			width: 100%;
+			background: #aaa;
+			overflow: auto;
+			height: 100%;
+		}
+
+		#scroller {
+			position: absolute;
+			z-index: 1;
+			/*-webkit-touch-callout:none;*/
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			width: 100%;
+			padding: 0;
+		}
+	</style>
+
+
+	<script language="javascript">
+		dhtmlwindow.imagefiles[0] = "/moonlight/plugin/dhtmlwindow/windowfiles/vista_min.gif";
+		dhtmlwindow.imagefiles[1] = "/moonlight/plugin/dhtmlwindow/windowfiles/vista_close.gif";
+		dhtmlwindow.imagefiles[2] = "/moonlight/plugin/dhtmlwindow/windowfiles/vista_restore.gif";
+		dhtmlwindow.imagefiles[3] = "/moonlight/plugin/dhtmlwindow/windowfiles/resize.gif";
+		dhtmlwindow.imagefiles[4] = "/moonlight/plugin/dhtmlwindow/windowfiles/vista_min_highlight.gif";
+		dhtmlwindow.imagefiles[5] = "/moonlight/plugin/dhtmlwindow/windowfiles/vista_close_highlight.gif";
+		dhtmlwindow.imagefiles[6] = "/moonlight/plugin/dhtmlwindow/windowfiles/vista_restore_highlight.gif";
+
+
+		// Add by Hii Ding Chen on 5/7/2011 to customise own onclose function
+		function dhtml_close() { };
+
+		function openNewDhtmlWindow(pURL_or_DivID, pTitle, pWidth, pHeight, pSetting, pWinType) {
+			var vWinName = unescape(pTitle);
+			pWidth = (pWidth == "") ? '600' : pWidth;
+			pHeight = (pHeight == "") ? '200' : pHeight;
+			pWinType = (pWinType == "") ? 'iframe' : pWinType;
+			pSetting = (pSetting == "") ? 'width=' + pWidth + 'px,height=' + pHeight + 'px,left=200px,top=80px,resize=1,scrolling=1' : pSetting;
+			mydhtmlwin = dhtmlwindow.open(vWinName, pWinType, pURL_or_DivID, pTitle, pSetting);
+			mydhtmlwin.isResize(true);
+			mydhtmlwin.isScrolling(true);
+			mydhtmlwin.setSize(pWidth, pHeight);
+			mydhtmlwin.moveTo('middle', 'middle');
+			mydhtmlwin.onclose = function () {
+
+				if (isFunction(dhtml_close)) {
+					// Modified by Hii Ding Chen on 20-July-2012 to cancel the closing process
+					result = dhtml_close();
+					if (result === false) {
+						return result;
+					}
+				}
+				if (isFunction(grayOut)) {
+					grayOut(false);
+				}
+				return 1;
+			}
+
+			// Add by Hii Ding Chen on 09-March-2012 to resize the gray out background when the window is resized.
+			window.onresize = function () {
+				if (isFunction(resizeDarkScreen)) {
+					resizeDarkScreen();
+				}
+			}
+
+			switch (pWinType.toLowerCase()) {
+				case 'div':
+					mydhtmlwin.onclose = function () {
+						if (isFunction(dhtml_close)) {
+							result = dhtml_close();
+							if (result === false) {
+								return result;
+							}
+						}
+						if (isFunction(grayOut)) {
+							grayOut(false);
+						}
+						originalDiv = document.getElementById(pURL_or_DivID);
+						originalDiv.innerHTML = originalDiv.defaultHTML;
+
+						switch (originalDiv.defaultStyleDisplayStatus) {
+							case '':
+								showItSimple(pURL_or_DivID);
+								break;
+							case 'block':
+								showItSimple(pURL_or_DivID);
+								break;
+							case 'none':
+								hideItSimple(pURL_or_DivID);
+								break;
+						}
+						//showItSimple(pURL_or_DivID);
+						return true;
+					}
+					break;
+			}
+
+			grayOut(true);
+			//return mydhtmlwin;
+		}
+
+		function isFunction(a) {
+			return typeof a == 'function';
+		}
+	</script>
+
+	<!--
+  ~ jquery.mb.components
+  ~ Copyright (c) 2001-2010. Matteo Bicocchi (Pupunzi); Open lab srl, Firenze - Italy
+  ~ email: info@pupunzi.com
+  ~ site: http://pupunzi.com
+  ~
+  ~ Licences: MIT, GPL
+  ~ http://www.opensource.org/licenses/mit-license.php
+  ~ http://www.gnu.org/licenses/gpl.html
+  -->
+
+	<script type="text/javascript" src="./skas_files/jquery.timers.js.download"></script>
+	<script type="text/javascript" src="./skas_files/jquery.dropshadow.js.download"></script>
+	<script type="text/javascript" src="./skas_files/mbTooltip.js.download"></script>
+	<link rel="stylesheet" type="text/css" href="./skas_files/mbTooltip.min.css" title="style1" media="screen">
+	<script>
+		function init_jquery_mb_tooltip() {
+			if ($("[tips]").mbTooltip) {
+				$("[tips]").mbTooltip({ // also $([domElement]).mbTooltip  >>  in this case only children element are involved
+					opacity: 1,       //opacity
+					wait: 1,           //before show
+					imgPath: "/moonlight/plugin/jquery.mb.tooltip.1.6/images/",
+					anchor: "parent", //"mouse", //"parent"  you can ancor the tooltip to the mouse position or at the bottom of the element
+					timePerWord: 1000,
+					mb_fade: 0,
+					shadowLeft: 0,
+					shadowTop: 0
+				});
+			}
+		}
+		$(document).ready(function () {
+			init_jquery_mb_tooltip();
+		});
+	</script>
+	<script language="javascript">
+		var HTTP_PATH = "https://www.sarawak.gov.my/web/";
+	</script>
+	<script src="./skas_files/module.js.download"></script>
+	<script language="javascript" type="text/javascript">
+		function handleKeyPress(ptype, event) {
+			//alert(ptype);
+			var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+			switch (keyCode) {
+
+			}
+		}
+	</script>
+
+	<script language="javascript" type="text/javascript">
+		function handleOnClick(pFieldName) {
+			switch (pFieldName) {
+
+			}
+		}
+	</script>
+
+	<script language="javascript" type="text/javascript">
+		function handleDateField(pDiv) {
+			if (document.getElementById(pDiv)) {
+				if (document.getElementById(pDiv).onclick) {
+					document.getElementById(pDiv).onclick();
+				} else {
+					document.getElementById(pDiv).click()
+				}
+				if (document.getElementById(pDiv).value != '') {
+
+				}
+			}
+		}
+		function clearDateField(pFieldID) {
+			if (document.getElementById(pFieldID)) {
+				document.getElementById(pFieldID).value = '';
+				hideItSimple(pFieldID + '_clear');
+			}
+			if (window.afterDateSelected) {
+				y = m = d = e = '';
+				gdCtrl = document.getElementById(pFieldID);
+				afterDateSelected(y, m, d, e, gdCtrl);
+			}
+		}
+	</script>
+	<div style="clear:both;display:none;"></div>
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async="" src="./skas_files/js"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-5N615D10J2');
+	</script>
+
+
+	<!--<script type="text/javascript" src="/moonlight/plugin/jquery-fancybox/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>-->
+
+	<script type="text/javascript" src="./skas_files/jquery.fancybox-1.3.4.pack.js.download"></script>
+	<link rel="stylesheet" type="text/css" href="./skas_files/jquery.fancybox-1.3.4.css" media="screen">
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("a[rel=lightbox]").fancybox({
+				'type': 'image',
+				'transitionIn': 'elastic',
+				'transitionOut': 'none',
+				'titlePosition': 'inside',
+				'titleFormat': function (title, currentArray, currentIndex, currentOpts) {
+					if (title == '') {
+						return '';
+					} else {
+						return '<span id="fancybox-title-inside">' + title + '</span>';
+					}
+				}
+			});
+		});
+	</script>
+	<script type="text/javascript" src="./skas_files/flowplayer-3.2.4.min.js.download"></script>
+	<script>
+		function initFlowPlayerAdvance(playerId) {
+			flowplayer(playerId, "/moonlight/plugin/flowplayer/flowplayer-3.2.5.swf", {
+				clip: {
+					autoPlay: false,
+					autoBuffering: false
+				}
+			});
+		}
+
+		function initFlowPlayerSimple(playerId) {
+			flowplayer(playerId, "/moonlight/plugin/flowplayer/flowplayer-3.2.5.swf", {
+				clip: {
+					autoPlay: false,
+					autoBuffering: false
+				},
+				plugins: {
+					controls: {
+
+						url: '/moonlight/plugin/flowplayer/flowplayer.controls-3.2.3.swf',
+						/* you may want to remove the gradient */
+						// backgroundGradient: 'none',
+
+						// these buttons are visible
+						all: false,
+						scrubber: true,
+						play: true,
+						mute: true,
+						fullscreen: true,
+
+						// custom colors
+						// bufferColor: '#333333',
+						// progressColor: '#cc0000',
+						// buttonColor: '#cc0000',
+						// buttonOverColor: '#ff0000',
+
+						// tooltip background color (since 3.1.0)
+						// tooltipColor: '#cc0000',
+
+						// custom dimension
+						// height: 25,
+						// width: 400,
+
+						// setup auto hide
+						autoHide: 'always'
+
+						// a little more styling
+						// width: '80%',
+						// bottom: 5,
+						// left: '50%',
+						// borderRadius: 15
+					}
+				}
+
+			});
+		}
+
+		function initFlowPlayerAudio(playerId) {
+
+			flowplayer(playerId, "/moonlight/plugin/flowplayer/flowplayer-3.2.5.swf", {
+				clip: {
+					autoPlay: false,
+					autoBuffering: false,
+					provider: "audio"
+				},
+
+				plugins: {
+					audio: { url: '/moonlight/plugin/flowplayer/flowplayer.audio-3.2.2.swf' },
+					controls: {
+						url: '/moonlight/plugin/flowplayer/flowplayer.controls-3.2.3.swf',
+						all: false,
+						scrubber: true,
+						play: true,
+						mute: true,
+						fullscreen: true,
+						autoHide: false
+					}
+				}
+			});
+
+		}
+	</script>
+	<link rel="stylesheet" type="text/css" href="./skas_files/responsive.css">
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js"></script>-->
+	<script async="" src="./skas_files/transit.js.download"></script>
+	<script async="" type="text/javascript" src="./skas_files/service_sarawak_plugin"></script>
+	<script type="text/javascript" language="javascript">
+		$(document).ready(function () {
+			init_change_tab();
+			/*Collapse*/
+			vC = 1;
+			vTotal = $(".col2 div .content").length;
+			$(".col2 div .content").each(function () {
+				if (vC > 1 && vC < vTotal) { //if 1st and last matched
+					/* slide up the content if display is set to none by czwong */
+					if ($(this).css('display') == "none") {
+						$(this).slideUp('fast');
+					}
+				}
+				vC++;
+			});
+
+			/*register onclick function to toggle expand/collapse*/
+			vC = 1;
+			vTotal = $(".col2 div .title").length;
+			$(".col2 div .title").each(function () {
+				$(this).css('cursor', 'pointer'); //move to css
+				if (vC > 1 && vC < vTotal) { //if 1st and last matched
+
+					/* Start modified by czwong to slideDown first if the content is hide */
+					if ($(this).parent().find('.content').css('display') == 'none') {
+						$(this).toggle(
+							function () {
+								$(this).parent().find('.content').slideDown('fast');
+							},
+							function () {
+								$(this).parent().find('.content').slideUp('fast');
+							}
+						);
+					} else {
+						$(this).toggle(
+							function () {
+								$(this).parent().find('.content').slideUp('fast');
+							},
+							function () {
+								$(this).parent().find('.content').slideDown('fast');
+							}
+						);
+					}
+					/* End modified by czwong to slideDown first if the content is hide */
+				} else {
+
+					/* Start modified by czwong to slideDown first if the content is hide */
+					if ($(this).parent().find('.content').css('display') == 'none') {
+						$(this).toggle(
+							function () {
+								$(this).parent().find('.content').slideDown('fast');
+							},
+							function () {
+								$(this).parent().find('.content').slideUp('fast');
+							}
+						);
+					} else {
+						$(this).toggle(
+							function () {
+								$(this).parent().find('.content').slideUp('fast');
+							},
+							function () {
+								$(this).parent().find('.content').slideDown('fast');
+							}
+						);
+					}
+					/* End modified by czwong to slideDown first if the content is hide */
+				}
+				vC++;
+			});
+
+			/*slide animation*/
+			function slideanimation(height) {
+				if (!height) {
+					// default 700
+					height = 850;
+				}
+				// hardcode //
+				height = 600;
+
+				/*$(".slideanim").each(function(){
+				  var pos = $(this).offset().top;
+				  height1=height+200;
+				  //default 600
+				  var winTop = $(window).scrollTop();
+					if (pos > winTop + height1) {
+					  $(this).removeClass("slide");
+					}
+				});*/
+				/**********************************************/
+				if (!navigator.userAgent.match(/(Android|iPod|iPhone|iPad|BlackBerry|IEMobile|Opera Mini)/) || $('body[data-responsive="0"]').length > 0) {
+					var $animationEasing = 'easeOutSine';
+					var $animationDuration = '650';
+
+					$('.heading-line').each(function (i) {
+						var pos = $(this).offset().top;
+						//default 600
+						var winTop = $(window).scrollTop();
+						if (pos < winTop + height) {
+							$(this).find('> div').delay(i * 70).transition({
+								'y': '0px'
+							}, $animationDuration, $animationEasing);
+						}
+
+					});
+
+					$(this).addClass('animated-in');
+
+				} else {
+					$('.heading-line').each(function (i) {
+						$(this).find('> div').transition({
+							'y': '0px'
+						}, $animationDuration, $animationEasing);
+					});
+				}
+				/**********************************************/
+				$(".slideanim").each(function () {
+					var pos = $(this).offset().top;
+					//default 600
+					var winTop = $(window).scrollTop();
+					if (pos < winTop + height) {
+						$(this).addClass("slide");
+					}
+				});
+			}
+			slideanimation(800);
+			$(window).scroll(function () {
+				slideanimation();
+			});
+
+
+
+			if (getCookie('seg_dark_mode') != '') {
+
+
+				document.querySelector("link[id='seg-dark-mode']").href = "https://www.sarawak.gov.my/web/web/web/dark.css";
+
+			}
+
+
+
+
+		})
+
+
+	</script>
+
+	<!-- Google tag (gtag.js) -->
+	<script src="./skas_files/js(1)"></script>
+	<script>
+		if (!window.dataLayer || !window.dataLayer.filter(item => (item[0] == 'config' && item[1] == 'G-KBFGR823Q6')).length) {
+
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+
+			gtag('config', 'G-KBFGR823Q6');
+
+			window.analyticsInitiated = true;
+		}
+	</script>
+
+
+	<style>
+		.nectar-split-heading .heading-line {
+			display: block;
+			overflow: hidden;
+			position: relative
+		}
+
+		.nectar-split-heading .heading-line>div {
+			display: block;
+			transform: translateY(200%);
+			-webkit-transform: translateY(200%)
+		}
+
+		/****************temp****************/
+
+		.width-control {
+			max-width: 1280px;
+			margin: 0 auto;
+			padding: 0 25px;
+		}
+
+		.displayNone {
+			display: none !important;
+		}
+
+		/*topheader*/
+		.topheader {
+			display: none;
+			margin-bottom: 15px;
+		}
+
+		.topheader-left {
+			flex-grow: 1;
+		}
+
+		.topheader-right {
+			display: -webkit-box;
+			/* OLD - iOS 6-, Safari 3.1-6 */
+			display: -moz-box;
+			/* OLD - Firefox 19- (buggy but mostly works) */
+			display: -ms-flexbox;
+			/* TWEENER - IE 10 */
+			display: -webkit-flex;
+			/* NEW - Chrome */
+			display: flex;
+		}
+
+		#language .form-inline {
+			margin: 0;
+		}
+
+		#language a {
+			/*text-decoration:underline;*/
+			padding: 0 5px;
+			font-family: Arial;
+			font-weight: Normal;
+			font-size: 13px;
+			Color: #666666;
+		}
+
+		#language a.selected {
+			font-family: Arial;
+			font-weight: Bold;
+			font-size: 13px;
+			color: #000000;
+		}
+
+		#sarawak-id-banner {
+			background: #333;
+			padding: 0px 10px 4px 10px;
+			border-radius: 2px;
+			margin-left: 5px;
+		}
+
+		#sarawak-id-banner img {
+			height: 16px;
+			vertical-align: middle;
+		}
+
+
+
+		#footer {
+			/*background:#222;*/
+			background-color: #343d47;
+			color: #fff;
+			/*color: #999ea3!important;*/
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+
+		#footer .box-left {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+
+		#footer .box-right {
+			border-top: 1px solid #333;
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+
+		#footer a {
+			color: #017BA7;
+		}
+
+		#photoslider {
+			margin-bottom: 30px;
+		}
+
+		#photoslider .photoslider-imgwrapper img {
+			display: none;
+		}
+
+		#photoslider .photoslider-imgwrapper img:nth-child(1) {
+			display: block;
+		}
+
+		.flex-direction-nav a {
+			height: 60px !important;
+		}
+
+		/*color overwrite*/
+		.btn-primary {
+			background-color: #333;
+			border-color: #333;
+		}
+
+		/*responsive*/
+		/*@media all and (min-width: 1280px) {*/
+		@media all and (min-width: 1000px) {
+			#webmenu {
+				display: block;
+			}
+
+			.mobile-menu-icon {
+				display: none !important;
+			}
+
+			#header {
+				/*padding-top:15px;*/
+				/*padding-bottom:15px;*/
+				background: transparent;
+				color: inherit;
+				box-shadow: none;
+			}
+
+			#header .header-wrapper,
+			#header .header-right,
+			#header .header-left {
+				flex-flow: row wrap;
+			}
+
+			#header .header-right,
+			#header .header-left {
+				font-size: 1.4em;
+			}
+
+			#header a {
+				/*color:inherit;*/
+			}
+
+			#header .header-icon img {
+				width: 60px;
+			}
+
+			#sarawak-id-banner a {
+				color: #ffffff;
+			}
+
+			#header .web-search-input {
+				display: flex;
+				width: 70%;
+				max-width: 420px;
+			}
+
+			#header .mobile-search-icon {
+				display: none;
+			}
+
+			#header .mobile-setting-icon {
+				display: none;
+			}
+
+			#search,
+			#menu,
+			#setting {
+				display: none;
+			}
+
+			.topheader {
+				display: -webkit-box;
+				/* OLD - iOS 6-, Safari 3.1-6 */
+				display: -moz-box;
+				/* OLD - Firefox 19- (buggy but mostly works) */
+				display: -ms-flexbox;
+				/* TWEENER - IE 10 */
+				display: -webkit-flex;
+				/* NEW - Chrome */
+				display: flex;
+				width: 100%;
+				justify-content: flex-end;
+				/*height:30px;*/
+			}
+
+			#header .header-right {
+				font-size: 1em;
+			}
+		}
+
+		@media all and (min-width: 800px) {
+			.box .box-item-list {
+				display: -webkit-box;
+				/* OLD - iOS 6-, Safari 3.1-6 */
+				display: -moz-box;
+				/* OLD - Firefox 19- (buggy but mostly works) */
+				display: -ms-flexbox;
+				/* TWEENER - IE 10 */
+				display: -webkit-flex;
+				/* NEW - Chrome */
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-between;
+			}
+
+			.box .box-item {
+				width: 18%;
+			}
+
+			.box-style-1 {
+				display: -webkit-box;
+				/* OLD - iOS 6-, Safari 3.1-6 */
+				display: -moz-box;
+				/* OLD - Firefox 19- (buggy but mostly works) */
+				display: -ms-flexbox;
+				/* TWEENER - IE 10 */
+				display: -webkit-flex;
+				/* NEW - Chrome */
+				display: flex;
+			}
+
+			.box-style-1 {
+				flex-flow: row nowrap;
+			}
+
+			.box-style-1 .box-left {
+				padding-right: 15px;
+				width: 100%;
+			}
+
+			#footer .box-right {
+				border-top: 0;
+			}
+		}
+
+		/* ==============================
+	   21. fact section styles
+	   ============================== */
+		.fact-counter-section {
+			padding-top: 26px;
+			padding-bottom: 80px;
+		}
+
+		.fact-counter-section .container {
+			border: 1px solid #F4F4F4;
+		}
+
+		.single-fact-counter {
+			padding: 59px 33px;
+			border-right: 1px solid #F4F4F4;
+			margin-left: -15px;
+			margin-right: -15px;
+		}
+
+		.single-fact-counter .text-box {
+			float: left;
+		}
+
+		.single-fact-counter .text-box .number {
+			font-size: 36px;
+			color: #000;
+			font-weight: bold;
+		}
+
+		.single-fact-counter .text-box p {
+			color: #9E9E9E;
+			font-weight: 500;
+			font-size: 16px;
+			margin: 0;
+		}
+
+		.single-fact-counter .icon-box {
+			width: 65px;
+			float: right;
+		}
+
+		.single-fact-counter .icon-box i {
+			font-size: 64px;
+			color: #CC0000;
+			display: block;
+			/*margin-top: 10px;*/
+			top: -10px;
+		}
+
+		/*.menu_background{
+		background-color: #000000;
+		border-bottom: 1px solid #999999;
+		min-height: 50px;
+
+		font-size: 15px;
+		font-family: Arial;
+		color:#FFF;
+	}*/
+
+		ul.megamenu2.frt_menu2 {
+			background: #000000;
+			min-height: 50px;
+		}
+
+		ul.frt_menu2 li:first-child {
+			border-left: 1px solid #999999;
+		}
+
+		ul.frt_menu2 li {
+			border-right: 1px solid #999999;
+		}
+
+		ul.frt_menu2 a.mm-item-link:link,
+		ul.frt_menu2 a.mm-item-link:visited {
+			color: #ffffff;
+			min-height: 50px;
+			padding-top: 13px;
+		}
+
+		ul.frt_menu2 a.mm-item-link.mm-item-link-hover {
+			color: #000000;
+		}
+
+		.btn-sarawak-id {
+			/*padding:0;
+		padding-left:5px;
+		padding-right:5px;*/
+			background: #fecc05;
+			border: 0;
+			color: black;
+			margin-left: 15px;
+			line-height: 1px;
+			font-weight: bold;
+			line-height: 2.3;
+		}
+
+		.vertical-align {
+			display: flex;
+			align-items: center;
+		}
+
+		.t_row {
+			display: flex;
+			flex-flow: row wrap;
+		}
+
+		.no_margin {
+			margin: 0;
+		}
+
+		.vertical_after_separator:after {
+			display: block;
+			content: "";
+			height: 5px;
+			background-image: url('http://10.18.4.52/projects/mseg/branches/v2/media/images/v2/image_divider02.png');
+		}
+
+		.content_padding {
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+
+		.width-control-header {
+			background-color: #fff;
+			padding: 10px 0px;
+			/*padding: 20px 30px;*/
+		}
+
+		.width-control-menu {
+			background-color: #fff;
+			border-bottom: 1px solid #d7d7d7;
+			padding: 0 50px 0;
+		}
+
+		/*#header {
+		padding-bottom:0;
+	}*/
+		.tophr {
+			background: #fff;
+			height: 12px;
+			border: 0;
+			box-shadow: inset 0 12px 12px -12px rgba(153, 153, 153, 0.5);
+
+		}
+
+		.tophr:before {
+			display: none;
+		}
+
+		.top-bar-darkmode {
+			width: 100%;
+			height: 45px;
+			background-color: #212121;
+			position: absolute;
+			top: -5px;
+			display: none;
+		}
+
+		@media (min-width: 500px) {
+			.modal-dialog-custom {
+				margin: 11% 11%;
+				width: 79%;
+				height: 53%;
+			}
+
+			.modal-content {
+				height: 100%;
+
+			}
+		}
+
+		@media (min-width: 700px) {
+			.modal-dialog-custom {
+				margin: 11% 33%;
+				width: 32%;
+				height: 45%;
+			}
+
+			.modal-content {
+				height: 100%;
+
+			}
+
+			.lan_berambeh_content {
+				height: unset;
+			}
+		}
+	</style>
+	<div id="content" class=" width-control-header" style="padding-top: 5px">
+		<div class="top-bar-darkmode"></div>
+		<!-- Start width control-->
+		<!-- header -->
+		<div id="header" style="padding-top: 20px">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div id="divDisabledAjaxError" style="display:none">
+				<div id="divAjaxError" class="nowLoading" style="display:none">
+					<table width="100%" cellpadding="1" cellspacing="0" border="0">
+						<tbody>
+							<tr>
+								<td align="right"><img src="./skas_files/warning.gif" alt="warning icon"
+										style="vertical-align:middle;"></td>
+								<td><strong>AJAX Error</strong><br>Sorry, failed to load required information. Please
+									contact your system administrator.</td>
+								<td width="1%" valign="top">
+									<a href="javascript:hideItSimple(&#39;divAjaxError&#39;)">
+										<img src="./skas_files/close.png" alt="close icon"
+											style="vertical-align:middle;">
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3" align="right" valugb="bottom">
+									<a href="javascript:hideItSimple(&#39;divAjaxError&#39;)">Close</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="divLoading" class="nowLoading" style="display:none">
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tbody>
+						<tr>
+							<td align="right"><img src="./skas_files/loading.gif" alt="loading icon"
+									style="vertical-align:middle;"></td>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;Loading.....</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+			<style>
+				.nowLoading {
+					color: #333;
+					display: none;
+					position: absolute;
+					top: 30%;
+					left: 35%;
+					width: 240px;
+					height: 95px;
+					padding: 10px;
+					border: 1px solid #D1CAA3;
+					background-color: #F9F2AA;
+					text-align: center;
+					overflow: auto;
+					z-index: 8080;
+					filter: progid:DXImageTransform.Microsoft.Shadow(color=gray, direction=135, Strength=5), alpha(opacity=90);
+					-moz-opacity: .09;
+					opacity: .90;
+				}
+			</style>
+			<script src="./skas_files/jquery.megamenu.js.download" type="text/javascript"></script>
+			<script src="./skas_files/jquery.verticalmenu.js.download" type="text/javascript"></script>
+
+			<script type="text/javascript" language="javascript">
+				$(document).ready(function () {
+					jQuery(".megamenu").megamenu();
+					jQuery(".verticalmenu").verticalmenu();
+				});
+
+				function initMegamenu(p_id) {
+					jQuery("." + p_id).megamenu();
+				}
+			</script>
+			<hr class="tophr" style="">
+			<div class="width-control-header">
+				<div class="row vertical-align"
+					style="margin-top: -60px; padding-left: 20px;padding-top: 10px;margin-right: 0px">
+					<div class="col-md-6">
+
+						<div class="t_row img_rotate" style="position: relative;top: 10px">
+							<div class="t_col">
+								<a href="https://www.sarawak.gov.my/">
+									<span class="flip-glow"></span>
+									<img class="img_load_sik_pusing_gik" style="width:60px;" alt="Sarawak Crest"
+										src="./skas_files/sarawak.png"></a>
+							</div>
+							<div class="t_col" style="padding-top:9px;">
+								<a href="https://www.sarawak.gov.my/"><span class="flip-glow" style="color: black">The
+										Official Portal of</span>
+									<div class="swk_gov_txt"
+										style="font-weight:bold;font-size:28px;line-height:0.8em;color: black">Sarawak
+										Government</div>
+								</a>
+							</div>
+							<!--
+	<div class="t_col" style="padding-top:9px; margin-top:-24px;">
+		<img id="celebration_event" style="padding-top: 0px; width: auto; position:absolute;" alt="Hari Raya Aidilfitri Logo" src="https://www.sarawak.gov.my/media/images/Banner/image_seg_header_gawai.png">
+	</div>
+  -->
+						</div>
+
+						<style>
+							.col-md-6 {
+								padding-top: 0px;
+							}
+
+							.t_col {
+								padding-right: 15px;
+							}
+
+							.img_load_sik_pusing_gik {
+								jangan: pusing;
+							}
+
+							/*.flip-glow{
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	max-width: 0;
+	background: #fff;
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+	-webkit-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+a:hover .flip-glow {
+	max-width: 100%;
+	background: #fff;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-webkit-transition: all 0.8s ease-out;
+	-ms-transition: all 0.8s ease-out;
+	-o-transition: all 0.8s ease-out;
+	transition: all 0.8s ease-out;
+}*/
+
+							img {
+								overflow: hidden;
+
+							}
+
+							.img_rotate:hover img {
+								transform: rotateY(720deg);
+							}
+
+							.img_load_flip {
+								-webkit-animation: flipbanner 1s;
+								animation: flipbanner 1s;
+							}
+
+							@-webkit-keyframes flipbanner {
+								from {
+									transform: rotateY(720deg)
+								}
+
+								to {
+									transform: rotateY(0deg)
+								}
+							}
+
+							@keyframes flipbanner {
+								from {
+									transform: rotateY(720deg)
+								}
+
+								to {
+									transform: rotateY(0deg)
+								}
+							}
+						</style>
+					</div>
+					<div class="col-md-6">
+						<div class="topheader">
+						</div>
+						<div class="topheader">
+
+							<style>
+								.swkheader-darkmode-button {
+									background: #ededed;
+									height: 1.8em;
+									width: 1.8em;
+									border-radius: 50%;
+									z-index: 2;
+									cursor: pointer;
+									display: flex;
+									align-items: center;
+									border: 1px solid #ddd;
+								}
+
+								.swkheader-website .swkheader-row .swkheader-button-div .swkheader-lang-button,
+								.swkheader-system-website .swkheader-system-row .swkheader-system-button-div .swkheader-lang-button {
+									width: 1em;
+									height: 1em;
+								}
+
+								.swkheader-button-div,
+								.swkheader-system-button-div {
+									position: relative;
+									margin-top: auto;
+									margin-bottom: auto;
+									color: #222;
+								}
+
+								.swkheader,
+								.swkheader-row,
+								.swkheader-center,
+								.swkheader-button,
+								.swkheader-button>a,
+								.swkheader-button>div>a,
+								.swkheader-system,
+								.swkheader-system-row,
+								.swkheader-system-center,
+								.swkheader-system-button,
+								.swkheader-system-button>a,
+								.swkheader-system-button>div>a {
+									display: -webkit-box;
+									display: -moz-box;
+									display: -ms-flexbox;
+									display: -webkit-flex;
+									display: flex;
+									flex-flow: row wrap;
+									box-sizing: border-box;
+								}
+
+								.swkheader-system-button>div>a {
+									color: inherit;
+									text-decoration: none;
+									align-items: center;
+								}
+
+								.swkheader,
+								.swkheader-row,
+								.swkheader-center,
+								.swkheader-button,
+								.swkheader-button>a,
+								.swkheader-button>div>a,
+								.swkheader-system,
+								.swkheader-system-row,
+								.swkheader-system-center,
+								.swkheader-system-button,
+								.swkheader-system-button>a,
+								.swkheader-system-button>div>a {
+									display: -webkit-box;
+									display: -moz-box;
+									display: -ms-flexbox;
+									display: -webkit-flex;
+									display: flex;
+									flex-flow: row wrap;
+									box-sizing: border-box;
+								}
+
+								a,
+								a:active,
+								a:focus,
+								a:hover,
+								a:visited {
+									text-decoration: none !important;
+									outline: none !important;
+									background-color: transparent;
+								}
+
+								.swkheader-lang-button {
+									border: solid 1px #ccc;
+									background: #ededed;
+									height: 2.9em;
+									width: 2.9em;
+									border-radius: 50%;
+									z-index: 2;
+									cursor: pointer;
+									display: flex;
+									align-items: center;
+								}
+
+								.swkheader-lang-span {
+									color: #333;
+									font-size: 0.8em;
+									font-weight: bold;
+									text-align: center;
+									width: 100%;
+								}
+
+								.swkheader-lang-span {
+									font-size: 0.9em;
+								}
+
+								ul.sso-bar-ul {
+									max-height: 0;
+									padding: 0;
+									list-style-type: none;
+									background: #fff;
+									box-shadow: 0 0 1px rgba(0, 0, 0, .3);
+									position: absolute;
+									min-width: 100%;
+									display: none;
+									max-height: 300px;
+									-moz-border-radius: 2px;
+									-webkit-border-radius: 2px;
+									-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+									-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+									box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+									margin-top: 8px;
+									z-index: 6;
+									right: 0;
+								}
+
+								.sso-bar-lang-ul {
+									margin-top: 10px !important;
+									/* display: none; */
+									width: 150px;
+									right: 0px;
+									top: 26px;
+									margin-top: 1em !important;
+								}
+
+								ul.sso-bar-ul li a:hover {
+									background: #0180B0;
+									color: #fff;
+								}
+
+								ul.sso-bar-ul li a {
+
+									display: block;
+									padding-left: 8px;
+									padding-right: 8px;
+									padding-top: 6px;
+									padding-bottom: 6px;
+									color: #444;
+									text-decoration: none;
+									white-space: nowrap;
+									font-size: 14px !important;
+
+								}
+
+								ul,
+								menu,
+								dir {
+									display: block;
+									list-style-type: disc;
+									margin-block-start: 1em;
+									margin-block-end: 1em;
+									margin-inline-start: 0px;
+									margin-inline-end: 0px;
+									padding-inline-start: 40px;
+								}
+
+								li {
+									display: list-item;
+									text-align: -webkit-match-parent;
+								}
+
+								.swkheader-darkmode-span {
+									background: #ededed url(https://www.sarawak.gov.my//media/images/dm.png) no-repeat center;
+									width: 19px;
+									height: 19px;
+									margin: auto;
+									justify-self: center;
+								}
+
+								.nav-link {
+									display: block !important;
+									padding: 1rem 1rem !important;
+								}
+
+								.dropdown-menu {
+									padding: 5px 0;
+									min-width: 200px;
+								}
+
+								.dropdown-menu>a {
+									padding: 0.75rem 1.5rem !important;
+								}
+
+								.dropdown-menu>a:hover {
+									color: #fff !important;
+									background: #0180B0;
+								}
+
+								.dropdown-item {
+									display: block;
+									width: 100%;
+									padding: 0.75rem 1.5rem !important;
+								}
+
+								A,
+								A:link,
+								A:visited {
+									color: #555;
+								}
+
+								ul.swkid-plugin-ul li div {
+									line-height: 1.5;
+								}
+							</style>
+
+
+
+							<div class="swkheader-system-right"
+								style="padding-left:15px;position: absolute;padding-right: 5px;top: -28px">
+								<div class="swkheader-system-button" style="">
+
+									<div splwpk-w3c="splwpk-w3c" class="swkheader-system-button-div"
+										style="padding-right: 10px;position: absolute; right: 300px;top:1px">
+										<div id="dstch" class="swkheader-darkmode-button" alt="dark"
+											title="dark mode switch" style=""><span id="darkmode-notification"
+												onclick="mode_switch()" class="swkheader-darkmode-span"></span></div>
+									</div>
+
+									<!-- <div id="swkid_plugin">
+										<div style="width: auto; position: relative; height: 100%;">
+											<div class="swkid-wrapper"><span
+													class="swkid-icon swkid-full-logo-icon swkid-unique-name swkid-hidden-xs"
+													title="SarawakID"><img id="swkid-profile-picture"
+														class="swkid-unique-logo"
+														src="./skas_files/image_sarawakid_logo_reverse.png">&nbsp;SarawakID</span><a
+													href="javascript:void(0);" class="swkid-login swkid-unique-login"
+													title="SarawakID Login" onclick="login_form_submit();">Login</a><a
+													href="https://sarawakid.sarawak.gov.my/web/ssov1/signup/"
+													class="swkid-register swkid-unique-register swkid-hidden-xs"
+													title="SarawakID Register">Register</a></div>
+											<link rel="stylesheet" type="text/css"
+												href="./skas_files/swkid_font_awesome.css">
+											<style>
+												#swkid_plugin .swkid-icon img,
+												.swkid-plugin-container,
+												.swkid-profile-picture {
+													height: 17px
+												}
+
+												#swkid_plugin .swkid-icon,
+												#swkid_plugin .swkid-login {
+													border-right: 1px solid #666;
+													display: flex
+												}
+
+												.swkid-plugin-container {
+													display: flex;
+													align-items: center;
+													cursor: pointer
+												}
+
+												.swkid-profile-picture {
+													width: 17px;
+													border-radius: 50%;
+													cursor: pointer
+												}
+
+												.swkid-span {
+													margin-left: 5px;
+													font-size: 12px
+												}
+
+												.swkid-btn {
+													background-color: #fecc05;
+													color: #000 !important;
+													border-radius: 3px !important;
+													margin-left: 5px;
+													padding: 3px 11px
+												}
+
+												.swkid-btn:hover {
+													box-shadow: 0 5px 10px rgba(0, 0, 0, .25), 0 3px 3px rgba(0, 0, 0, .22);
+													-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .25), 0 3px 3px rgba(0, 0, 0, .22);
+													-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .25), 0 3px 3px rgba(0, 0, 0, .22)
+												}
+
+												.swkid-button-span {
+													font-size: .8em
+												}
+
+												.swkid-logo-right {
+													margin: 4px 0;
+													width: 20px
+												}
+
+												.swkid-drop-down-bottom-left,
+												.swkid-drop-down-bottom-right {
+													bottom: 17px;
+													margin-bottom: 8px
+												}
+
+												.swkid-drop-down-top-left {
+													left: 0;
+													top: 17px;
+													margin-top: 8px
+												}
+
+												.swkid-drop-down-bottom-left {
+													left: 0
+												}
+
+												.swkid-drop-down-bottom-right {
+													right: 0
+												}
+
+												.swkid-drop-down-top-right {
+													right: 0;
+													top: 17px;
+													margin-top: .2em
+												}
+
+												.swkid-plugin-ul {
+													display: none;
+													padding: 0;
+													list-style-type: none;
+													background: #fff;
+													position: absolute;
+													min-width: 100%;
+													max-height: 300px;
+													-moz-border-radius: 2px;
+													-webkit-border-radius: 2px;
+													-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+													-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+													box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+													z-index: 5;
+													width: auto
+												}
+
+												ul.swkid-plugin-ul li a {
+													display: block;
+													color: #444;
+													text-decoration: none;
+													white-space: nowrap;
+													font-size: 14px !important;
+													outline: 0;
+													cursor: pointer;
+													font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+													padding: 6px 8px
+												}
+
+												ul.swkid-plugin-ul li a:hover {
+													background: #0180B0;
+													color: #fff
+												}
+
+												#swkid_plugin .swkid-wrapper,
+												#swkid_plugin .swkid-wrapper * {
+													display: -webkit-box;
+													display: -moz-box;
+													display: -ms-flexbox;
+													display: -webkit-flex;
+													display: flex;
+													flex-flow: row wrap;
+													align-items: center
+												}
+
+												#swkid_plugin .swkid-wrapper {
+													background: #FECC05;
+													border-radius: 5px;
+													width: 100%;
+													font-size: 12px !important;
+												}
+
+												#swkid_plugin .swkid-icon {
+													padding: 4px;
+													background: #555;
+													border-radius: 2px 0 0 2px;
+													align-self: stretch;
+												}
+
+												#swkid_plugin .swkid-icon img {
+													width: 17px
+												}
+
+												#swkid_plugin .swkid-login,
+												#swkid_plugin .swkid-register {
+													padding: 4px 10pxtext-decoration:none;
+													color: initial;
+													flex-grow: 1;
+													justify-content: center;
+													color: #333333
+												}
+
+												#swkid_plugin .swkid-icon {
+													text-decoration: none;
+													color: initial;
+													flex-grow: 1;
+													justify-content: center;
+													border-radius: 5px 0 0 5px;
+												}
+
+												#swkid_plugin .swkid-full-logo-icon {
+													background-color: #666666;
+													color: #eee;
+													padding: 4px 10px !important;
+												}
+
+												#swkid_plugin .swkid-login:hover,
+												#swkid_plugin .swkid-register:hover {
+													text-shadow: 0 1px 2px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .36)
+												}
+
+												#swkid_plugin span {
+													color: #222
+												}
+
+												.swkid-unique-login-short,
+												.swkid_short_name {
+													display: none !important
+												}
+
+												#swkid_plugin .swkid-login,
+												#swkid_plugin .swkid-register {
+													padding: 0 10px
+												}
+
+												@media all and (min-width:992px) {
+													#swkid_plugin .swkid-icon img {
+														width: 17px;
+														height: 17px
+													}
+
+													#swkid_plugin .swkid-icon {
+														padding: 4px
+													}
+
+													#swkid_plugin .swkid-login,
+													#swkid_plugin .swkid-register {
+														padding: 0 10px
+													}
+
+													#swkid_plugin .swkid-icon,
+													#swkid_plugin .swkid-register {
+														display: -webkit-box;
+														display: -moz-box;
+														display: -ms-flexbox;
+														display: -webkit-flex;
+														display: flex
+													}
+												}
+
+												@media all and (max-width:991px) {
+													.swkid-hidden-sm {
+														display: none
+													}
+
+													.swkid-first-btn {
+														margin-left: 0
+													}
+												}
+
+												@media all and (max-width:575px) {
+													.swkid-hidden-xs {
+														display: none !important
+													}
+
+													.swkid-btn {
+														margin-left: 0
+													}
+
+													.swkid-unique-login-short,
+													.swkid_short_name {
+														display: -webkit-box !important;
+														display: -moz-box !important;
+														display: -ms-flexbox !important;
+														display: -webkit-flex !important;
+														display: flex !important;
+														flex-flow: row wrap;
+														align-items: center
+													}
+												}
+
+												@media screen and (max-width: 575px) {
+													.swkid-wrapper {
+														height: 100%;
+														padding: 0 10px;
+													}
+
+													#swkid_plugin .swkid-icon,
+													#swkid_plugin .swkid-login {
+														border-right: none;
+													}
+												}
+											</style>
+										</div> 
+									</div>-->
+								</div>
+							</div>
+							<script type="text/javascript">
+								function mode_switch() {
+									var sd_mawek = document.getElementById('seg-dark-mode');
+									var dstch = document.getElementById('dstch');
+									if (sd_mawek.href == 'https://www.sarawak.gov.my/web/web/web/dark.css') {
+										setCookie('seg_dark_mode', '', '');
+										//document.querySelector("link[id='seg-dark-mode']").href = "";
+										sd_mawek.href = "";
+										dstch.title = 'Into the dark';
+
+									} else {
+										dstch.title = 'Into the light';
+										// document.body.style.backgroundColor = "black";
+										// document.hr.style.background = "black";
+										var vCookieName = "6b1659ab8b0501f0d492c80921b0803d_darkmode";
+										vTodaysDate = new Date();
+										vTodaysDate.setDate(62);
+										vExpire = vTodaysDate.toGMTString();
+										setCookie('seg_dark_mode', vCookieName, vExpire);
+
+										document.querySelector("link[id='seg-dark-mode']").href = "https://www.sarawak.gov.my/web/web/web/dark.css";
+									}
+								}
+							</script>
+
+							<style>
+								.swkheader-lang-button {
+									background: #ededed;
+									height: 1.8em;
+									width: 1.8em;
+									border-radius: 50%;
+									z-index: 2;
+									cursor: pointer;
+									display: flex;
+									align-items: center;
+								}
+
+								.swkheader-website .swkheader-row .swkheader-button-div .swkheader-lang-button,
+								.swkheader-system-website .swkheader-system-row .swkheader-system-button-div .swkheader-lang-button {
+									width: 1em;
+									height: 1em;
+								}
+
+								.swkheader-button-div,
+								.swkheader-system-button-div {
+									position: relative;
+									margin-top: auto;
+									margin-bottom: auto;
+									color: #222;
+								}
+
+								.swkheader,
+								.swkheader-row,
+								.swkheader-center,
+								.swkheader-button,
+								.swkheader-button>a,
+								.swkheader-button>div>a,
+								.swkheader-system,
+								.swkheader-system-row,
+								.swkheader-system-center,
+								.swkheader-system-button,
+								.swkheader-system-button>a,
+								.swkheader-system-button>div>a {
+									display: -webkit-box;
+									display: -moz-box;
+									display: -ms-flexbox;
+									display: -webkit-flex;
+									display: flex;
+									flex-flow: row wrap;
+									box-sizing: border-box;
+								}
+
+								.swkheader-system-button>div>a {
+									color: inherit;
+									text-decoration: none;
+									align-items: center;
+								}
+
+								.swkheader,
+								.swkheader-row,
+								.swkheader-center,
+								.swkheader-button,
+								.swkheader-button>a,
+								.swkheader-button>div>a,
+								.swkheader-system,
+								.swkheader-system-row,
+								.swkheader-system-center,
+								.swkheader-system-button,
+								.swkheader-system-button>a,
+								.swkheader-system-button>div>a {
+									display: -webkit-box;
+									display: -moz-box;
+									display: -ms-flexbox;
+									display: -webkit-flex;
+									display: flex;
+									flex-flow: row wrap;
+									box-sizing: border-box;
+								}
+
+								a,
+								a:active,
+								a:focus,
+								a:hover,
+								a:visited {
+									text-decoration: none !important;
+									outline: none !important;
+									background-color: transparent;
+								}
+
+								.swkheader-lang-button {
+									border: solid 1px #ccc;
+									background: #ededed;
+									height: 1.8em;
+									width: 1.8em;
+									border-radius: 50%;
+									z-index: 2;
+									cursor: pointer;
+									display: flex;
+									align-items: center;
+								}
+
+								.swkheader-lang-span {
+									color: #333;
+									font-size: 1.0em;
+									font-weight: bold;
+									text-align: center;
+									width: 100%;
+								}
+
+								.swkheader-lang-span {
+									font-size: 1.0em;
+								}
+
+								ul.sso-bar-ul {
+									max-height: 0;
+									padding: 0;
+									list-style-type: none;
+									background: #fff;
+									box-shadow: 0 0 1px rgba(0, 0, 0, .3);
+									position: absolute;
+									min-width: 100%;
+									display: none;
+									max-height: 300px;
+									-moz-border-radius: 2px;
+									-webkit-border-radius: 2px;
+									-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+									-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+									box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+									margin-top: 8px;
+									z-index: 6;
+									right: 0;
+								}
+
+								.sso-bar-lang-ul {
+									margin-top: 10px !important;
+									/* display: none; */
+									width: 150px;
+									right: 0px;
+									top: 26px;
+									margin-top: 1em !important;
+								}
+
+								ul.sso-bar-ul li a:hover {
+									background: #0180B0;
+									color: #fff;
+								}
+
+								ul.sso-bar-ul li a {
+
+									display: block;
+									padding-left: 8px;
+									padding-right: 8px;
+									padding-top: 6px;
+									padding-bottom: 6px;
+									color: #444;
+									text-decoration: none;
+									white-space: nowrap;
+									font-size: 14px !important;
+
+								}
+
+								ul,
+								menu,
+								dir {
+									display: block;
+									list-style-type: disc;
+									margin-block-start: 1em;
+									margin-block-end: 1em;
+									margin-inline-start: 0px;
+									margin-inline-end: 0px;
+									padding-inline-start: 40px;
+								}
+
+								li {
+									display: list-item;
+									text-align: -webkit-match-parent;
+								}
+							</style>
+							<!-- 	<div id="language">
+								<form class="form-inline">
+									<span class="mr-sm-1">Language</span>
+									<a  href="https://www.sarawak.gov.my/web/share/set_lang/bm">BM</a>
+									<span>|</span>
+									<a class="selected " href="https://www.sarawak.gov.my/web/share/set_lang/en">EN</a>
+								</form>
+							</div> -->
+
+							<div class="swkheader-system-right"
+								style="padding-left:15px;width:1000px;position: absolute;top: -35px;">
+								<div class="swkheader-system-button">
+									<div class="swkheader-system-button-div"
+										style="position: absolute;right: 260px;top: 8px;">
+										<a splwpk-multilang="splwpk-multilang" title="Language"
+											href="javascript:language_onclick();">
+											<div class="swkheader-lang-button" "=""><span id=" lang-notification"
+												class="swkheader-lang-span">EN</span></div>
+										</a>
+										<ul id="sso-bar-lang-ul" class="sso-bar-ul sso-bar-lang-ul">
+											<li>
+												<a href="https://www.sarawak.gov.my/web/share/set_lang/?lang=bm"><span
+														class="fa fa-language" aria-hidden="true"></span> Bahasa
+													Malaysia</a>
+											</li>
+											<li>
+												<a href="https://www.sarawak.gov.my/web/share/set_lang/?lang=en"><span
+														class="fa fa-language" aria-hidden="true"></span> English</a>
+											</li>
+										</ul>
+									</div>
+									<div id="swkid_plugin" style="position:absolute; right: 20px;top: 8px; "></div>
+								</div>
+							</div>
+
+							<script type="text/javascript">
+								function language_onclick() {
+
+									var ul = document.getElementById('sso-bar-lang-ul');
+									if (document.getElementById('swkid-plugin-ul')) {
+										var ul2 = document.getElementById('swkid-plugin-ul');
+										ul2.style.display = 'none';
+									}
+									if (ul.style.display != 'block') {
+										ul.style.display = 'block';
+									} else {
+										ul.style.display = 'none';
+									}
+								}
+							</script><!-- <a href="https://www.sarawak.gov.my/web/home/login/" class="btn btn-sarawak-id btn-sm img_rotate" style="">
+	<img style="height:28px;" alt="Sarawak ID Logo" src="https://www.sarawak.gov.my/media/images/v2/image_swak_id.png">Sarawak ID Login
+</a> -->
+							<style>
+								.divider {
+									width: 2px;
+									background: #ddd;
+								}
+
+								.icon-title {
+									position: relative;
+									bottom: 10px
+								}
+
+								.top-menu {
+									text-align: center;
+									font-family: 'Roboto', sans-serif !important;
+									font-size: 12px;
+									color: #666666;
+								}
+
+								.swkid-profile-picture {
+									width: 50px;
+									height: 32px;
+								}
+
+								.swkid-plugin-ul {
+									width: 235px;
+								}
+
+								.seg_icon {
+									width: 25px !important;
+								}
+
+								@media screen and (min-width: 0px) and (max-width: 1200px) {
+									.menu-small {
+										display: none;
+									}
+
+								}
+							</style>
+
+							<link rel="stylesheet" type="text/css" href="./skas_files/swkid_font_awesome.css">
+							<div id="swkid_plugin"
+								style="padding-left: 15px !important;position: absolute;top: -27px;right: 20px ">
+								<!--
+<div style="width: auto; position: relative;">
+--> <!-- <div class="swkid-wrapper">
+	<a href="https://www.sarawak.gov.my/" class="swkid-icon swkid-unique-name swkid-hidden-xs" title="Sarawak ID">
+		<img alt="Sarawak ID" id="swkid-profile-picture" class="swkid-unique-logo" src="https://www.sarawak.gov.my/media/images/image_sarawakid_logo_reverse.png">
+		</a>
+		<a href="https://www.sarawak.gov.my/web/home/signup/" class="swkid-register swkid-unique-register swkid-hidden-xs" title="Sarawak ID Register">Register</a>
+		<a href="https://www.sarawak.gov.my/web/home/login/" class="swkid-login swkid-unique-login" title="Sarawak ID Login" onclick="login_form_submit();">Login</a>
+	</div>
+</div>
+<div class="swkheader-system-button-div" style="padding-right: 10px">
+	<div id="swkid_plugin" style="padding-left: 5px;"></div>
+</div>-->
+								<!--</div>-->
+
+							</div>
+
+							<div class="t_row img_rotate menu-small" style="position: relative;top: 15px">
+								<div class="divider" style=""> </div>
+								<div class="t_col" style="padding-top:9px;padding-left: 15px">
+									<a splwpk-faq="splwpk-faq" timestamp="2025-01-13 17:51:50"
+										href="https://www.sarawak.gov.my/web/home/faq"><img class="icon-title"
+											style="width:25px;" alt="Sarawak Crest" src="./skas_files/icon_faq.svg">
+										<div class="top-menu" style="margin-top: -10px">FAQ</div>
+									</a>
+								</div>
+								<div class="divider" style=""> </div>
+
+								<div class="t_col" style="padding-top:9px;padding-left: 10px">
+									<a splwpk-feedback-form="splwpk-feedback-form" timestamp="2025-01-13 11:40:50"
+										href="https://www.sarawak.gov.my/web/home/feedback"
+										style="padding-left: 6px"><img class="icon-title"
+											style="width:25px; margin-left: 15px" alt="Sarawak Crest"
+											src="./skas_files/icon_feedback.svg">
+										<div class="top-menu" style="margin-top: -10px">Complaints <br>&amp; Feedback
+										</div>
+									</a>
+								</div>
+								<div class="divider" style=""> </div>
+								<div class="t_col" style="padding-top:9px; padding-left: 10px">
+									<a splwpk-contact-details="splwpk-contact-details" timestamp="2025-01-13 16:42:16"
+										href="https://www.sarawak.gov.my/web/home/list_agency/243"><img
+											class="icon-title" style="width:25px; margin-left: 14px" alt="Sarawak Crest"
+											src="./skas_files/icon_phone.svg">
+										<div class="top-menu" style="margin-top: -10px">Contact us</div>
+									</a>
+								</div>
+								<div class="divider" style=""> </div>
+								<div class="t_col" style="padding-top:9px;padding-left: 10px">
+									<a splwpk-sitemap="splwpk-sitemap" timestamp="2025-01-13 16:48:50"
+										href="https://www.sarawak.gov.my/web/home/sitemap/144"
+										style="padding-left: 6px"><img class="icon-title"
+											style="width:25px; margin-left: 0px" alt="Sarawak Crest"
+											src="./skas_files/icon_sitemap.svg">
+										<div class="top-menu" style="margin-top: -10px">Sitemap</div>
+									</a>
+								</div>
+							</div>
+
+							<script src="./skas_files/saved_resource"></script>
+							<script type="text/javascript" language="javascript">
+								document.addEventListener("DOMContentLoaded", function () {
+									swkid_sso_build();
+								});
+
+								function swkid_sso_build() {
+									swkid_sso_init({
+										client_id: 'seg_web',
+										state: '79304',
+										response_type: 'code',
+										redirect_uri: 'https://www.sarawak.gov.my/web/home/index/?swkid_auth',
+										switch_account_redirect_uri: 'https://www.sarawak.gov.my/web/home/index/?swkid_switch',
+										logout_redirect_uri: 'https://www.sarawak.gov.my/web/home/index/',
+										logout_uri: 'https://www.sarawak.gov.my/web/user/logout/',
+										style: 'logo-full-text',
+										icon_width: '',
+										position: '',
+										misc_param: '',
+										profile_listing_style: 'seg',
+										profile_listing_email: 'on',
+										force_login_btn: 'off',
+										servicelisting_uri: 'https://sarawak.gov.my/web/home/p_display_nature_list/16',
+										//servicelisting_uri: 'https://ism-tnt.sarawak.gov.my/myseg/3.1.1/web/home/p_display_nature_list/16',
+										// force_login_btn:'on'
+									});
+								}
+
+								function refresh_swkid_token() {
+
+								}
+
+								function swkid_callback(p_login_status) {
+									// alert("AAAA");
+									if (p_login_status['swkid_login_status'] == 'after_swkid_login') {
+										login_form_submit();
+									}
+								}
+							</script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="BannerWrapper">
+			<div class="body-row">
+				<div>
+				</div>
+				<div>
+				</div>
+				<div>
+				</div>
+			</div>
+		</div>
+		<div id="MenuWrapper" class="menu_background" style="">
+			<div class="">
+				<div class="body-row">
+					<div>
+						<div class="width-control1">
+							<nav id="navbar_main" class="navbar navbar-default" style=" border-radius:0;">
+								<div class="navbar-header">
+									<button class="navbar-toggle" type="button" data-toggle="collapse"
+										data-target=".js-navbar-collapse">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+									<span id="logo_stick">
+										<a class="logo slideDown pull-left" href="https://www.sarawak.gov.my/"
+											style="text-align: center;font-size:10px"><img style="width:33px;"
+												alt="Sarawak Crest"
+												src="./skas_files/sarawak.png"><br>Sarawak<br>Government</a>
+									</span>
+								</div>
+								<div class="collapse navbar-collapse js-navbar-collapse">
+									<ul class="nav navbar-nav">
+										<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+										<li id="home">
+											<a href="https://www.sarawak.gov.my/" style="width:auto;">
+												<span aria-hidden="true" class="glyphicon glyphicon-home"></span>
+											</a>
+										</li>
+										<li class="dropdown mega-dropdown"><a splwpk-about-us="splwpk-about-us"
+												timestamp="2025-01-13 17:52:03"
+												href="https://www.sarawak.gov.my/http://www.sarawak.gov.my/web/home/article_view/228/244/"
+												class="dropdown-toggle" data-toggle="dropdown">About Sarawak <span
+													class="glyphicon glyphicon-chevron-down pull-right"></span><span
+													class="dropdown-triangle pull-right"></span></a>
+											<ul class="dropdown-menu mega-dropdown-menu row">
+												<li class="col-sm-3">
+													<ul>
+														<li class="dropdown-header"><a style="padding:0;"
+																href="https://www.sarawak.gov.my/web/home/article_view/228/244/?id=228">History</a>
+														</li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/233/244/?id=228#244">Sarawak
+																before 1841</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/234/245/?id=228#245">The
+																Brooke Era</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/235/246/?id=228#246">The
+																Japanese Occupation</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/236/247/?id=228#247">British
+																Military Administration</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/237/248/?id=228#248">Sarawak
+																as a British Crown Colony</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/238/249/?id=228#249">Self-Governing
+																Sarawak 1963</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/239/250/?id=228#250">Formation
+																of Malaysia 1963</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-3">
+													<ul>
+														<li class="dropdown-header"><a style="padding:0;"
+																href="https://www.sarawak.gov.my/web/home/article_view/153/172/?id=153">State
+																Symbols</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/154/172/?id=153#172">Sarawak
+																State Flag</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/155/187/?id=153#187">Sarawak
+																State Crest</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-3">
+													<ul>
+														<li class="dropdown-header"><a style="padding:0;"
+																href="https://www.sarawak.gov.my/web/home/article_view/158/175/?id=158">Demographics</a>
+														</li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/240/175/?id=158#175">Population</a>
+														</li>
+													</ul>
+												</li>
+												<li class="col-sm-3">
+													<ul>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/article_view/159/176/?id=159?id=?id=159">Geography</a>
+																</li>
+															</ul>
+														</li>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/article_view/160/177/160?id=160">Transport
+																		and Infrastructure</a></li>
+															</ul>
+														</li>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/article_view/164/181/164?id=164">Communication</a>
+																</li>
+															</ul>
+														</li>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/list_agency/393/">Directory</a>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="dropdown mega-dropdown">
+												<a href="https://www.sarawak.gov.my/#nolink" class="dropdown-toggle" data-toggle="dropdown">
+													Sarawak Government
+													<span class="glyphicon glyphicon-chevron-down pull-right"></span>
+													<span class="dropdown-triangle pull-right"></span>
+												</a>
+											<ul class="dropdown-menu mega-dropdown-menu row">
+												<li class="col-sm-3">
+													<ul>
+														<li class="dropdown-header"><a style="padding:0;"
+																href="https://www.sarawak.gov.my/web/home/article_view/229/188/?id=229">Sarawak
+																Government</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/358/298/?id=229#298">Sarawak
+																Administrative Divisions and Districts</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/359/299/?id=229#299">Government
+																Policy</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-3">
+													<ul>
+														<li class="dropdown-header"><a style="padding:0;"
+																href="https://www.sarawak.gov.my/web/home/article_view/183/199/?id=183">Sarawak
+																Civil Service</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/259/191/?id=183#191">Department
+																Of The Premier Of Sarawak</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/260/192/?id=183#192">Client's
+																Charter</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-3">
+													<ul>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/article_view/173/189/173?id=173">Yang
+																		di-Pertua Negeri</a></li>
+															</ul>
+														</li>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/article_view/174/190/174?id=174">Premier
+																		of Sarawak</a></li>
+															</ul>
+														</li>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/article_view/180/196/180?id=180">Judiciary</a>
+																</li>
+															</ul>
+														</li>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/article_view/182/198/182?id=182">Executive</a>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li><a splwpk-online-services="splwpk-online-services"
+												timestamp="2025-01-13 18:26:06" href="https://www.sarawak.gov.my/#"
+												onclick="javascript:window.open(&quot;https://sarawak.gov.my/web/home/p_display_nature_list/213?id=home&quot;);"
+												class="" alt="Services Directory">Services Directory</a></li>
+										<li class="dropdown mega-dropdown"><a
+												href="https://www.sarawak.gov.my/web/home/article_view/193/211/"
+												class="dropdown-toggle" data-toggle="dropdown">Residents <span
+													class="glyphicon glyphicon-chevron-down pull-right"></span><span
+													class="dropdown-triangle pull-right"></span></a>
+											<ul class="dropdown-menu mega-dropdown-menu row">
+												<li class="col-sm-3">
+													<ul>
+														<li class="dropdown-header"><a style="padding:0;"
+																href="https://sarawak.gov.my/web/home/article_view/0/300//?id=391#300?id=391">Sarawak
+																ID</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/0/300/?id=391#300">How
+																to Register</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/396/303/?id=391#303">How
+																to Update Your Email</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/397/302/?id=391#302">How
+																to Update Your Personal Information</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/399/304/?id=391#304">How
+																to Update Your Password</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/400/305/?id=391#305">How
+																to Update Your Phone Number</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/419/368/?id=391#368">How
+																to verify SarawakID via eKYC</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/faq/403/#12?id=391##12">FAQ</a>
+														</li>
+													</ul>
+												</li>
+												<li class="col-sm-3">
+													<ul>
+														<li class="dropdown-header"><a style="padding:0;"
+																href="https://sarawak.gov.my/web/home/article_view/0/300//?id=420#300?id=420">SarawakID
+																Corp</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/0/360/?id=420#360">How
+																to Register SarawakID Corp Account</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/426/371/?id=420#371">How
+																to Fill SarawakID Corp Registration Form</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/429/373/?id=420#373">How
+																to Login SarawakID Corp Account</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/430/366/?id=420#366">How
+																to Switch SarawakID Corp Account</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/433/361/?id=420#361">How
+																to Update Corporate Profile</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/426/363/?id=420#363">How
+																to Add or Edit&nbsp;Corporate&nbsp;Staff</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-3">
+													<ul>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/article_view/194/211/194?id=194">Citizenship</a>
+																</li>
+															</ul>
+														</li>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/article_view/195/213/195?id=195">Malaysian
+																		Passport</a></li>
+															</ul>
+														</li>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/article_view/197/215/197?id=197">Education</a>
+																</li>
+															</ul>
+														</li>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/article_view/198/378/">Public
+																		Holidays 2025</a></li>
+															</ul>
+														</li>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/article_view/199/377/">School
+																		Holidays Session 2025/2026</a></li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li><a splwpk-contact-details="splwpk-contact-details"
+												timestamp="2025-01-13 07:41:01"
+												href="https://www.sarawak.gov.my/web/home/list_agency/243/?id=243"
+												class="" alt="Agency Directory">Agency Directory</a></li>
+										<li><a splwpk-procurement="splwpk-procurement" timestamp="2025-01-13 16:20:13"
+												href="https://www.sarawak.gov.my/web/home/list_news/368/news_tender/?id=368"
+												class="" alt="Tender &amp; Quotation">Tender &amp; Quotation</a></li>
+										<li class="dropdown mega-dropdown"><a
+												href="https://www.sarawak.gov.my/web/home/list_news/374/"
+												class="dropdown-toggle" data-toggle="dropdown">Media Center <span
+													class="glyphicon glyphicon-chevron-down pull-right"></span><span
+													class="dropdown-triangle pull-right"></span></a>
+											<ul class="dropdown-menu mega-dropdown-menu row">
+												<li class="col-sm-3">
+													<ul>
+														<li class="dropdown-header"><a style="padding:0;"
+																href="https://www.sarawak.gov.my/web/home/article_view/382/259/?id=382">Publication</a>
+														</li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/414/259/?id=382#259">General
+																Publication</a></li>
+														<li><a
+																href="https://www.sarawak.gov.my/web/home/article_view/413/353/?id=382#353">Sarawak
+																Facts and Figures</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-3">
+													<ul>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/list_announcement/394/">Announcement</a>
+																</li>
+															</ul>
+														</li>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/list_infografik/407/">Infografik</a>
+																</li>
+															</ul>
+														</li>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/web/home/list_event/379/">Events</a>
+																</li>
+															</ul>
+														</li>
+														<li class="col-sm-3-dis" style="">
+															<ul>
+																<li class="dropdown-header"><a
+																		href="https://www.sarawak.gov.my/#"
+																		onclick="javascript:window.open(&#39;/web/home/list_news/377/General?id=&#39;);">News</a>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<!-- /.nav-collapse -->
+							</nav>
+						</div>
+						<style>
+							.navbar-default {
+								background-color: #fff;
+								border-color: #fff;
+								font-family: 'Roboto', sans-serif !important;
+							}
+
+							.navbar-nav>li>.dropdown-menu {
+								border-top-left-radius: 4px;
+								border-top-right-radius: 4px;
+							}
+
+							.navbar-default .navbar-nav>li>a {
+								/*width: 200px;*/
+								font-weight: bold;
+								color: #333333;
+
+								background-color: #fff;
+							}
+
+							.mega-dropdown {
+								position: static !important;
+								/*width: 100%;*/
+							}
+
+							.mega-dropdown-menu {
+								padding: 20px 0px;
+								width: 100%;
+								box-shadow: none;
+								-webkit-box-shadow: none;
+								background-color: #ebf0f1;
+							}
+
+							/*.mega-dropdown-menu:before {
+  content: "";
+  border-bottom: 15px solid #fff;
+  border-right: 17px solid transparent;
+  border-left: 17px solid transparent;
+  position: absolute;
+  top: -15px;
+  left: 285px;
+  z-index: 10;
+}
+
+.mega-dropdown-menu:after {
+  content: "";
+  border-bottom: 17px solid #ccc;
+  border-right: 19px solid transparent;
+  border-left: 19px solid transparent;
+  position: absolute;
+  top: -17px;
+  left: 283px;
+  z-index: 8;
+}*/
+
+							.mega-dropdown-menu>li>ul {
+								padding: 0;
+								margin: 0;
+							}
+
+							.mega-dropdown-menu>li>ul>li {
+								list-style: none;
+							}
+
+							.mega-dropdown-menu>li>ul>li>a {
+								display: block;
+								padding: 3px 20px;
+								clear: both;
+								font-weight: normal;
+								line-height: 1.428571429;
+								color: #333333;
+								white-space: normal;
+							}
+
+							.mega-dropdown-menu>li ul>li>a:hover,
+							.mega-dropdown-menu>li ul>li>a:focus {
+								text-decoration: none;
+								color: #cc0000;
+								background-color: #f5f5f5;
+							}
+
+							.mega-dropdown-menu .dropdown-header {
+								color: #333333;
+								font-size: 18px;
+								font-weight: bold;
+							}
+
+							.mega-dropdown-menu form {
+								margin: 3px 20px;
+							}
+
+							.mega-dropdown-menu .form-group {
+								margin-bottom: 3px;
+							}
+
+							.mega-dropdown-menu .dropdown-header a {
+								color: #333333;
+								font-size: 16px;
+								font-weight: bold;
+							}
+
+							.sticky {
+								position: fixed;
+								top: 0;
+								width: 100%;
+								z-index: 10000;
+								box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.2);
+							}
+
+							.sticky+.content {
+								padding-top: 60px;
+							}
+
+							#logo_stick {
+								display: none;
+							}
+
+							.sticky #logo_stick {
+								display: block;
+							}
+
+							.sticky #home {
+								display: none;
+							}
+
+							.mega-dropdown.open .dropdown-triangle {
+								content: "";
+								border-bottom: 17px solid #ebf0f1;
+								border-right: 19px solid transparent;
+								border-left: 19px solid transparent;
+								position: absolute;
+								bottom: 22px;
+								margin-left: 7px;
+								margin-bottom: -21px;
+								z-index: 1001;
+								color: #333333;
+							}
+
+							.navbar-default .navbar-nav>.open>a,
+							.navbar-default .navbar-nav>.open>a:focus,
+							.navbar-default .navbar-nav>.open>a:hover {
+								color: #555;
+								background-color: #fff;
+							}
+
+							.mega-dropdown a:hover,
+							.mega-dropdown a:focus {
+								text-decoration: none;
+								color: #cc0000 !important;
+							}
+
+							#navbar_main .navbar-nav li.active>a {
+								color: #cc0000 !important;
+								text-decoration: none;
+							}
+
+							.dropdown-toggle .glyphicon {
+								padding-left: 20px;
+							}
+
+							.navbar-nav:nth-child(2) ul {
+								background: #9495e0;
+							}
+
+							/*
+.mega-dropdown-menu:nth-of-type(1){
+	background:#9495e0;
+}
+
+.mega-dropdown ul li ul a{
+	color:#fff!important;
+}
+*/
+
+							.effect-1.dat-menu-animate .dat-menu-container {
+								-webkit-transform: translateZ(-1500px) translateX(100%) rotateY(-45deg);
+								transform: translateZ(-1500px) translateX(100%) rotateY(-45deg);
+							}
+
+							/*.width-control{
+	-webkit-transform: translateZ(-1500px) translateX(100%) rotateY(-45deg);
+	transform: translateZ(-1500px) translateX(100%) rotateY(-45deg);
+}*/
+
+							.navbar.navbar-default.sticky ul.nav.navbar-nav {
+								margin-top: 15px;
+							}
+						</style>
+						<script>
+							window.onscroll = function () { myFunction() };
+
+							if (document.getElementById("navbar_main")) {
+								var navbar = document.getElementById("navbar_main");
+								var sticky = navbar.offsetTop;
+							}
+
+							function myFunction() {
+
+								if (window.innerWidth > 500) {
+									if (window.pageYOffset >= sticky) {
+										navbar.classList.add("sticky");
+										//navbar.classList.add("slide");
+									} else {
+
+										navbar.classList.remove("sticky");
+									}
+								} else {
+									navbar.classList.remove("sticky");
+								}
+
+							}
+
+							$(document).on('click', '.mega-dropdown', function (e) {
+								e.stopPropagation()
+							})
+						</script>
+						<!--<style>
+.navbar-nav>li>.dropdown-menu {
+  margin-top: 20px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.navbar-default .navbar-nav>li>a {
+  /*width: 200px;*/
+  font-weight: bold;
+}
+
+.mega-dropdown {
+  position: static !important;
+  /*width: 100%;*/
+}
+
+.mega-dropdown-menu {
+  padding: 20px 0px;
+  width: 100%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+/*.mega-dropdown-menu:before {
+  content: "";
+  border-bottom: 15px solid #fff;
+  border-right: 17px solid transparent;
+  border-left: 17px solid transparent;
+  position: absolute;
+  top: -15px;
+  left: 285px;
+  z-index: 10;
+}
+
+.mega-dropdown-menu:after {
+  content: "";
+  border-bottom: 17px solid #ccc;
+  border-right: 19px solid transparent;
+  border-left: 19px solid transparent;
+  position: absolute;
+  top: -17px;
+  left: 283px;
+  z-index: 8;
+}*/
+
+.mega-dropdown-menu > li > ul {
+  padding: 0;
+  margin: 0;
+}
+
+.mega-dropdown-menu > li > ul > li {
+  list-style: none;
+}
+
+.mega-dropdown-menu > li > ul > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #999;
+  white-space: normal;
+}
+
+.mega-dropdown-menu > li ul > li > a:hover,
+.mega-dropdown-menu > li ul > li > a:focus {
+  text-decoration: none;
+  color: #444;
+  background-color: #f5f5f5;
+}
+
+.mega-dropdown-menu .dropdown-header {
+  color: #428bca;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.mega-dropdown-menu form {
+  margin: 3px 20px;
+}
+
+.mega-dropdown-menu .form-group {
+  margin-bottom: 3px;
+}
+
+.mega-dropdown-menu .dropdown-header a{
+	color: #428bca;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:10000;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+#logo_stick{
+	display:none;
+}
+
+.sticky #logo_stick{
+	display:block;
+}
+
+.sticky #home{
+	display:none;
+}
+
+.mega-dropdown.open:before {
+  content: "";
+  border-bottom: 16px solid #fff;
+  border-right: 18px solid transparent;
+  border-left: 18px solid transparent;
+  position: absolute;
+  bottom:0;
+  margin-bottom: -21px;
+  margin-left:1px;
+  z-index: 1002;
+}
+
+.mega-dropdown.open:after {
+  content: "";
+  border-bottom: 17px solid #ccc;
+  border-right: 19px solid transparent;
+  border-left: 19px solid transparent;
+  position: absolute;
+  bottom:0;
+  margin-bottom: -21px;
+  z-index: 1001;
+}
+
+.dropdown-toggle .glyphicon{
+padding-left:20px;
+}
+
+.navbar-nav:nth-child(2) ul{
+	background:#9495e0;
+}
+
+/*
+.mega-dropdown-menu:nth-of-type(1){
+	background:#9495e0;
+}
+
+.mega-dropdown ul li ul a{
+	color:#fff!important;
+}
+*/
+
+.effect-1.dat-menu-animate .dat-menu-container {
+	-webkit-transform: translateZ(-1500px) translateX(100%) rotateY(-45deg);
+	transform: translateZ(-1500px) translateX(100%) rotateY(-45deg);
+}
+
+/*.width-control{
+	-webkit-transform: translateZ(-1500px) translateX(100%) rotateY(-45deg);
+	transform: translateZ(-1500px) translateX(100%) rotateY(-45deg);
+}*/
+</style>
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar_main");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+
+if(window.innerWidth > 500){
+  if (window.pageYOffset >= sticky) {
+	navbar.classList.add("sticky");
+	//navbar.classList.add("slide");
+  }else{
+	navbar.classList.remove("sticky");
+  }
+}else{
+	navbar.classList.remove("sticky");
+}
+
+}
+
+$(document).on('click', '.mega-dropdown', function(e) {
+  e.stopPropagation()
+})
+</script>-->
+						<style>
+							.dat-menu-search-block input[type='text'] {
+								display: block;
+								/*height: 40px;*/
+								padding: 0 15px;
+								line-height: 40px;
+								width: 100%;
+								border: 0px;
+								border-radius: 40px;
+								color: #fff;
+								outline: none;
+								background: transparent;
+								position: relative;
+								z-index: 10;
+								border: 1px solid rgba(255, 255, 255, 0.5);
+								-webkit-box-sizing: border-box;
+								-moz-box-sizing: border-box;
+								box-sizing: border-box;
+								margin-top: 5px;
+								margin-bottom: 5px;
+							}
+
+							.dat-menu-search-block input[type='text']:focus {
+								color: #232323;
+								background: #fff;
+								border: 1px solid #fff;
+							}
+
+							.dat-menu-search {
+								display: none;
+							}
+
+							.navbar-toggle .icon-bar {
+								display: block;
+								width: 12px !important;
+								height: 2px;
+							}
+
+							.navbar-toggle {
+								margin-right: 2px;
+							}
+
+							.swk-gov-top-link {
+								display: flex;
+								white-space: normal;
+							}
+
+							.btn_top {
+								display: inline-block;
+								margin-bottom: 0;
+								font-weight: 400;
+								text-align: center;
+								white-space: nowrap;
+								vertical-align: middle;
+								-ms-touch-action: manipulation;
+								touch-action: manipulation;
+								cursor: pointer;
+								background-image: none;
+								border: 1px solid transparent;
+								font-size: 14px;
+								line-height: 1.42857143;
+								border-radius: 4px;
+								-webkit-user-select: none;
+								-moz-user-select: none;
+								-ms-user-select: none;
+								user-select: none;
+							}
+
+							@media screen and (max-width: 500px) {
+								.swk_gov_txt {
+									font-size: 9px;
+									margin-left: 4px;
+									font-weight: bold
+								}
+							}
+
+							@media screen and (max-width: 350px) {
+								#workspace {
+									font-size: 9px;
+									margin-left: 4px;
+									font-weight: bold;
+								}
+							}
+
+							@media screen and (min-width: 501px) {
+								.swk_gov_txt {
+									font-size: 12px;
+									margin-left: 12px;
+									font-weight: bold
+								}
+							}
+						</style>
+						<script>
+							$(".dat-menu-search").bind("click", function () {
+								// console.log('test');
+								/*$('html,body').animate({
+									scrollTop: 0
+								});
+								$(".dat-menu-top-header").css("position", "absolute").css("top", "0px");*/
+								//$(".dat-menu-top-header input[type='text']").focus();
+								return false;
+							});
+						</script>
+						<link rel="stylesheet" href="./skas_files/offcanvas.css">
+						<script src="./skas_files/offcanvas.js.download"></script>
+						<nav id="responsive_header" class="navbar navbar-default navbar-fixed-top">
+							<div class="width-control-dis">
+								<div class="navbar-header">
+									<button type="button"
+										class="navbar-toggle offcanvas-toggle pull-left js-offcanvas-has-events" id="toggle-button"
+										style="background:transparent;" data-toggle="offcanvas"
+										data-target="#js-bootstrap-offcanvas">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+									<link rel="stylesheet" type="text/css" href="./skas_files/swkid_font_awesome.css">
+									<div id="swkid_plugin2" class="btn_top pull-right"
+										style="padding-top:14px; left:5px; margin-right: 18px"
+										onclick="javascript:profile_click_mobile();">
+									</div>
+
+									<div class="dropdown btn_top pull-right" style="padding-top: 12px;">
+										<div class="" style="margin-right: 5px;">
+											<a id="dLabel" class="dropdown-toggle" data-toggle="dropdown" role="button"
+												aria-haspopup="true" aria-expanded="false" "="">
+												<div class=" swkheader-lang-button" "=""><span id=" lang-notification"
+												class="swkheader-lang-span" style="margin-left:1px">EN</span>
+												</div>
+											</a>
+										<ul class="dropdown-menu" aria-labelledby="dLabel"
+											style="margin-right:10%; right: 4px; left: auto;">
+											<li><a href="https://www.sarawak.gov.my/web/share/set_lang/?lang=bm">Bahasa
+													Malaysia</a></li>
+											<li><a
+													href="https://www.sarawak.gov.my/web/share/set_lang/?lang=en">English</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<button class="btn_top pull-right"
+									style="padding-top:14px; background:transparent; outline:0;"
+									onclick="javascript:openSearch();">
+									<i class="glyphicon glyphicon-search"></i>
+								</button>
+								<div class="row">
+									<img class="pull-left column" style="width:40px;padding-top: 6px;margin-left: -5px"
+										alt="Sarawak Crest" src="./skas_files/sarawak.png">
+									<a class="pull-left column"
+										style="padding-top:16px; background:transparent; width:20vw;word-break:break-word"
+										href="https://www.sarawak.gov.my/">
+										<div class="swk_gov_txt" style="">Sarawak Government</div>
+									</a>
+								</div>
+
+							</div>
+							<div class="navbar-offcanvas  offcanvas-transform js-offcanas-done" id="js-bootstrap-offcanvas">
+								<div class="row" style="border-top:1px solid #e7e7e7;"></div>
+								<script>
+									function check_lang(dom_id) {
+										if (dom_id.checked == true) {
+											window.location = "https://www.sarawak.gov.my/web/share/set_lang/en";
+										} else {
+											window.location = "https://www.sarawak.gov.my/web/share/set_lang/bm";
+										}
+									}
+									$(document).ready(function () {
+										$('.dropdown-menu').on('click', function (event) {
+											event.stopPropagation();
+										});
+									})
+								</script>
+
+
+								<style>
+									.swkid-profile-mobile {
+										margin-left: 6px;
+										margin-right: 16px;
+									}
+
+									#swkid_plugin .swkid-icon,
+									#swkid_plugin .swkid-login {
+										border-right: 1px solid #fff;
+										display: flex;
+									}
+
+									.onoffswitch {
+										position: relative;
+										width: 90px;
+										-webkit-user-select: none;
+										-moz-user-select: none;
+										-ms-user-select: none;
+									}
+
+									.onoffswitch-checkbox {
+										display: none;
+									}
+
+									.onoffswitch-label {
+										display: block;
+										overflow: hidden;
+										cursor: pointer;
+										border: 2px solid #999999;
+										border-radius: 20px;
+									}
+
+									.onoffswitch-inner {
+										display: block;
+										width: 200%;
+										margin-left: -100%;
+										transition: margin 0.3s ease-in 0s;
+									}
+
+									.onoffswitch-inner:before,
+									.onoffswitch-inner:after {
+										display: block;
+										float: left;
+										width: 50%;
+										height: 30px;
+										padding: 0;
+										line-height: 30px;
+										font-size: 14px;
+										color: white;
+										font-family: Trebuchet, Arial, sans-serif;
+										font-weight: bold;
+										box-sizing: border-box;
+									}
+
+									.onoffswitch-inner:before {
+										content: "EN";
+										padding-left: 10px;
+										background-color: #169fe6;
+										color: #FFFFFF;
+									}
+
+									.onoffswitch-inner:after {
+										content: "BM";
+										padding-right: 10px;
+										background-color: #46ad46;
+										color: #FFFFFF;
+										text-align: right;
+									}
+
+									.onoffswitch-switch {
+										display: block;
+										width: 18px;
+										margin: 6px;
+										background: #FFFFFF;
+										position: absolute;
+										top: 0;
+										bottom: 0;
+										right: 56px;
+										border: 2px solid #999999;
+										border-radius: 20px;
+										transition: all 0.3s ease-in 0s;
+									}
+
+									.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
+										margin-left: 0;
+									}
+
+									.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
+										right: 0px;
+									}
+								</style>
+								<ul class="nav navbar-nav navbar-left">
+									<div class="list-group panel"><a href="https://www.sarawak.gov.my/#151"
+											class="list-group-item panel-heading " data-toggle="collapse"
+											data-parent="#MainMenu">About Sarawak <span
+												style="float: right;margin-top: 10px" class="caret"></span></a>
+										<div class="collapse" id="151"><a href="https://www.sarawak.gov.my/#228"
+												class="list-group-item panel-body" data-toggle="collapse"
+												data-parent="#228">History <span style="float: right;margin-top: 10px"
+													class="caret"></span></a>
+											<div class="collapse list-group-submenu" id="228"><a
+													style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/233/244/?id=228"
+													class="list-group-item panel-body" data-parent="#228">Sarawak before
+													1841</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/234/245/?id=228"
+													class="list-group-item panel-body" data-parent="#228">The Brooke
+													Era</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/235/246/?id=228"
+													class="list-group-item panel-body" data-parent="#228">The Japanese
+													Occupation</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/236/247/?id=228"
+													class="list-group-item panel-body" data-parent="#228">British
+													Military Administration</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/237/248/?id=228"
+													class="list-group-item panel-body" data-parent="#228">Sarawak as a
+													British Crown Colony</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/238/249/?id=228"
+													class="list-group-item panel-body" data-parent="#228">Self-Governing
+													Sarawak 1963</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/239/250/?id=228"
+													class="list-group-item panel-body" data-parent="#228">Formation of
+													Malaysia 1963</a></div><a href="https://www.sarawak.gov.my/#153"
+												class="list-group-item panel-body" data-toggle="collapse"
+												data-parent="#153">State Symbols <span
+													style="float: right;margin-top: 10px" class="caret"></span></a>
+											<div class="collapse list-group-submenu" id="153"><a
+													style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/154/172/?id=153"
+													class="list-group-item panel-body" data-parent="#153">Sarawak State
+													Flag</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/155/187/?id=153"
+													class="list-group-item panel-body" data-parent="#153">Sarawak State
+													Crest</a></div><a href="https://www.sarawak.gov.my/#158"
+												class="list-group-item panel-body" data-toggle="collapse"
+												data-parent="#158">Demographics <span
+													style="float: right;margin-top: 10px" class="caret"></span></a>
+											<div class="collapse list-group-submenu" id="158"><a
+													style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/240/175/?id=158"
+													class="list-group-item panel-body" data-parent="#158">Population</a>
+											</div><a
+												href="https://www.sarawak.gov.my/web/home/article_view/159/176/?id=159?id=151"
+												class="list-group-item panel-body">Geography</a><a
+												href="https://www.sarawak.gov.my/web/home/article_view/160/177/160?id=151"
+												class="list-group-item panel-body">Transport and Infrastructure</a><a
+												href="https://www.sarawak.gov.my/web/home/article_view/164/181/164?id=151"
+												class="list-group-item panel-body">Communication</a><a
+												href="https://www.sarawak.gov.my/web/home/list_agency/393/?id=151"
+												class="list-group-item panel-body">Directory</a>
+										</div>
+									</div>
+									<div class="list-group panel"><a href="https://www.sarawak.gov.my/#152"
+											class="list-group-item panel-heading " data-toggle="collapse"
+											data-parent="#MainMenu">Sarawak Government <span
+												style="float: right;margin-top: 10px" class="caret"></span></a>
+										<div class="collapse" id="152"><a href="https://www.sarawak.gov.my/#229"
+												class="list-group-item panel-body" data-toggle="collapse"
+												data-parent="#229">Sarawak Government <span
+													style="float: right;margin-top: 10px" class="caret"></span></a>
+											<div class="collapse list-group-submenu" id="229"><a
+													style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/358/298/?id=229"
+													class="list-group-item panel-body" data-parent="#229">Sarawak
+													Administrative Divisions and Districts</a><a
+													style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/359/299/?id=229"
+													class="list-group-item panel-body" data-parent="#229">Government
+													Policy</a></div><a href="https://www.sarawak.gov.my/#183"
+												class="list-group-item panel-body" data-toggle="collapse"
+												data-parent="#183">Sarawak Civil Service <span
+													style="float: right;margin-top: 10px" class="caret"></span></a>
+											<div class="collapse list-group-submenu" id="183"><a
+													style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/259/191/?id=183"
+													class="list-group-item panel-body" data-parent="#183">Department Of
+													The Premier Of Sarawak</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/260/192/?id=183"
+													class="list-group-item panel-body" data-parent="#183">Client's
+													Charter</a></div><a
+												href="https://www.sarawak.gov.my/web/home/article_view/173/189/173?id=152"
+												class="list-group-item panel-body">Yang di-Pertua Negeri</a><a
+												href="https://www.sarawak.gov.my/web/home/article_view/174/190/174?id=152"
+												class="list-group-item panel-body">Premier of Sarawak</a><a
+												href="https://www.sarawak.gov.my/web/home/article_view/180/196/180?id=152"
+												class="list-group-item panel-body">Judiciary</a><a
+												href="https://www.sarawak.gov.my/web/home/article_view/182/198/182?id=152"
+												class="list-group-item panel-body">Executive</a>
+										</div>
+									</div>
+									<div class="list-group panel"><a
+											href="https://sarawak.gov.my/web/home/p_display_nature_list/213"
+											class="list-group-item panel-heading">Services Directory</a>
+										<div class="collapse"></div>
+									</div>
+									<div class="list-group panel"><a href="https://www.sarawak.gov.my/#193"
+											class="list-group-item panel-heading " data-toggle="collapse"
+											data-parent="#MainMenu">Residents <span
+												style="float: right;margin-top: 10px" class="caret"></span></a>
+										<div class="collapse" id="193"><a href="https://www.sarawak.gov.my/#391"
+												class="list-group-item panel-body" data-toggle="collapse"
+												data-parent="#391">Sarawak ID <span
+													style="float: right;margin-top: 10px" class="caret"></span></a>
+											<div class="collapse list-group-submenu" id="391"><a
+													style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/0/300/?id=391"
+													class="list-group-item panel-body" data-parent="#391">How to
+													Register</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/396/303/?id=391"
+													class="list-group-item panel-body" data-parent="#391">How to Update
+													Your Email</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/397/302/?id=391"
+													class="list-group-item panel-body" data-parent="#391">How to Update
+													Your Personal Information</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/399/304/?id=391"
+													class="list-group-item panel-body" data-parent="#391">How to Update
+													Your Password</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/400/305/?id=391"
+													class="list-group-item panel-body" data-parent="#391">How to Update
+													Your Phone Number</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/419/368/?id=391"
+													class="list-group-item panel-body" data-parent="#391">How to verify
+													SarawakID via eKYC</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/faq/403/#12?id=391"
+													class="list-group-item panel-body" data-parent="#391">FAQ</a></div>
+											<a href="https://www.sarawak.gov.my/#420" class="list-group-item panel-body"
+												data-toggle="collapse" data-parent="#420">SarawakID Corp <span
+													style="float: right;margin-top: 10px" class="caret"></span></a>
+											<div class="collapse list-group-submenu" id="420"><a
+													style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/0/360/?id=420"
+													class="list-group-item panel-body" data-parent="#420">How to
+													Register SarawakID Corp Account</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/426/371/?id=420"
+													class="list-group-item panel-body" data-parent="#420">How to Fill
+													SarawakID Corp Registration Form</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/429/373/?id=420"
+													class="list-group-item panel-body" data-parent="#420">How to Login
+													SarawakID Corp Account</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/430/366/?id=420"
+													class="list-group-item panel-body" data-parent="#420">How to Switch
+													SarawakID Corp Account</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/433/361/?id=420"
+													class="list-group-item panel-body" data-parent="#420">How to Update
+													Corporate Profile</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/426/363/?id=420"
+													class="list-group-item panel-body" data-parent="#420">How to Add or
+													Edit&nbsp;Corporate&nbsp;Staff</a></div><a
+												href="https://www.sarawak.gov.my/web/home/article_view/194/211/194?id=193"
+												class="list-group-item panel-body">Citizenship</a><a
+												href="https://www.sarawak.gov.my/web/home/article_view/195/213/195?id=193"
+												class="list-group-item panel-body">Malaysian Passport</a><a
+												href="https://www.sarawak.gov.my/web/home/article_view/197/215/197?id=193"
+												class="list-group-item panel-body">Education</a><a
+												href="https://www.sarawak.gov.my/web/home/article_view/198/378/?id=193"
+												class="list-group-item panel-body">Public Holidays 2025</a><a
+												href="https://www.sarawak.gov.my/web/home/article_view/199/377/?id=193"
+												class="list-group-item panel-body">School Holidays Session 2025/2026</a>
+										</div>
+									</div>
+									<div class="list-group panel"><a
+											href="https://www.sarawak.gov.my/web/home/list_agency/243/"
+											class="list-group-item panel-heading">Agency Directory</a>
+										<div class="collapse"></div>
+									</div>
+									<div class="list-group panel"><a
+											href="https://www.sarawak.gov.my/web/home/list_news/368/news_tender/"
+											class="list-group-item panel-heading">Tender &amp; Quotation</a>
+										<div class="collapse"></div>
+									</div>
+									<div class="list-group panel"><a href="https://www.sarawak.gov.my/#374"
+											class="list-group-item panel-heading " data-toggle="collapse"
+											data-parent="#MainMenu">Media Center <span
+												style="float: right;margin-top: 10px" class="caret"></span></a>
+										<div class="collapse" id="374"><a
+												href="https://www.sarawak.gov.my/web/home/list_announcement/394/?id=374"
+												class="list-group-item panel-body">Announcement</a><a
+												href="https://www.sarawak.gov.my/web/home/list_infografik/407/?id=374"
+												class="list-group-item panel-body">Infografik</a><a
+												href="https://www.sarawak.gov.my/web/home/list_event/379/?id=374"
+												class="list-group-item panel-body">Events</a><a
+												href="https://www.sarawak.gov.my/web/home/list_news/377/General?id=374"
+												class="list-group-item panel-body">News</a><a
+												href="https://www.sarawak.gov.my/#382"
+												class="list-group-item panel-body" data-toggle="collapse"
+												data-parent="#382">Publication <span
+													style="float: right;margin-top: 10px" class="caret"></span></a>
+											<div class="collapse list-group-submenu" id="382"><a
+													style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/414/259/?id=382"
+													class="list-group-item panel-body" data-parent="#382">General
+													Publication</a><a style="padding-left:30px"
+													href="https://www.sarawak.gov.my/web/home/article_view/413/353/?id=382"
+													class="list-group-item panel-body" data-parent="#382">Sarawak Facts
+													and Figures</a></div>
+										</div>
+									</div>
+								</ul>
+							</div>
+							<style>
+								
+
+								.navbar-toggle.active .icon-bar:nth-child(2) {
+									opacity: 0;
+								}
+
+								.navbar-toggle.active .icon-bar:nth-child(3) {
+									transform: rotate(-45deg); /* Third bar tilts the opposite way */
+									position: relative;
+									top: -5.5px;
+								}
+							</style>
+							<script>
+									document.getElementById('toggle-button').addEventListener('click', function () {
+									const target = document.getElementById('js-bootstrap-offcanvas');
+										if (target) {
+											target.classList.toggle('in'); // Toggle the "in" class on each click
+											document.getElementById('toggle-button').classList.toggle('active');
+										}
+									});
+									document.addEventListener('click', function (event) {
+										if (!document.getElementById('js-bootstrap-offcanvas').contains(event.target) && !document.getElementById('toggle-button').contains(event.target)) {
+											document.getElementById('js-bootstrap-offcanvas').classList.remove('in');
+											document.getElementById('toggle-button').classList.remove('active');
+										}
+									});
+							</script>
+					</div>
+					</nav>
+					<style>
+						a[aria-expanded=true] .caret {
+							display: inline-block;
+							width: 0;
+							height: 0;
+							margin-left: 2px;
+							vertical-align: middle;
+							border-bottom: 4px dashed;
+							border-top: 0px solid transparent;
+							border-right: 4px solid transparent;
+							border-left: 4px solid transparent;
+						}
+
+						.panel .panel-body {
+							background-color: #d5dcde;
+						}
+
+						.navbar-offcanvas.offcanvas-transform.in {
+							left: -250px;
+						}
+
+						.navbar-offcanvas {
+							position: fixed;
+							width: 100%;
+							max-width: 1450px;
+							top: 50px;
+							left: -1450px;
+							padding-left: 15px;
+							padding-right: 15px;
+							z-index: 999;
+							overflow: scroll;
+							-webkit-overflow-scrolling: touch;
+							-webkit-transition: all 0.15s ease-in;
+							transition: all 0.15s ease-in;
+						}
+
+						.list-group {
+							padding-left: 0;
+							margin-bottom: 0px;
+						}
+
+						@media screen and (min-width: 0px) and (max-width: 1200px) {
+							a.list-group-item:focus,
+							a.list-group-item:hover,
+							button.list-group-item:focus,
+							button.list-group-item:hover {
+								font-weight: bold;
+								color: #cc0000;
+								text-decoration: none;
+								background-color: #ebf0f1;
+							}
+
+							.glyphicon {
+								font-size: 19px;
+							}
+
+							.navbar-default .navbar-nav>.open>a,
+							.navbar-default .navbar-nav>.open>a:focus,
+							.navbar-default .navbar-nav>.open>a {
+								color: #cc1717;
+								;
+								background-color: #d7e8e8;
+								font-weight: bold;
+							}
+
+							.navbar-nav li.dropdown.open .dropdown-menu {
+								background-color: #eff7f7;
+							}
+
+							#header {
+								display: none;
+							}
+						}
+
+						.dropdown-submenu {
+							list-style-type: none;
+						}
+
+						.dropdown-submenu a {
+							line-height: 33px;
+							text-decoration: none;
+							color: #777;
+						}
+
+						.dropdown-submenu a:hover {
+							color: #000;
+						}
+
+						.mobile-header {
+							display: block;
+							padding: 25px 0 30px;
+						}
+
+						.mobile-header #mobile-logo {
+							display: block;
+							text-indent: -9999px;
+							overflow: hidden;
+							background-image: url(/profiles/gsecms/themes/ausgovau_bootstrap/images/logo-navy.svg);
+							background-position: center center;
+							background-repeat: no-repeat;
+							width: 230px;
+							height: 40px;
+							background-size: contain;
+							margin: 0 auto;
+							background-color: transparent !important;
+						}
+
+						.mobile-header #tagline {
+							margin: auto;
+							text-align: center;
+							color: #777;
+							padding: 0.5em;
+						}
+
+						.navbar-offcanvas {
+							max-height: 90%;
+							overflow: auto
+						}
+
+						.list-group-item {
+							border: 1px solid #ebf0f1;
+						}
+					</style>
+					
+					<div id="myOverlay" class="overlay_src">
+						<span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
+						<div class="overlay_src-content">
+							<div>
+								<input name="txt_search_simple_responsive" id="txt_search_simple_responsive" value=""
+									onkeyup="if(event.keyCode==13){portlet_search_simple_res();}" type="text"
+									placeholder="Search">
+								<input type="hidden" class="text" name="txt_search_simple_category_res"
+									id="txt_search_simple_category_res" value=""> <button style="border-radius:0;"
+									onclick="javascript:portlet_search_simple_res();"><i
+										class="glyphicon glyphicon-search"></i></button>
+								<script>
+									function portlet_search_simple_res() {
+										window.location = 'https://www.sarawak.gov.my/web/home/search/?keyword=' + escape(document.getElementById('txt_search_simple_responsive').value) + '&cat=' + escape(document.getElementById('txt_search_simple_category_res').value);
+									}
+								</script>
+							</div>
+						</div>
+					</div>
+					<style>
+						/* The overlay effect with black background */
+						.overlay_src {
+							height: 100%;
+							width: 100%;
+							display: none;
+							position: fixed;
+							z-index: 1050;
+							top: 0;
+							left: 0;
+							background-color: #f8f8f8;;
+							background-color: rgba(0, 0, 0, 0.88);
+							/* Black with a little bit see-through */
+						}
+
+						/* The content */
+						.overlay_src-content {
+							position: relative;
+							top: 46%;
+							width: 80%;
+							text-align: center;
+							margin-top: 30px;
+							margin: auto;
+						}
+
+						/* Close button */
+						.overlay_src .closebtn {
+							position: absolute;
+							top: 20px;
+							right: 45px;
+							font-size: 60px;
+							cursor: pointer;
+							color: white;
+						}
+
+						.overlay_src .closebtn:hover {
+							color: #ccc;
+						}
+
+						/* Style the search field */
+						.overlay_src input[type=text] {
+							padding: 15px;
+							font-size: 17px;
+							border: none;
+							float: left;
+							width: 80%;
+							background: white;
+						}
+
+						.overlay_src input[type=text]:hover {
+							background: #f1f1f1;
+						}
+
+						/* Style the submit button */
+						.overlay_src button {
+							float: left;
+							width: 20%;
+							padding: 15px;
+							background: #ddd;
+							font-size: 17px;
+							border: none;
+							cursor: pointer;
+						}
+
+						.overlay_src button:hover {
+							background: #bbb;
+						}
+					</style>
+
+					<script>
+						$(document).ready(function () {
+
+						});
+
+						function profile_click_mobile() {
+							//var ul = document.getElementById('swkid-plugin-ul');
+							var ul = $('#swkid_plugin2').find('div').find('ul');
+							if (ul.css('display') != 'block') {
+
+								ul.css('display', 'block');
+							} else {
+								ul.css('display', 'none');
+							}
+
+							var div = $('#swkid_plugin2').find('div').find('ul').find('li').find('div').find('.swkid-inner-right-div');
+
+							div.css('word-break', 'break-word');
+							div.css('white-space', 'pre-wrap');
+						}
+						function language_onclick() {
+							var ul = document.getElementById('sso-bar-lang-ul');
+							if (ul.style.display != 'block') {
+								ul.style.display = 'block';
+							} else {
+								ul.style.display = 'none';
+							}
+						}
+						// Open the full screen search box
+						function openSearch() {
+							document.getElementById("myOverlay").style.display = "block";
+						}
+
+						// Close the full screen search box
+						function closeSearch() {
+							document.getElementById("myOverlay").style.display = "none";
+						}
+
+
+						document.addEventListener("DOMContentLoaded", function () {
+							// alert("init");
+							swkid_sso_init({
+								client_id: 'seg_web',
+								// client_id:'seg_web',
+								state: '79304',
+								response_type: 'code',
+								redirect_uri: 'https://www.sarawak.gov.my/web/home/index/0?swkid_auth',
+								logout_redirect_uri: 'https://sarawak.gov.my/web/api/api_sarawak_id_logout',
+								logout_uri: 'https://sarawak.gov.my/',
+								style: 'logo-full-text',
+								icon_width: '',
+								position: '',
+								misc_param: '',
+								profile_listing_style: 'seg',
+								profile_listing_email: 'on',
+								force_login_btn: 'off',
+								display_div: 'swkid_plugin2',
+								servicelisting_uri: 'https://sarawak.gov.my/web/home/p_display_nature_list/16',
+							});
+							/*swkid_login_form_submit();*/
+						});
+
+						function swkid_callback(p_login_status) {
+							// alert("AAAA");
+							if (p_login_status['swkid_login_status'] == 'after_swkid_login') {
+								login_form_submit();
+							}
+						}
+					</script>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="search-container">
+			<div class="search-bar">
+				<div class="down-searchbar">
+					<button class="drop-btn">All Services <span>▼</span></button>
+					<ul class="down-menu">
+						<li>Service 1</li>
+						<li>Service 2</li>
+						<li>Service 3</li>
+						<li>Service 4</li>
+					</ul>
+				</div>
+				<input type="text" class="search-input" placeholder="What type of service are you looking for? eg. apply trade license">
+				<button class="search-logo-btn">
+					<img class="search-logo" src="skas_files/search_logo.svg" alt="Search Logo">
+				</button>
+			</div>
+		</div>
+	
+		<div id="top-banner">
+			<div class="banner-image-wrapper"> </div>
+			<img src="skas_files/top-banner.png" alt="Banner Image">
+		</div>
+	
+		<div class="dot-navigation">
+			<span class="dot" data-slide="1"></span>
+			<span class="dot active" data-slide="2"></span>
+			<span class="dot" data-slide="3"></span>
+		</div>		
+	
+		<div class="grid-container">
+			<div class="card-container">
+				<div class="card-title">
+					<img src="#" alt="img-1">
+					<h3>
+						Business & Trade
+					</h3>
+				</div>
+				<div class="card">
+					<ul>
+						<li>New farmer</li>
+						<li>Apply for livestock new schemes</li>
+						<li>BKSS 7.0 for SME & BKSS 7.0+ Micro Enterprise</li>
+						<li>It is a long established fact that a reader will be distracted by the</li>
+						<li>There are many variations of passages of Lorem Ipsum available</li>
+					</ul>                  
+				</div>
+				<div class="more-button">
+					<button>More</button>
+				</div>
+			</div>
+		</div>
+	
+		<div class="media-section">
+			<div class="media-section-title">
+				<h2>More on Sarawak Government</h2>
+			</div>
+			<div class="media-cards">
+				<div class="media-card">
+					<div class="media-image">
+						<img src="skas_files/news.jpg" alt="Media 1">
+						<div class="media-title">News</div>
+					</div>
+				</div>
+				<div class="media-card">
+					<div class="media-image">
+						<img src="skas_files/tender.jpg" alt="Media 2">
+						<div class="media-title">Tender</div>
+					</div>
+				</div>
+				<div class="media-card">
+					<div class="media-image">
+						<img src="skas_files/announcement.jpg" alt="Media 3">
+						<div class="media-title">Announcement</div>
+					</div>
+				</div>
+			</div>
+		</div>    
+	</div>
+	
+	<style>
+	.content {
+		background-color: #fff;
+		padding: 0px;
+	}
+	.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    padding: 0 10px;
+	}
+
+	.search-bar {
+		display: flex;
+		align-items: center;
+		padding: 10px;
+		width: 100%;
+		background-color: #fff;
+		border: none;
+		border-radius: 4px;
+	}
+
+	.down-searchbar {
+		position: relative;
+		margin-right: 10px;
+	}
+	
+	.drop-btn {
+		background: none;
+		border: none;
+		font-size: 14px;
+		font-weight: bold;
+		color: #333;
+		cursor: pointer;
+		outline: none;
+	}
+	
+	.drop-btn span {
+		font-size: 12px;
+		color: #666;
+		margin-left: 5px;
+	}
+	
+	.down-menu {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		background-color: #fff;
+		border: 1px solid #ccc;
+		border-radius: 8px;
+		box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		width: 200px;
+		z-index: 10;
+	}
+	
+	.down-menu li {
+		padding: 10px 15px;
+		font-size: 14px;
+		color: #333;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+		list-style-type: none;
+	}
+	
+	.down-menu li:hover {
+		background-color: #f5f5f5;
+	}
+	
+	.search-input {
+		flex-grow: 1;
+		border: none;
+		outline: none;
+		font-size: 14px;
+		color: #666;
+		padding: 0 10px;
+	}
+	
+	.search-input::placeholder {
+		color: #aaa;
+		font-size: 14px;
+	}
+	
+	.search-logo-btn {
+		background: none;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+	}
+	
+	.search-logo {
+		width: 20px;
+		height: 20px;
+	}
+	
+	#top-banner {
+			position: relative;
+			max-height: 660px;
+			overflow: hidden;
+			margin-top: 20px;
+		}
+	
+		#top-banner .banner-image-wrapper {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	
+		#top-banner img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			display: block;
+		}
+	
+	.dot-navigation {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		padding: 20px 0;
+		}
+	
+		.dot {
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background-color: #ccc;
+			transition: background-color 0.3s ease-in-out;
+		}
+	
+		.dot.active {
+			background-color: #000;
+		}
+	
+	.grid-container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				gap: 20px;
+				padding: 20px;
+			}
+	
+			.card-container {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				flex: 1 1 calc(33.333% - 20px); /* 3 columns with spacing */
+				max-width: calc(33.333% - 20px);
+				padding: 20px;
+				border: 1px solid rgb(209, 209, 209);
+				border-radius: 10px;
+				background-color: #f3fffef1;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+				box-sizing: border-box;
+			}
+	
+			.card-title {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				margin-bottom: 20px;
+			}
+			.card-title h3{
+				font-size: 24px;
+				font-weight: bold;
+				color: rgb(23, 159, 159);
+			}
+	
+			/* .title img {
+				width: 15px;
+				height: 15px;
+			} */
+	
+			.card li {
+			margin: 5px 0;
+			font-size: 14px;
+			line-height: 1.5;
+			/* list-style-type: disc; */
+			color: #555;
+			margin-left: 30px;
+			}
+
+			.card li::marker {
+				color: rgb(23, 159, 159); /* Set marker color */
+				font-size: 20px;
+			}
+			.card ul{
+				padding: 0;
+			}
+			.more-button {
+				width: 100px;
+				margin-top: 150px;
+			}
+	
+			.more-button button {
+				padding: 5px 20px;
+				width: 100%;
+				font-size: 14px;
+				border: 2px solid rgb(209, 209, 209);
+				border-radius: 20px;
+				background-color: #f3fffef1;
+				color: #555;
+				cursor: pointer;
+			}
+	
+			.more-button button:hover {
+				background-color: #a4bbd4;
+			}
+	
+.media-section {
+		text-align: center;
+		padding: 20px;
+		background-color: transparent;
+		}
+	
+		.media-section-title h2 {
+			font-size: 24px;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+	
+		.media-cards {
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+		}
+	
+		.media-card {
+			position: relative;
+			width: 450px;
+			overflow: hidden;
+		}
+	
+		.media-image {
+			position: relative;
+			width: 100%;
+			height: 80%;
+		}
+	
+		.media-image img {
+			width: 100%;
+			height: 80%;
+			/* display: block; */
+		}
+	
+		.media-title {
+			position: absolute;
+			bottom: 0;
+			margin-bottom: 30%;
+			color: #fff;
+			width: 100%;
+			text-align: center;
+			padding: 10px 0;
+			font-size: 24px;
+			font-weight: bold;
+		}
+	
+	@media (max-width: 768px) {
+		.search-container {
+			flex-direction: column;
+			width: 90%;
+			gap: 5px;
+			padding: 10px;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+		}
+		
+		.search-bar {
+			width: 100%;
+			padding: 10px;
+			display: flex;
+			align-items: center;
+			background-color: transparent;
+			padding: 10px;
+		}
+	
+		.search-input {
+		flex-grow: 1;
+		border: none;
+		outline: none;
+		font-size: 14px;
+		color: #666;
+		padding: 0 10px;
+	}
+	
+		.search-input::placeholder{
+			color: transparent;
+		}
+	
+		.search-logo-btn {
+			background: none;
+			border: none;
+			padding: 0;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-left: 10px;
+		}
+	
+		.search-logo {
+			width: 20px;
+			height: 20px;
+		}
+	
+		.down-searchbar {
+			margin-right: 10px;
+			position: relative;
+		}
+	
+		.drop-btn {
+			background: none;
+			border: none;
+			font-size: 12px;
+			color: #333;
+			cursor: pointer;
+			outline: none;
+			margin-top: 10px;
+		}
+	
+		.down-menu {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: 8px;
+			box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+			list-style: none;
+			padding: 10px 0;
+			margin: 0;
+			width: 200px;
+		}
+	
+		.down-menu li {
+			padding: 10px 15px;
+			font-size: 14px;
+			color: #333;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+	
+		.down-menu li:hover {
+			background-color: #f5f5f5;
+		}
+	
+		/* Make the grid items stack vertically on small screens */
+		.grid-container {
+			flex-direction: column;
+			gap: 10px;
+			padding: 10px;
+		}
+	
+		.card-container {
+			flex: 1 1 100%;
+			max-width: 100%;
+			box-sizing: border-box;
+			padding: 10px;
+		}
+	
+		.media-cards {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 20px;
+			width: 50%;
+			margin: 0 auto;
+		}
+	
+		#top-banner {
+			position: relative;
+			max-height: 600px;
+		}
+		#top-banner .banner-image-wrapper {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	
+		#top-banner img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			display: block;
+		}
+	
+		.media-title {
+			font-size: 24px;
+			font-weight: bold;
+		}
+	
+		.down-searchbar {
+			margin-right: 0;
+			margin-bottom: 10px;
+			width: 100%;
+		}
+		.dot {
+			width: 8px;
+			height: 8px;
+		}
+	}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			// Dropdown toggle
+			const dropBtn = document.querySelector('.drop-btn');
+			const downMenu = document.querySelector('.down-menu');
+	
+			dropBtn.addEventListener('click', (e) => {
+				e.stopPropagation(); // Prevent click from propagating to document
+				downMenu.style.display = downMenu.style.display === 'block' ? 'none' : 'block';
+			});
+	
+			// Close dropdown
+			document.addEventListener('click', (e) => {
+				if (!downMenu.contains(e.target) && !dropBtn.contains(e.target)) {
+					downMenu.style.display = 'none';
+				}
+			});
+	
+			// Handle dropdown selection
+			const downItems = downMenu.querySelectorAll('li');
+			downItems.forEach((item) => {
+				item.addEventListener('click', () => {
+					dropBtn.innerHTML = `${item.textContent} <span>▼</span>`;
+					downMenu.style.display = 'none';
+				});
+			});
+	
+			// Dot navigation function
+			const dots = document.querySelectorAll('.dot');
+			const slides = document.querySelectorAll('.slide');
+	
+			dots.forEach((dot, index) => {
+				dot.addEventListener('click', () => {
+					// Update active dot
+					dots.forEach(d => d.classList.remove('active'));
+					dot.classList.add('active');
+	
+					// Update active slide
+					slides.forEach(s => s.classList.remove('active'));
+					slides[index].classList.add('active');
+	
+					console.log(`Dot ${index + 1} clicked.`);
+				});
+			});
+	
+			// HTML inject
+			const gridContainer = document.querySelector('.grid-container');
+			const cardHTML = Array(9).fill(`
+				<div class="card-container">
+					<div class="card-title">
+						<img src="#" alt="img-1">
+						<h3>Business & Trade</h3>
+					</div>
+					<div class="card">
+						<ul>
+							<li>New farmer</li>
+							<li>Apply for livestock new schemes</li>
+							<li>BKSS 7.0 for SME & BKSS 7.0+ Micro Enterprise</li>
+							<li>It is a long established fact that a reader will be distracted by the</li>
+							<li>There are many variations of passages of Lorem Ipsum available</li>
+						</ul>  
+					</div>
+					<div class="more-button">
+						<button>More</button>
+					</div>
+				</div>
+			`).join('');
+	
+			gridContainer.innerHTML = cardHTML;
+		});
+	</script>	
+	</div>
+
+	<div id="footer">
+		<div class="width-control">
+			<div class="box box-style-1">
+				<div class="box-left">
+					<div>
+						<style>
+							#pMenuFooter .menufooter {
+								/*float:left;*/
+								margin-top: 0px;
+								/*padding:0;*/
+								min-width: 0px;
+								list-style: none;
+								font-weight: normal;
+								padding-bottom: 0px;
+								display: inline-block;
+								text-align: justify;
+								font-size: 14px;
+								margin-bottom: 20px;
+							}
+
+							ul {
+								list-style-type: none;
+								padding-left: 0px;
+							}
+
+							#pMenuFooter .menufooter .footerImage {
+								width: 35%;
+								/*float: left;*/
+								height: 100%;
+								display: block;
+
+							}
+
+							#pMenuFooter .menufooter a {
+								color: #cccccc;
+								font-size: 14px;
+
+							}
+
+							#pMenuFooter .pInnerFooter {
+								font-family: 'Roboto', sans-serif !important;
+								font-weight: bold !important;
+								color: #f6ff00;
+								font-size: 19px;
+								font-weight: bold;
+
+							}
+
+							#pMenuFooter .menufootersub {
+								font-weight: normal;
+								list-style: none;
+								padding: 10px;
+								margin: 0;
+							}
+
+							.footer_btm_note {
+								font-family: Roboto !important;
+								color: #cccccc;
+							}
+
+							#footer {
+								background-color: #24272a;
+								margin-bottom: -10px;
+							}
+
+							.lbl-footer {
+								font-size: 14px;
+								text-transform: none;
+								font-family: 'Roboto', sans-serif !important;
+								color: #ccc;
+							}
+
+							.lbl-list-item {
+								padding-bottom: 10px;
+								font-family: 'Roboto', sans-serif !important;
+								color: #cccccc;
+							}
+
+							.lbl-contact-us {
+								font-family: 'Roboto', sans-serif !important;
+								color: #cccccc;
+								display: inline;
+								width: 25px;
+								text-align: left;
+								font-weight: normal;
+								text-transform: none;
+								line-height: 20px;
+								"
+
+							}
+						</style>
+						<div class="width-control">
+							<div id="pMenuFooter" style="text-align: center ">
+								<div class="row" style="">
+									<div class="menufooter col-xs-12 col-sm-4" style="">
+										<div class="pInnerFooter"> USEFUL LINKS</div>
+										<div class="">
+											<ul>
+												<li style="display: inline-block; padding-right: 5px"><a
+														href="https://www.malaysia.gov.my/"><img style="width:45px"
+															src="./skas_files/image_footer_federal.png"></a></li>
+												<li style="display: inline-block; padding-right: 5px"><a
+														href="https://www.data.gov.my/"><img style="width:45px"
+															src="./skas_files/image_footer_datagov.png"></a></li>
+												<li style="display: inline-block; padding-right: 5px"><a
+														href="https://data.sarawak.gov.my/"><img style="width:45px"
+															src="./skas_files/image_footer_sarawakdata.png"></a></li>
+											</ul>
+											<ul>
+												<li
+													style="margin-top: 20px; padding-right: 5px; display: inline-block;">
+													<a><img style="width:75px" src="./skas_files/qrcode_android.png"
+															title="Google Play Store"></a>
+													<span class="lbl-footer"
+														style="display: block; text-align: center;">Android</span>
+												</li>
+												<li
+													style="margin-top: 20px; padding-right: 5px; display: inline-block;">
+													<a><img style="width:75px" src="./skas_files/qrcode_ios.png"
+															title="Apple App Store"></a>
+													<span class="lbl-footer"
+														style="display: block; text-align: center;">iOS</span>
+												</li>
+											</ul>
+											<span class="lbl-footer">
+												<a href="https://gamma.malaysia.gov.my/appdetails/914"
+													splwpk-mobile-apps="splwpk-mobile-apps">
+													Scan the QR above to download and access <br> Sarawak Government
+													application through mobile </a>
+											</span>
+										</div>
+									</div>
+
+									<div class="menufooter col-xs-12 col-sm-4" style="  text-transform: none;">
+										<div class="pInnerFooter" style="padding-bottom: 25px;"> TERMS &amp; CONDITIONS
+										</div>
+										<li></li>
+										<li class="lbl-list-item"><a
+												href="https://www.sarawak.gov.my/web/home/article_view/250/261/?id=250">Security
+												Policy</a></li>
+										<li></li>
+										<li class="lbl-list-item"><a splwpk-privacy-policy="splwpk-privacy-policy"
+												timestamp="2025-01-13 16:52:30"
+												href="https://www.sarawak.gov.my/web/home/article_view/251/262/?id=251">Privacy
+												Policy</a></li>
+										<li></li>
+										<li class="lbl-list-item"><a
+												href="https://www.sarawak.gov.my/web/home/article_view/253/289/?id=253">Terms
+												&amp; Conditions</a></li>
+										<li></li>
+										<li class="lbl-list-item"><a splwpk-feedback-form="splwpk-feedback-form"
+												timestamp="2025-01-13 15:48:06"
+												href="https://www.sarawak.gov.my/web/home/feedback/254/?id=254">Feedback/Comment</a>
+										</li>
+										<li></li>
+										<li class="lbl-list-item"><a
+												href="https://www.sarawak.gov.my/web/home/article_view/264/273/?id=264">About
+												Us</a></li>
+									</div>
+
+									<div class="menufooter col-xs-12 col-sm-4" style="float: right">
+										<div class="pInnerFooter" style="padding-bottom: 25px"> CONTACT US </div>
+										<p class="lbl-contact-us">
+											State Secretary<br>Sarawak State Secretary Office,<br>Level 20 , Wisma Bapa
+											Malaysia<br>Petra Jaya, 93502 Kuching<br>Tel :082-441957<br>Fax
+											:082-441677<br>Email: 555999@sarawak.gov.my<br> </p>
+									</div>
+									<div class="footer_btm_note col-xs-12"
+										style="float: left;text-align: justify;font-weight: normal;">
+										<div style="font-size: 14px; text-transform: none; display: inline-block">
+											<p style="margin-bottom: 0px">
+												Copyright © 2018-2025 Sarawak Government. All rights reserved<br>
+												Disclaimer: The Government of Sarawak shall not be liable for any loss
+												or damage caused by the usage of any information obtained from this
+												portal. Services provided through this portal are subject to the terms
+												and conditions of the respective providers </p>
+										</div>
+									</div>
+									<div class="footer_btm_note col-xs-12"
+										style="text-align: justify; font-weight: normal;">
+										<div
+											style="font-size: 14px; text-transform: none; margin-top: 0px; display: inline-block">
+											<p>
+												Best viewed with latest Firefox and latest Google Chrome in 1024 x 768
+												screen resolution. </p>
+										</div>
+									</div>
+									<div class="footer_btm_note col-xs-12"
+										style="text-align: justify; font-weight: normal;">
+										<div
+											style="font-size: 14px; text-transform: none; margin-top: 0px; display: inline-block">
+											<p>
+												No. of visitors <span
+													style="font-size:1.2em;font-weight:bold;">28419265</span> </p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="clear:both;"></div>
+					</div>
+				</div>
+				<div class="box-right">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade bd-example-modal-lg-custom" id="viewModal" tabindex="-1" role="dialog"
+		aria-labelledby="lbl_modal" aria-hidden="true">
+		<div class="modal-dialog-custom modal-lg " role="document" style="">
+			<span class="closing" data-dismiss="modal">×</span>
+			<div class="modal-content">
+				<!--button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button-->
+				<div class="modal-body" style="height: 100%; ">
+					<iframe src="./skas_files/152.html" title="E-Rating"
+						style="width: 100%;height:100%;border: none !important;"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade bd-example-modal-lg-custom" id="viewMode" tabindex="-1" role="dialog"
+		aria-labelledby="lbl_modal" aria-hidden="true">
+		<div class="modal-dialog-custom modal-lg " role="document" style="">
+			<div class="modal-content lan_berambeh_content">
+				<!--button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button-->
+				<div class="modal-body" style="height: 100%; ">
+					<!--img src="https://10.18.4.74/php73/mseg_v2/media/images/v2/lan_berambeh_logo.png" alt="Girl in a jacket" width="500" height="600" style="width: 100%;"-->
+					<a href="https://www.sarawak.gov.my/web/home/p_service_catalogue/587">
+						<img src="./skas_files/berambeh_modal.jpeg" alt="lan berambeh" style="width: 100%;">
+					</a>
+					<!--iframe src="https://www.sarawak.gov.my/rating/home/erating_mobile/152?ifr=1&r=1594096711&bfontcolor=000&bcolor=transparent" title="E-Rating" style="width: 100%;height:100%;border: none !important;"></iframe-->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script language="javascript" type="text/javascript" src="./skas_files/shortcuts.js.download"></script>
+	<script language="javascript" type="text/javascript">j_lbl_field_required = "This field is required.";</script>
+	<button id="back-to-top" href="#" class="btn btn-primary btn-circle btn-lg back-to-top" role="button" title=""
+		data-toggle="tooltip" data-placement="left" data-original-title="Click to return on the top page"
+		aria-describedby="tooltip808536"><span class="glyphicon glyphicon-chevron-up"></span></button>
+	<div class="tooltip fade left in" role="tooltip" id="tooltip808536" style="top: 0px; left: -187px; display: block;">
+		<div class="tooltip-arrow" style="top: 0%;"></div>
+		<div class="tooltip-inner">Click to return on the top page</div>
+	</div>
+	<!--button id="e-rating" href="#" class="btn btn-primary btn-circle btn-lg e-rating" role="button" title="Click to rate us" data-toggle="modal"  data-target="#viewModal" data-placement="left" style="padding: 0px 0px;"><img class="img_load_sik_pusing_gik" style="width:49px;" alt="Sarawak Crest" src="https://ism-tnt.sarawak.gov.my/myseg/3.1.1/media/images/Banner/smileyface.png"></i></button-->
+
+	<a role="button" href="https://www.sarawak.gov.my/#" title="Click to return on the top page" data-toggle="modal"
+		data-target="#viewModal" style="padding: 0px 0px;">
+		<div id="e-rating" href="#" class="btn btn-primary btn-circle btn-lg e-rating" title="" data-toggle="tooltip"
+			data-placement="left" style="display: block;" data-original-title="Click to rate us"
+			aria-describedby="tooltip761540">
+		</div>
+		<!-- <div class="tooltip fade left in" role="tooltip" id="tooltip761540"
+			style="top: 773px; left: 1707px; display: block;">
+			<div class="tooltip-arrow" style="top: 50%;"></div>
+			<div class="tooltip-inner">Click to rate us</div>
+		</div> -->
+	</a>
+
+	<a role="button" href="https://www.sarawak.gov.my/web/home/p_service_catalogue/587"  title="Click to return on the top page"  style="padding: 0px 0px;">
+	<div id="lan_berambeh" href="#" class="btn btn-primary btn-circle btn-lg lan_berambeh"  title="Click to join Lan Berambeh" data-toggle="tooltip" data-placement="left">
+	</div></a>
+
+	<a role="button" href="https://www.sarawak.gov.my/skas" title="Click to return on the top page"
+		style="padding: 0px 0px;">
+		<div id="skas" class="btn btn-primary btn-circle btn-lg skas" title="Click to SKSS" style="display: block;">
+		</div>
+	</a>
+
+	<style>
+		.skas {
+			cursor: pointer;
+			position: fixed;
+			bottom: 163px;
+			right: 25px;
+			display: none;
+			outline: 0 !important;
+			background-color: #ededed;
+			border-color: #777;
+			color: #4d4d4d;
+			z-index: 10000;
+		}
+
+		.skas:focus,
+		.skas:active,
+		.skas:hover {
+			background-color: #ededed;
+			border-color: #777;
+			color: #4d4d4d;
+		}
+
+		.skas {
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			padding: 6px 0;
+			font-size: 12px;
+			line-height: 1.428571429;
+			border-radius: 15px;
+		}
+
+		.skas.btn-lg {
+			width: 70px;
+			height: 70px;
+			padding: 13px 15px;
+			font-size: 18px;
+			line-height: 1.33;
+			border-radius: 42px;
+			background-image: url(https://www.sarawak.gov.my/media/images/SKAS.png);
+			background-position: center;
+			background-size: 50pt;
+
+			background-repeat: no-repeat;
+		}
+
+		.back-to-top {
+			cursor: pointer;
+			position: fixed;
+			/*bottom: 163px;*/
+			bottom: 233px;
+			/* bottom: 235px; */
+			right: 25px;
+			display: none;
+			outline: 0 !important;
+			background-color: #ffffff;
+			border-color: #fff;
+			color: #4d4d4d;
+			z-index: 10000;
+			box-shadow: 0 0 17px rgba(50, 50, 50, 0.5);
+		}
+
+		.btn-circle.btn-lg {
+			width: 65px;
+			height: 65px;
+			padding: 13px 15px;
+			font-size: 18px;
+			line-height: 1.33;
+			border-radius: 35px;
+		}
+
+		.back-to-top:focus,
+		.back-to-top:active,
+		.back-to-top:hover {
+			background-color: #ededed;
+			border-color: #777;
+			color: #4d4d4d;
+		}
+
+		.e-rating {
+			cursor: pointer;
+			position: fixed;
+			bottom: 93px;
+			right: 24px;
+			display: none;
+			outline: 0 !important;
+			background-color: #ffffff;
+			border-color: white;
+			color: #4d4d4d;
+			z-index: 10000;
+			box-shadow: 0 0 17px rgba(50, 50, 50, 0.5);
+		}
+
+		.e-rating:focus,
+		.e-rating:active,
+		.e-rating:hover {
+			background-color: #ededed;
+			border-color: #777;
+			color: #4d4d4d;
+		}
+
+		.navbar-default .navbar-toggle {
+			border: 0 !important;
+		}
+
+		.e-rating {
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			padding: 6px 0;
+			font-size: 12px;
+			line-height: 1.428571429;
+			border-radius: 15px;
+		}
+
+		.e-rating.btn-lg {
+			width: 67px;
+			height: 67px;
+			padding: 13px 15px;
+			font-size: 18px;
+			line-height: 1.33;
+			border-radius: 33px;
+			background-image: url(https://www.sarawak.gov.my/media/images/Banner/smileyface.png);
+			background-position: center;
+			background-size: 42pt;
+		}
+		.lan_berambeh {
+			cursor: pointer;
+			position: fixed;
+			/*bottom: 163px;
+			right: 22px;*/
+			bottom: 23px;
+			right: 95px;
+			display: none;
+			outline: 0 !important;
+			background-color: #ededed;
+			border-color: #777;
+			color: #4d4d4d;
+			z-index: 10000;
+		}
+
+		.lan_berambeh:focus,
+		.lan_berambeh:active,
+		.lan_berambeh:hover {
+			background-color: #ededed;
+			border-color: #777;
+			color: #4d4d4d;
+		}
+
+		.lan_berambeh {
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			padding: 6px 0;
+			font-size: 12px;
+			line-height: 1.428571429;
+			border-radius: 15px;
+		}
+
+		.lan_berambeh.btn-lg {
+			width: 70px;
+			height: 70px;
+			padding: 13px 15px;
+			font-size: 18px;
+			line-height: 1.33;
+			border-radius: 42px;
+			background-image: url(https://www.sarawak.gov.my/media/images/v2/lan_berambeh_logo.png);
+			background-position: center;
+			background-size: 33pt;
+			background-repeat: no-repeat;
+		}
+
+		.closing {
+			position: absolute;
+			top: 145px;
+			right: 668px;
+			color: #f1f1f1;
+			font-size: 40px;
+			font-weight: bold;
+			transition: 0.3s;
+		}
+
+		.closing:hover,
+		.closing:focus {
+			color: #bbb;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.closing:focus,
+		.closing:hover {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+			filter: alpha(opacity=50);
+			opacity: .5;
+		}
+	</style>
+	<script>
+		$(document).ready(function () {
+			$('#e-rating').fadeIn();
+			$('#lan_berambeh').fadeIn();
+			$('#e-rating').tooltip('show');
+			$('#lan_berambeh').tooltip('show');
+			$(window).scroll(function () {
+
+				if ($(this).scrollTop() > 50) {
+					$('#back-to-top').fadeIn();
+					$('#e-rating').tooltip('hide');
+					$('#lan_berambeh').tooltip('hide');
+
+				} else {
+					$('#back-to-top').fadeOut();
+
+				}
+			});
+			// scroll body to 0px on click
+			$('#back-to-top').click(function () {
+				$('#back-to-top').tooltip('hide');
+				$('body,html').animate({
+					scrollTop: 0
+				}, 800);
+				return false;
+			});
+
+			$('#back-to-top').tooltip('show');
+
+
+		});
+	</script>
+	</div>
+
+
+
+
+
+	<script type="text/javascript">
+		/*var timer = $('.timer');
+			timer.appear(function () {
+				timer.countTo();
+			});*/
+
+		/*slide animation*/
+		/*function counttoanimation(){
+		  $(".timer").each(function(){
+			var pos = $(this).offset().top;
+			//default 600
+			var winTop = $(window).scrollTop();
+			  if (pos < winTop+800) {
+				  $(this).countTo();
+				  $(this).removeClass("timer");
+			  }
+		  });
+		}
+	
+		$(window).scroll(function() {
+		  counttoanimation();
+		});*/
+
+		/*!
+		Waypoints - 4.0.1
+		*/
+		!function () { "use strict"; function t(o) { if (!o) throw new Error("No options passed to Waypoint constructor"); if (!o.element) throw new Error("No element option passed to Waypoint constructor"); if (!o.handler) throw new Error("No handler option passed to Waypoint constructor"); this.key = "waypoint-" + e, this.options = t.Adapter.extend({}, t.defaults, o), this.element = this.options.element, this.adapter = new t.Adapter(this.element), this.callback = o.handler, this.axis = this.options.horizontal ? "horizontal" : "vertical", this.enabled = this.options.enabled, this.triggerPoint = null, this.group = t.Group.findOrCreate({ name: this.options.group, axis: this.axis }), this.context = t.Context.findOrCreateByElement(this.options.context), t.offsetAliases[this.options.offset] && (this.options.offset = t.offsetAliases[this.options.offset]), this.group.add(this), this.context.add(this), i[this.key] = this, e += 1 } var e = 0, i = {}; t.prototype.queueTrigger = function (t) { this.group.queueTrigger(this, t) }, t.prototype.trigger = function (t) { this.enabled && this.callback && this.callback.apply(this, t) }, t.prototype.destroy = function () { this.context.remove(this), this.group.remove(this), delete i[this.key] }, t.prototype.disable = function () { return this.enabled = !1, this }, t.prototype.enable = function () { return this.context.refresh(), this.enabled = !0, this }, t.prototype.next = function () { return this.group.next(this) }, t.prototype.previous = function () { return this.group.previous(this) }, t.invokeAll = function (t) { var e = []; for (var o in i) e.push(i[o]); for (var n = 0, r = e.length; r > n; n++)e[n][t]() }, t.destroyAll = function () { t.invokeAll("destroy") }, t.disableAll = function () { t.invokeAll("disable") }, t.enableAll = function () { t.Context.refreshAll(); for (var e in i) i[e].enabled = !0; return this }, t.refreshAll = function () { t.Context.refreshAll() }, t.viewportHeight = function () { return window.innerHeight || document.documentElement.clientHeight }, t.viewportWidth = function () { return document.documentElement.clientWidth }, t.adapters = [], t.defaults = { context: window, continuous: !0, enabled: !0, group: "default", horizontal: !1, offset: 0 }, t.offsetAliases = { "bottom-in-view": function () { return this.context.innerHeight() - this.adapter.outerHeight() }, "right-in-view": function () { return this.context.innerWidth() - this.adapter.outerWidth() } }, window.Waypoint = t }(), function () { "use strict"; function t(t) { window.setTimeout(t, 1e3 / 60) } function e(t) { this.element = t, this.Adapter = n.Adapter, this.adapter = new this.Adapter(t), this.key = "waypoint-context-" + i, this.didScroll = !1, this.didResize = !1, this.oldScroll = { x: this.adapter.scrollLeft(), y: this.adapter.scrollTop() }, this.waypoints = { vertical: {}, horizontal: {} }, t.waypointContextKey = this.key, o[t.waypointContextKey] = this, i += 1, n.windowContext || (n.windowContext = !0, n.windowContext = new e(window)), this.createThrottledScrollHandler(), this.createThrottledResizeHandler() } var i = 0, o = {}, n = window.Waypoint, r = window.onload; e.prototype.add = function (t) { var e = t.options.horizontal ? "horizontal" : "vertical"; this.waypoints[e][t.key] = t, this.refresh() }, e.prototype.checkEmpty = function () { var t = this.Adapter.isEmptyObject(this.waypoints.horizontal), e = this.Adapter.isEmptyObject(this.waypoints.vertical), i = this.element == this.element.window; t && e && !i && (this.adapter.off(".waypoints"), delete o[this.key]) }, e.prototype.createThrottledResizeHandler = function () { function t() { e.handleResize(), e.didResize = !1 } var e = this; this.adapter.on("resize.waypoints", function () { e.didResize || (e.didResize = !0, n.requestAnimationFrame(t)) }) }, e.prototype.createThrottledScrollHandler = function () { function t() { e.handleScroll(), e.didScroll = !1 } var e = this; this.adapter.on("scroll.waypoints", function () { (!e.didScroll || n.isTouch) && (e.didScroll = !0, n.requestAnimationFrame(t)) }) }, e.prototype.handleResize = function () { n.Context.refreshAll() }, e.prototype.handleScroll = function () { var t = {}, e = { horizontal: { newScroll: this.adapter.scrollLeft(), oldScroll: this.oldScroll.x, forward: "right", backward: "left" }, vertical: { newScroll: this.adapter.scrollTop(), oldScroll: this.oldScroll.y, forward: "down", backward: "up" } }; for (var i in e) { var o = e[i], n = o.newScroll > o.oldScroll, r = n ? o.forward : o.backward; for (var s in this.waypoints[i]) { var a = this.waypoints[i][s]; if (null !== a.triggerPoint) { var l = o.oldScroll < a.triggerPoint, h = o.newScroll >= a.triggerPoint, p = l && h, u = !l && !h; (p || u) && (a.queueTrigger(r), t[a.group.id] = a.group) } } } for (var c in t) t[c].flushTriggers(); this.oldScroll = { x: e.horizontal.newScroll, y: e.vertical.newScroll } }, e.prototype.innerHeight = function () { return this.element == this.element.window ? n.viewportHeight() : this.adapter.innerHeight() }, e.prototype.remove = function (t) { delete this.waypoints[t.axis][t.key], this.checkEmpty() }, e.prototype.innerWidth = function () { return this.element == this.element.window ? n.viewportWidth() : this.adapter.innerWidth() }, e.prototype.destroy = function () { var t = []; for (var e in this.waypoints) for (var i in this.waypoints[e]) t.push(this.waypoints[e][i]); for (var o = 0, n = t.length; n > o; o++)t[o].destroy() }, e.prototype.refresh = function () { var t, e = this.element == this.element.window, i = e ? void 0 : this.adapter.offset(), o = {}; this.handleScroll(), t = { horizontal: { contextOffset: e ? 0 : i.left, contextScroll: e ? 0 : this.oldScroll.x, contextDimension: this.innerWidth(), oldScroll: this.oldScroll.x, forward: "right", backward: "left", offsetProp: "left" }, vertical: { contextOffset: e ? 0 : i.top, contextScroll: e ? 0 : this.oldScroll.y, contextDimension: this.innerHeight(), oldScroll: this.oldScroll.y, forward: "down", backward: "up", offsetProp: "top" } }; for (var r in t) { var s = t[r]; for (var a in this.waypoints[r]) { var l, h, p, u, c, d = this.waypoints[r][a], f = d.options.offset, w = d.triggerPoint, y = 0, g = null == w; d.element !== d.element.window && (y = d.adapter.offset()[s.offsetProp]), "function" == typeof f ? f = f.apply(d) : "string" == typeof f && (f = parseFloat(f), d.options.offset.indexOf("%") > -1 && (f = Math.ceil(s.contextDimension * f / 100))), l = s.contextScroll - s.contextOffset, d.triggerPoint = Math.floor(y + l - f), h = w < s.oldScroll, p = d.triggerPoint >= s.oldScroll, u = h && p, c = !h && !p, !g && u ? (d.queueTrigger(s.backward), o[d.group.id] = d.group) : !g && c ? (d.queueTrigger(s.forward), o[d.group.id] = d.group) : g && s.oldScroll >= d.triggerPoint && (d.queueTrigger(s.forward), o[d.group.id] = d.group) } } return n.requestAnimationFrame(function () { for (var t in o) o[t].flushTriggers() }), this }, e.findOrCreateByElement = function (t) { return e.findByElement(t) || new e(t) }, e.refreshAll = function () { for (var t in o) o[t].refresh() }, e.findByElement = function (t) { return o[t.waypointContextKey] }, window.onload = function () { r && r(), e.refreshAll() }, n.requestAnimationFrame = function (e) { var i = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || t; i.call(window, e) }, n.Context = e }(), function () { "use strict"; function t(t, e) { return t.triggerPoint - e.triggerPoint } function e(t, e) { return e.triggerPoint - t.triggerPoint } function i(t) { this.name = t.name, this.axis = t.axis, this.id = this.name + "-" + this.axis, this.waypoints = [], this.clearTriggerQueues(), o[this.axis][this.name] = this } var o = { vertical: {}, horizontal: {} }, n = window.Waypoint; i.prototype.add = function (t) { this.waypoints.push(t) }, i.prototype.clearTriggerQueues = function () { this.triggerQueues = { up: [], down: [], left: [], right: [] } }, i.prototype.flushTriggers = function () { for (var i in this.triggerQueues) { var o = this.triggerQueues[i], n = "up" === i || "left" === i; o.sort(n ? e : t); for (var r = 0, s = o.length; s > r; r += 1) { var a = o[r]; (a.options.continuous || r === o.length - 1) && a.trigger([i]) } } this.clearTriggerQueues() }, i.prototype.next = function (e) { this.waypoints.sort(t); var i = n.Adapter.inArray(e, this.waypoints), o = i === this.waypoints.length - 1; return o ? null : this.waypoints[i + 1] }, i.prototype.previous = function (e) { this.waypoints.sort(t); var i = n.Adapter.inArray(e, this.waypoints); return i ? this.waypoints[i - 1] : null }, i.prototype.queueTrigger = function (t, e) { this.triggerQueues[e].push(t) }, i.prototype.remove = function (t) { var e = n.Adapter.inArray(t, this.waypoints); e > -1 && this.waypoints.splice(e, 1) }, i.prototype.first = function () { return this.waypoints[0] }, i.prototype.last = function () { return this.waypoints[this.waypoints.length - 1] }, i.findOrCreate = function (t) { return o[t.axis][t.name] || new i(t) }, n.Group = i }(), function () { "use strict"; function t(t) { this.$element = e(t) } var e = window.jQuery, i = window.Waypoint; e.each(["innerHeight", "innerWidth", "off", "offset", "on", "outerHeight", "outerWidth", "scrollLeft", "scrollTop"], function (e, i) { t.prototype[i] = function () { var t = Array.prototype.slice.call(arguments); return this.$element[i].apply(this.$element, t) } }), e.each(["extend", "inArray", "isEmptyObject"], function (i, o) { t[o] = e[o] }), i.adapters.push({ name: "jquery", Adapter: t }), i.Adapter = t }(), function () { "use strict"; function t(t) { return function () { var i = [], o = arguments[0]; return t.isFunction(arguments[0]) && (o = t.extend({}, arguments[1]), o.handler = arguments[0]), this.each(function () { var n = t.extend({}, o, { element: this }); "string" == typeof n.context && (n.context = t(this).closest(n.context)[0]), i.push(new e(n)) }), i } } var e = window.Waypoint; window.jQuery && (window.jQuery.fn.waypoint = t(window.jQuery)), window.Zepto && (window.Zepto.fn.waypoint = t(window.Zepto)) }();
+
+		//visible
+		!function (t) { var i = t(window); t.fn.visible = function (t, e, o) { if (!(this.length < 1)) { var r = this.length > 1 ? this.eq(0) : this, n = r.get(0), f = i.width(), h = i.height(), o = o ? o : "both", l = e === !0 ? n.offsetWidth * n.offsetHeight : !0; if ("function" == typeof n.getBoundingClientRect) { var g = n.getBoundingClientRect(), u = g.top >= 0 && g.top < h, s = g.bottom > 0 && g.bottom <= h, c = g.left >= 0 && g.left < f, a = g.right > 0 && g.right <= f, v = t ? u || s : u && s, b = t ? c || a : c && a; if ("both" === o) return l && v && b; if ("vertical" === o) return l && v; if ("horizontal" === o) return l && b } else { var d = i.scrollTop(), p = d + h, w = i.scrollLeft(), m = w + f, y = r.offset(), z = y.top, B = z + r.height(), C = y.left, R = C + r.width(), j = t === !0 ? B : z, q = t === !0 ? z : B, H = t === !0 ? R : C, L = t === !0 ? C : R; if ("both" === o) return !!l && p >= q && j >= d && m >= L && H >= w; if ("vertical" === o) return !!l && p >= q && j >= d; if ("horizontal" === o) return !!l && m >= L && H >= w } } } }(jQuery);
+
+		function splitLineHeadings() {
+
+			$splitLineOffsetPos = ($('#nectar_fullscreen_rows').length > 0) ? '200%' : 'bottom-in-view';
+			$($fullscreenSelector + '.nectar-split-heading').each(function () {
+
+				var $that = $(this);
+				var $animationEasing = ($('body[data-cae]').length > 0) ? $('body').attr('data-cae') : 'easeOutSine';
+				var $animationDuration = ($('body[data-cad]').length > 0) ? $('body').attr('data-cad') : '650';
+
+				var waypoint = new Waypoint({
+					element: $that,
+					handler: function (direction) {
+
+						if ($that.parents('.wpb_tab').length > 0 && $that.parents('.wpb_tab').css('visibility') == 'hidden' || $that.hasClass('animated-in')) {
+							waypoint.destroy();
+							return;
+						}
+
+						if (!navigator.userAgent.match(/(Android|iPod|iPhone|iPad|BlackBerry|IEMobile|Opera Mini)/) || $('body[data-responsive="0"]').length > 0) {
+
+
+							$that.find('.heading-line').each(function (i) {
+								//if($that.parents('.first-section').length > 0 && $('body[data-aie="zoom-out"]').length > 0) i = i+4;
+								$(this).find('> div').delay(i * 70).transition({
+									'y': '0px'
+								}, $animationDuration, $animationEasing);
+
+							});
+
+
+							$that.addClass('animated-in');
+
+						}
+
+						waypoint.destroy();
+					},
+					offset: $splitLineOffsetPos
+				});
+
+			});
+		}
+
+		//splitLineHeadings()
+	</script>
+
+
+
+	<script>
+		//$(document).ready(function(){});
+		let lang = 'en';
+		var dark_mode = getCookie('seg_dark_mode');
+		var LHC_API = LHC_API || {};
+
+
+
+
+		// onchange to bm mode
+		if (lang == 'bm') {
+			document.cookie = "lhc_per=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+			if (dark_mode != '') {
+				// onchange to bm mode on darkmode
+				//LHC_API.args = {mode:'widget',lhc_base_url:'//aisha.tnt.sarawak.gov.my/',wheight:560,wwidth:520,pheight:520,pwidth:500,leaveamessage:true,department:[28],theme:16,check_messages:false};
+
+				LHC_API.args = { mode: 'widget', lhc_base_url: '//aisha.sains.com.my/index.php/', wheight: 560, wwidth: 520, pheight: 520, pwidth: 500, leaveamessage: true, department: [3], theme: 4, check_messages: false };
+
+			} else {
+				// onchange to bm mode on lightmode
+				//LHC_API.args = {mode:'widget',lhc_base_url:'//aisha.tnt.sarawak.gov.my/',wheight:560,wwidth:520,pheight:520,pwidth:500,leaveamessage:true,theme:17,department:[28],check_messages:false};
+
+				LHC_API.args = { mode: 'widget', lhc_base_url: '//aisha.sains.com.my/index.php/', wheight: 560, wwidth: 520, pheight: 520, pwidth: 500, fresh: true, leaveamessage: true, theme: 5, department: [5], check_messages: false };
+
+			}
+		} else {
+			// onchange to en mode
+			document.cookie = "lhc_per=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+			if (dark_mode != '') {
+				// onchange to en mode on darkmode
+				//LHC_API.args = {mode:'widget',lhc_base_url:'//aisha.tnt.sarawak.gov.my/',wheight:560,wwidth:520,pheight:520,pwidth:500,leaveamessage:true,department:[24],theme:15,check_messages:false};
+
+				LHC_API.args = { mode: 'widget', lhc_base_url: '//aisha.sains.com.my/index.php/', wheight: 560, wwidth: 520, pheight: 520, pwidth: 500, fresh: true, leaveamessage: true, department: [4], theme: 3, check_messages: false };
+
+			} else {
+				// onchange to en mode on light
+				//LHC_API.args = {mode:'widget',lhc_base_url:'//aisha.tnt.sarawak.gov.my/',wheight:560,wwidth:520,pheight:520,pwidth:500,leaveamessage:true,department:[24],theme:9,check_messages:false};
+
+				LHC_API.args = { mode: 'widget', lhc_base_url: '//aisha.sains.com.my/index.php/', wheight: 560, wwidth: 520, pheight: 520, pwidth: 500, fresh: true, leaveamessage: true, department: [6], theme: 2, check_messages: false };
+
+			}
+		}
+
+		(function () {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.setAttribute('crossorigin', 'anonymous'); po.async = true;
+			var date = new Date(); po.src = '//aisha.sains.com.my/design/defaulttheme/js/widgetv2/index.js?' + ("" + date.getFullYear() + date.getMonth() + date.getDate());
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		})();
+
+
+
+
+
+		// dark mode on click
+		$('#darkmode-notification').click(function () {
+			if (getCookie('seg_dark_mode') != '') {
+				// dark mode on bm mode
+				if (lang == 'bm') {
+					//LHC_API.args = {mode:'widget',lhc_base_url:'//aisha.tnt.sarawak.gov.my/',wheight:560,wwidth:520,pheight:520,pwidth:500,leaveamessage:true,department:[28],theme:16,check_messages:false};
+					LHC_API.args = { mode: 'widget', lhc_base_url: '//aisha.sains.com.my/index.php/', wheight: 560, wwidth: 520, pheight: 520, pwidth: 500, leaveamessage: true, department: [3], theme: 4, check_messages: false };
+					(function () {
+						var po = document.createElement('script');
+						po.type = 'text/javascript';
+						po.setAttribute('crossorigin', 'anonymous');
+						po.async = true;
+						var date = new Date();
+						po.src = '//aisha.sains.com.my/design/defaulttheme/js/widgetv2/index.js?' + ("" + date.getFullYear() + date.getMonth() + date.getDate());
+						var s = document.getElementsByTagName('script')[0];
+						s.parentNode.insertBefore(po, s);
+					})();
+				} else {
+					// dark mode on en mode
+					//LHC_API.args = {mode:'widget',lhc_base_url:'//aisha.tnt.sarawak.gov.my/',wheight:560,wwidth:520,pheight:520,pwidth:500,leaveamessage:true,department:[24],theme:15,check_messages:false};
+					LHC_API.args = { mode: 'widget', lhc_base_url: '//aisha.sains.com.my/index.php/', wheight: 560, wwidth: 520, pheight: 520, pwidth: 500, fresh: true, leaveamessage: true, department: [4], theme: 3, check_messages: false };
+					(function () {
+						var po = document.createElement('script'); po.type = 'text/javascript'; po.setAttribute('crossorigin', 'anonymous'); po.async = true;
+						var date = new Date(); po.src = '//aisha.sains.com.my/design/defaulttheme/js/widgetv2/index.js?' + ("" + date.getFullYear() + date.getMonth() + date.getDate());
+						var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+					})();
+				}
+			} else {
+				// light mode on bm mode
+				if (lang == 'bm') {
+					//LHC_API.args = {mode:'widget',lhc_base_url:'//aisha.tnt.sarawak.gov.my/',wheight:560,wwidth:520,pheight:520,pwidth:500,leaveamessage:true,theme:17,department:[28],check_messages:false};
+					LHC_API.args = { mode: 'widget', lhc_base_url: '//aisha.sains.com.my/', wheight: 560, wwidth: 520, pheight: 520, pwidth: 500, fresh: true, leaveamessage: true, theme: 17, department: [28], check_messages: false };
+					(function () {
+						var po = document.createElement('script'); po.type = 'text/javascript'; po.setAttribute('crossorigin', 'anonymous'); po.async = true;
+						var date = new Date(); po.src = '//aisha.sains.com.my/design/defaulttheme/js/widgetv2/index.js?' + ("" + date.getFullYear() + date.getMonth() + date.getDate());
+						var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+					})();
+				} else {
+					// light mode on en mode
+					//LHC_API.args = {mode:'widget',lhc_base_url:'//aisha.tnt.sarawak.gov.my/',wheight:560,wwidth:520,pheight:520,pwidth:500,leaveamessage:true,department:[24],theme:9,check_messages:false};
+					LHC_API.args = { mode: 'widget', lhc_base_url: '//aisha.sains.com.my/index.php/', wheight: 560, wwidth: 520, pheight: 520, pwidth: 500, fresh: true, leaveamessage: true, department: [4], theme: 2, check_messages: false };
+					(function () {
+						var po = document.createElement('script'); po.type = 'text/javascript'; po.setAttribute('crossorigin', 'anonymous'); po.async = true;
+						var date = new Date(); po.src = '//aisha.sains.com.my/design/defaulttheme/js/widgetv2/index.js?' + ("" + date.getFullYear() + date.getMonth() + date.getDate());
+						var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+					})();
+				}
+			}
+		});
+
+		/*        function deleteCookieValue(name) {
+				   // Retrieve the cookie
+				   var cookies = document.cookie.split('; ');
+				   for (var i = 0; i < cookies.length; i++) {
+					   var parts = cookies[i].split('=');
+					   var cookieName = parts[0];
+					   var cookieValue = parts[1];
+					   
+					   // Find the specific cookie by name
+					   if (cookieName === name) {
+						   // Set the expiration date to a past date to delete the cookie
+						   document.cookie = cookieName + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+					   }
+				   }
+			   }
+	   
+			   // Delete the specific cookie value when the DOM content is loaded
+			   document.addEventListener("DOMContentLoaded", function() {
+				   deleteCookieValue('lhc_per');
+			   }); */
+
+	</script>
+
+	<div id="lhc_container_v2" class=""
+		style="border: 0px none !important; padding: 0px !important; margin: 0px !important; z-index: 999999999 !important; overflow: visible !important; min-width: 0px !important; min-height: 0px !important; max-width: none !important; max-height: none !important; width: auto !important; height: auto !important; display: block !important;">
+		<iframe id="lhc_status_widget_v2" class="lhc-desktop"
+			style="box-shadow: none; overflow: visible; inset: auto 10px 10px auto; min-height: 95px; min-width: 95px; max-height: 95px; max-width: 95px; width: 95px; height: 95px; z-index: 2147483640; border-radius: unset; outline: none !important; visibility: visible !important; resize: none !important; background: none transparent !important; opacity: 1 !important; position: fixed !important; border: 0px !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; cursor: auto !important; float: none !important; display: block !important;"
+			src="./skas_files/saved_resource.html"></iframe><iframe id="lhc_widget_v2"
+			class="lhc-desktop lhc-mode-widget"
+			style="box-shadow: none; overflow: visible; inset: auto 30px 30px auto; z-index: 2147483640; border-radius: unset; height: 560px; min-height: 560px; max-height: 560px; width: 520px; min-width: 520px; max-width: 520px; outline: none !important; visibility: visible !important; resize: none !important; background: none transparent !important; opacity: 1 !important; position: fixed !important; border: 0px !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; cursor: auto !important; float: none !important; display: none !important;"
+			src="./skas_files/saved_resource(1).html"></iframe></div>
+	<div id="fancybox-tmp"></div>
+	<div id="fancybox-loading">
+		<div></div>
+	</div>
+	<div id="fancybox-overlay"></div>
+	<div id="fancybox-wrap">
+		<div id="fancybox-outer">
+			<div class="fancybox-bg" id="fancybox-bg-n"></div>
+			<div class="fancybox-bg" id="fancybox-bg-ne"></div>
+			<div class="fancybox-bg" id="fancybox-bg-e"></div>
+			<div class="fancybox-bg" id="fancybox-bg-se"></div>
+			<div class="fancybox-bg" id="fancybox-bg-s"></div>
+			<div class="fancybox-bg" id="fancybox-bg-sw"></div>
+			<div class="fancybox-bg" id="fancybox-bg-w"></div>
+			<div class="fancybox-bg" id="fancybox-bg-nw"></div>
+			<div id="fancybox-content"></div><a id="fancybox-close"></a>
+			<div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left" alt="fancy box left icon"><span
+					class="fancy-ico" id="fancybox-left-ico">
+					<div style="display:none;">L</div>
+				</span></a><a href="javascript:;" id="fancybox-right" alt="fancy box right icon"><span class="fancy-ico"
+					id="fancybox-right-ico">
+					<div style="display:none;">R</div>
+				</span></a>
+		</div>
+	</div>
+	<form id="swkid_login_form" method="post" action="https://sarawakid.sarawak.gov.my/web/ssov1/login/"><input
+			type="hidden" name="client_id" value="seg_web"><input type="hidden" name="u_id" value="undefined"><input
+			type="hidden" name="state" value="79304"><input type="hidden" name="response_type" value="code"><input
+			type="hidden" name="redirect_uri" value="https://www.sarawak.gov.my/web/home/index/?swkid_auth"><input
+			type="hidden" name="servicelisting_uri"
+			value="https://sarawak.gov.my/web/home/p_display_nature_list/16"><input type="hidden" name="logout_uri"
+			value="https://www.sarawak.gov.my/web/user/logout/"><input type="hidden" name="misc_param" value=""><input
+			type="hidden" name="hide_header" value="undefined"><input type="hidden" name="permission"
+			value="undefined"><input type="hidden" name="sub_login_app_name" value="undefined"><input type="hidden"
+			name="login_method" value="undefined"><input type="hidden" name="hide_login_extra_link"
+			value="undefined"><input type="hidden" name="ekyc_redirect" value="undefined"><input type="hidden"
+			name="ekyc_redirect_post_uri" value="undefined"><input type="hidden" name="corp_only"
+			value="undefined"><input type="hidden" name="switch_account" value="undefined"></form>
+	<form id="swkid_switch_account" method="post" action="https://sarawakid.sarawak.gov.my/web/ssov1/switchaccountpb/">
+		<input type="hidden" name="client_id" value="seg_web"><input type="hidden" name="switch_account_redirect_uri"
+			value="https://www.sarawak.gov.my/web/home/index/?swkid_switch"></form>
+	<form id="swkid_login_form" method="post" action="https://sarawakid.sarawak.gov.my/web/ssov1/login/"><input
+			type="hidden" name="client_id" value="seg_web"><input type="hidden" name="u_id" value="undefined"><input
+			type="hidden" name="state" value="79304"><input type="hidden" name="response_type" value="code"><input
+			type="hidden" name="redirect_uri" value="https://www.sarawak.gov.my/web/home/index/0?swkid_auth"><input
+			type="hidden" name="servicelisting_uri"
+			value="https://sarawak.gov.my/web/home/p_display_nature_list/16"><input type="hidden" name="logout_uri"
+			value="https://sarawak.gov.my/"><input type="hidden" name="misc_param" value=""><input type="hidden"
+			name="hide_header" value="undefined"><input type="hidden" name="permission" value="undefined"><input
+			type="hidden" name="sub_login_app_name" value="undefined"><input type="hidden" name="login_method"
+			value="undefined"><input type="hidden" name="hide_login_extra_link" value="undefined"><input type="hidden"
+			name="ekyc_redirect" value="undefined"><input type="hidden" name="ekyc_redirect_post_uri"
+			value="undefined"><input type="hidden" name="corp_only" value="undefined"><input type="hidden"
+			name="switch_account" value="undefined"></form>
+	<form id="swkid_switch_account" method="post" action="https://sarawakid.sarawak.gov.my/web/ssov1/switchaccountpb/">
+		<input type="hidden" name="client_id" value="seg_web"><input type="hidden" name="switch_account_redirect_uri"
+			value="undefined"></form>
+</body>
+</html>
