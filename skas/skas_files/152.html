@@ -1,0 +1,326 @@
+
+<!-- saved from url=(0110)https://www.sarawak.gov.my/rating/home/erating_mobile/152?ifr=1&r=1594096711&bfontcolor=000&bcolor=transparent -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<script type="text/javascript" src="./jquery-1.4.2.min.js.download"></script>
+
+<script>
+(function($) {
+	$.fn.customFadeIn = function(speed, callback) {
+		$(this).fadeIn(speed, function() {
+			if(!$.support.opacity)
+				$(this).get(0).style.removeAttribute('filter');
+			if(callback != undefined)
+				callback();
+		});
+	};
+	$.fn.customFadeOut = function(speed, callback) {
+		$(this).fadeOut(speed, function() {
+			if(!$.support.opacity)
+				$(this).get(0).style.removeAttribute('filter');
+			if(callback != undefined)
+				callback();
+		});
+	};
+	$.fn.customFadeTo = function(speed,to,callback) {
+		return this.animate({opacity: to}, speed, function() {
+			if (to == 1 && jQuery.browser.msie)
+				this.style.removeAttribute('filter');
+			if (jQuery.isFunction(callback))
+				callback();
+		});
+	};
+})(jQuery);
+</script>
+<link rel="stylesheet" type="text/css" href="./jquery.jqplot.min.css">
+
+<script type="text/javascript" src="./jquery.jqplot.js.download"></script>
+<script type="text/javascript" src="./jqplot.pieRenderer.min.js.download"></script>
+<script type="text/javascript" src="./jqplot.donutRenderer.min.js.download"></script>
+<script language="javascript" type="text/javascript" src="./excanvas.js.download"></script>
+<script type="text/javascript">
+function display_pie_chart(p_data, p_label, p_id, p_title, p_ext_data, p_location, p_format_string){
+	
+	if(p_data.length!=p_label.length){
+		return;
+	}
+	
+	count=0;
+	v_data = new Array();
+	for(i=0; i<p_data.length; i++){
+		if(p_ext_data!=null){
+			v_data[i] = new Array(p_label[i], parseInt(p_data[i]), p_ext_data[i]);
+		}else{
+			v_data[i] = new Array(p_label[i], parseInt(p_data[i]));
+		}
+	}
+	
+	if(p_location!=null){
+		v_location = p_location;
+	}else{
+		v_location = 'e';
+	}
+	
+	
+  
+  var plot1 = jQuery.jqplot (p_id, [v_data],
+    {
+		title: { 
+			text: p_title,
+			show: true
+		},
+	
+      seriesDefaults: {
+        // Make this a pie chart.
+        renderer: jQuery.jqplot.PieRenderer,
+        rendererOptions: {
+        // Put data labels on the pie slices.
+        // By default, labels show the percentage of the slice.
+			showDataLabels: true,
+			sliceMargin: 4,
+			lineWidth: 3,
+			fill: true,
+			dataLabels: 'all',  // Defaults to percentage of each pie slice. (percent, all, value, label)
+			dataLabelFormatString: p_format_string  // Format string for data labels. 
+			
+			
+        }
+      },
+      legend: { 
+		show:true, 
+		location: v_location
+	  }
+    }
+  );
+  //added by tie to handle responsive
+    $(window).resize(function() {
+		plot1.replot( { resetAxes: true } );
+		
+	});
+	
+  $('#'+p_id).bind('jqplotDataHighlight', function() { $('#'+p_id).css('cursor', 'pointer'); } );
+  $('#'+p_id).bind('jqplotDataUnhighlight', function() { $('#'+p_id).css('cursor', 'default'); } );
+
+}
+</script><script language="javascript" type="text/javascript" src="./moonlight.js.download"></script><style>
+body{
+  color:#000;
+  font-family:verdana,arial;
+  background-color:#transparent;
+}
+
+.content_top,
+.content{
+  background-color:#transparent;
+}
+
+.banner{
+  color:#fff;
+  background-color:#2B60DE;
+}
+
+.banner SPAN{
+  color:#fff;
+}
+
+.rating{
+  margin:0px 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.rating label,
+.rating ol{
+  color:#000;
+  font-size:1em;
+}
+
+.rating ol li{}
+
+A,
+A:link,
+A:visited{
+  color:#000;
+  text-decoration:none;
+}
+
+A:hover{
+  text-decoration:underline;
+}
+
+.rating_msg, 
+.rating .question{
+  color:#000;
+  font-size:1.2em;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+}
+
+.textarea_responsive {
+  max-width: 100%;
+}
+
+.jqplot-target {
+  min-width: 240px;
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.rate {
+    height: 46px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+  }
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:45px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box div {
+/*  width: 100px;
+  height: 100px;*/
+}
+
+.input_div{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#btn_save{
+  align-self: end;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#btn_back{
+  align-self: end;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.btn_div{
+  display: flex;
+  flex-direction: row;
+}
+
+.div_question{
+  text-align: center;
+}
+
+</style>
+
+</head><body data-new-gr-c-s-check-loaded="14.1216.0" data-gr-ext-installed=""><div class="box">
+  <!-- <div> -->
+      <form name="frm_rating" id="frm_rating" method="POST" action="https://www.sarawak.gov.my/rating/home/erating_mobile_process/" class="rating">
+                <div id="div_question" class="question">
+            <span>How do your rate our portal? </span>
+         </div>
+
+        <div class="input_div">
+                    <div class="rate">
+                          <input type="radio" id="1084" name="rate" value="1084" onclick="javascript:submit_answer(&#39;1084&#39;)">
+              <label for="1084" title="text">5 stars</label>
+                          <input type="radio" id="1087" name="rate" value="1087" onclick="javascript:submit_answer(&#39;1087&#39;)">
+              <label for="1087" title="text">5 stars</label>
+                          <input type="radio" id="1090" name="rate" value="1090" onclick="javascript:submit_answer(&#39;1090&#39;)">
+              <label for="1090" title="text">5 stars</label>
+                          <input type="radio" id="1093" name="rate" value="1093" onclick="javascript:submit_answer(&#39;1093&#39;)">
+              <label for="1093" title="text">5 stars</label>
+                          <input type="radio" id="1096" name="rate" value="1096" onclick="javascript:submit_answer(&#39;1096&#39;)">
+              <label for="1096" title="text">5 stars</label>
+                        </div>
+                <input type="hidden" class="" name="ques_id" id="ques_id" value="349"><input type="hidden" class="" name="next_parent_id" id="next_parent_id" value="1084"><input type="hidden" class="" name="category_id" id="category_id" value="152"><input type="hidden" class="" name="rate_session" id="rate_session" value=""><input type="hidden" class="" name="src" id="src" value=""><input type="hidden" class="" name="query_str" id="query_str" value="/index&amp;/rating/home/erating_mobile/152&amp;ifr=1&amp;r=1594096711&amp;bfontcolor=000&amp;bcolor=transparent">      </div>
+      </form>
+
+    
+  <!-- </div> -->
+</div>
+
+<script type="text/javascript">
+  function submit_answer(p_ans){
+    document.getElementById("next_parent_id").value = p_ans;
+    document.frm_rating.submit();
+  }
+
+  function back_action(){
+    // window.history.back();
+    // document.getElementById("frm_rating").reset();
+    // window.location.replace("https://www.sarawak.gov.my/rating/home/erating_mobile/152?/index&/rating/home/erating_mobile/152&ifr=1&r=1594096711&bfontcolor=000&bcolor=transparent");
+  }
+
+  function max_length(p_obj){
+    var v_max_length=255;
+    if (p_obj.value.length>v_max_length)
+    p_obj.value=p_obj.value.substring(0,v_max_length);
+  }
+</script><iframe id="j5WModil" frameborder="0" src="./translateSandbox(1).html" style="width: 0px; height: 0px; display: none;"></iframe></body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

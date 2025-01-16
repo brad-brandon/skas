@@ -1,0 +1,337 @@
+
+
+var iframe_loader_div = '<div class=\'loader_div\' id=\'loader_div\' style=\'margin-bottom:1em\'><div style=\'float:left;\'><div class=\'loader\'></div></div><div style=\'float:left; position: relative; margin-top:20px; margin-left:20px\'><i class=\'fas fa-spinner fa-spin\' style=\'\margin-right:1em\'></i>Loading...</div></div>';
+
+document.addEventListener("DOMContentLoaded", function(){
+	//myworkspace_bar_append();
+	iframe_resize();
+	after_xml_stop();
+
+	/*const targetNode = document.querySelector("#swkid_plugin");
+	const observerOptions = {
+		childList: false,
+		attributes: true,
+
+		subtree: true
+	}
+
+	const observer = new MutationObserver(myworkspace_append);
+	observer.observe(targetNode, observerOptions);*/
+});
+
+function myworkspace_append(mutationList, observer){
+	//console.log(mutationList);
+	//console.log(observer);
+	mutationList.forEach((mutation) => {
+		switch(mutation.type){
+			case 'childList':
+				console.log('child');
+				break;
+			case 'attributes':
+				myworkspace_bar_append();
+				break;
+		}
+	});
+}
+/*
+const observer = new PerformanceObserver((list)=>{
+	for(const entry of list.getEntries()){
+		if(entry.initiatorType === "fetch"){
+			console.log("finish fetch");
+		}
+	}
+});
+
+observer.observe({
+	entryTypes: ["resource"]
+});*/
+/*
+$('body').on('DOMSubtreeModified','#swkid_plugin', function(){
+	var v_elem = document.getElementById('swkid_plugin-ul');
+	console.log(v_elem);
+	if(v_elem){
+		//console.log(v_elem);
+	}
+});*/
+/*
+$(document).ready(function(){
+	after_xml_stop();
+});
+*/
+/*
+(function(){
+	after_xml_stop();
+})();*/
+/*
+$('.modal').on('hidden.bs.modal', function(){
+	console.log("removeee");
+});
+*/
+
+var message=function(event){
+	//console.log(event.data);
+	if(typeof event.data.type != 'undefined' && event.data.type == 'iframe_height'){
+		//console.log(event.data.iframe_id);
+		if(typeof event.data.iframe_id !='undefined' && event.data.iframe_id !=''){
+			//console.log(event);
+			var iframe=document.getElementById(event.data.iframe_id);
+		}else{
+			var iframe=document.getElementById("iframe_ss");
+		}
+		
+		if(iframe){
+			iframe.style.height=event.data.height+"px"
+		}
+	}else if(typeof event.data.type != 'undefined' && event.data.type == 'swkid_login'){
+		//overwrite swkid form redirect uri
+		var form = document.forms['swkid_login_form'];
+		form.elements['redirect_uri'].value = window.location.href + '&ob=1&swkid_auth';
+		
+		//submit swkid form
+		document.getElementById('swkid_login_form').submit();
+	}else if(typeof event.data.type != 'undefined' && event.data.type == 'swkid_login_4_ss'){
+		document.getElementById('swkid_login_form').submit();
+	}else if(typeof event.data.type != 'undefined' && event.data.type =='scroll_top'){
+		window.scrollTo({
+			top:event.data.top,
+			left:0,
+			behavior:'smooth'});
+	}else if(typeof event.data.type != 'undefined' && event.data.type == 'back_to_ss'){
+		window.location.href='https://service.sarawak.gov.my/web/pub/public/my_workspace/app_stat/';
+	}
+};
+
+if(window.addEventListener){
+	window.addEventListener("message",message,!1)
+}else if(window.attachEvent){
+	window.attachEvent("onmessage",message)
+}
+
+function after_xml_stop(){
+	var xmlOpen = XMLHttpRequest.prototype.open;
+	XMLHttpRequest.prototype.open = function(method, url){
+		this.addEventListener('load', function(){
+			iframe_resize();
+		});
+		this.addEventListener('error', function(){
+			iframe_resize();
+		});
+		xmlOpen.apply(this,arguments);
+	}
+}
+
+function iframe_resize(){
+	//== for embedded iframe
+	v_height = Math.max(document.body.scrollHeight, document.body.offsetHeight, 
+	document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+	//console.log(v_height);
+	//console.log("1 "+document.body.scrollHeight);
+	//console.log("2 "+document.body.offsetHeight);
+	//console.log("3 "+document.documentElement.clientHeight);
+	//console.log("4 "+document.documentElement.scrollHeight);
+	//console.log("5 "+document.documentElement.offsetHeight);
+	var data = {
+		type:'iframe_height',
+		iframe_id:'service_frame',
+		height:v_height,
+	};
+	if (parent.postMessage) {
+		parent.postMessage(data, "*");
+	}	
+}
+
+function request(p_info){
+	if(typeof p_info.request_type == 'undefined'){
+		p_info.request_type = 'POST';
+	}
+	
+	if(typeof p_info.request_btn != 'undefined'){
+		$('#'+p_info.request_btn).addClass('disabled');
+		document.getElementById(p_info.request_btn).innerHTML = "<i class='fas fa-spinner fa-spin' style='margin-right:1em'></i>Submitting...";
+	}
+
+	if(window.XMLHttpRequest){
+		//code for modern browsers
+		var xmlhttp = new XMLHttpRequest();
+	}else{
+		var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+	xmlhttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200){
+			if(typeof p_info.request_content == 'undefined'){
+				return this.responseText;
+			}else{
+				// if(typeof p_info.request_callback_return_value == 'undefined' || p_info.request_callback_return_value==false){
+					document.getElementById(p_info.request_content).innerHTML = this.responseText;
+				// }
+				
+				if(typeof p_info.request_callback !=='undefined'){
+					if(typeof p_info.request_callback_return_value == 'undefined' || p_info.request_callback_return_value==false){
+						p_info.request_callback();
+					}else{
+						eval(p_info.request_callback+'(this.responseText)');
+					}					
+				}
+			}
+		}
+	}
+	xmlhttp.open(p_info.request_type, p_info.request_url, true);
+	
+	if(p_info.request_type=='POST'){
+		var v_data = '';
+		if(typeof p_info.request_form != 'undefined'){
+			v_data = new FormData(document.getElementById(p_info.request_form));
+		}else if(typeof p_info.request_data != 'undefined'){
+			//v_data = p_info.request_data;
+			var url_params = new URLSearchParams(p_info.request_data);
+			var params = Object.fromEntries(url_params);
+
+
+			v_data = new FormData();
+			for(const[key, value] of Object.entries(params)){
+				v_data.append(key, value);
+			}
+		}
+		xmlhttp.send(v_data);
+	}else{
+		xmlhttp.send();
+	}
+
+	if(typeof p_info.request_content != 'undefined' && typeof p_info.request_btn=='undefined'){
+		document.getElementById(p_info.request_content).innerHTML = iframe_loader_div;
+	}
+}
+
+function rate_modal(e){
+	e.preventDefault();
+	var p_value = e.srcElement.dataset.eid;
+	/*var ele = document.createElement('div');
+	ele.className = 'modal fade';
+	ele.id = 'rate_modal';
+	ele.tabindex='-1';
+	document.body.appendChild(ele);*/
+
+	var child = document.createElement('div');
+	child.className = 'modal-content';
+	child.id = 'modal-content';
+	child.innerHTML = '&nbsp;';
+
+	var parent = document.createElement('div');
+	parent.className = 'modal-dialog modal-dialog-centered';
+	parent.setAttribute("role","document");
+	parent.appendChild(child);
+
+	var elem = document.createElement('div');
+	elem.className = 'modal';
+	elem.id = 'rate_modal';
+	elem.setAttribute('tabindex','-1');
+	elem.setAttribute('role','dialog');
+	elem.appendChild(parent);
+
+	document.body.appendChild(elem);
+	
+	//var v_url = "https://service.sarawak.gov.my/web/pub/public/rating/"+p_value;
+	//makeGETRequest(v_url, 'modal-content');
+	var v_info = {
+		request_url : "https://service.sarawak.gov.my/web/pub/public/rating/"+p_value,
+		request_type : 'GET',
+		request_content : 'modal-content'
+	};
+	request(v_info);
+	$('#rate_modal').modal('toggle');
+}
+
+
+function rate(v_star){
+	//console.log(v_star);
+	//$('.fa-star').removeClass('fas');
+	//$('.fa-star').addClass('far');
+	for(var i=1; i<=5; i++){
+		$('#star_'+i).removeClass('fas');
+		$('#star_'+i).addClass('far');
+	}
+	for(var i=1; i<=v_star; i++){
+		$('#star_'+i).removeClass('far');
+		$('#star_'+i).addClass('fas');
+	}
+	document.getElementById('app_rating').value=v_star;
+	$('#rate-submit-btn').removeClass('disabled');
+}
+
+function submit_rate(){
+	if(!$('#rate-submit-btn').hasClass('disabled')){
+
+		var v_info = {
+			request_url : 'https://service.sarawak.gov.my/web/pub/public/rating/'+document.getElementById('app_uid').value,
+			request_type : 'POST',
+			request_form : 'rate_form',
+			request_btn : 'rate-submit-btn',
+			request_content : 'modal-content',
+			request_callback : refresh_rate_button,
+		};
+		request(v_info);
+	}
+}
+
+function refresh_rate_button(){
+	if(document.getElementById('app_uid')){
+		var v_eid = document.getElementById('app_uid').value;
+		//console.log(v_eid);
+		if(document.getElementById('app_rating_div_'+v_eid)){
+			//console.log("yes");
+			var v_content = "<div style='padding:1rem 0; padding-top:0'>";
+			var v_star = document.getElementById('app_rating').value;
+			for(var i=0; i < v_star; i++){
+				v_content += "<i class='fas fa-star' style='float:left; font-size:0.9rem; color: orange'></i>";
+			}
+			v_content += "</div>";
+			//v_content += "<button type='button' class='btn btn-rate' style='width:100%' onclick='rate_modal(\""+v_eid+"\")'>";
+			//v_content += "Rated";
+			//v_content += "</button>";
+			document.getElementById('app_rating_div_'+v_eid).innerHTML = v_content;
+		}
+	}
+	
+}
+/*
+function f_swkid_login(){
+	if(typeof parent.document.getElementById('swkid_login_form'))
+}*/
+
+function ss_swkid_login(){
+	swkid_login_form_submit();
+}
+
+function myworkspace_bar_append(){
+	//console.log(document.getElementById('swkid_plugin'));
+	//var elem = document.getElementById('swkid_plugin');
+	//var v_swkid_ul = elem.querySelectorAll('swkid_plugin-ul');
+	//console.log(v_swkid_ul);
+	var v_swkid_ul = document.getElementById("swkid-plugin-ul");
+	if(v_swkid_ul && v_swkid_ul.style.display=='block'){
+		var myworkspace = document.getElementsByClassName('feat_myworkspace');
+		if(myworkspace.length==0){
+			for(var v_key of Object.keys(v_my_workspace)){
+				//console.log(v_my_workspace[v_key]);
+				var v_node = document.createElement('li');
+				v_node.className='feat_myworkspace';
+				var v_a_tag = document.createElement('a');
+				var v_span_tag = document.createElement('span');
+
+				//append icon
+				v_span_tag.innerHTML=v_my_workspace[v_key].icon;
+				v_a_tag.appendChild(v_span_tag);
+				//append label
+				var v_text_node = document.createTextNode(v_my_workspace[v_key].label);
+				v_a_tag.appendChild(v_text_node);
+				//set href link
+				v_a_tag.setAttribute('href', v_my_workspace[v_key].link);
+
+				v_node.appendChild(v_a_tag);
+				v_swkid_ul.appendChild(v_node);
+			}
+		}
+	}
+}
+
