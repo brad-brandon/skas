@@ -1564,7 +1564,6 @@ a:hover .flip-glow {
 										//document.querySelector("link[id='seg-dark-mode']").href = "";
 										sd_mawek.href = "";
 										dstch.title = 'Into the dark';
-
 									} else {
 										dstch.title = 'Into the light';
 										// document.body.style.backgroundColor = "black";
@@ -1574,7 +1573,6 @@ a:hover .flip-glow {
 										vTodaysDate.setDate(62);
 										vExpire = vTodaysDate.toGMTString();
 										setCookie('seg_dark_mode', vCookieName, vExpire);
-
 										document.querySelector("link[id='seg-dark-mode']").href = "https://www.sarawak.gov.my/web/web/web/dark.css";
 									}
 								}
@@ -6240,6 +6238,14 @@ function service_search_select(vObjLI) {
 	<form id="swkid_switch_account" method="post" action="https://sarawakid.sarawak.gov.my/web/ssov1/switchaccountpb/">
 		<input type="hidden" name="client_id" value="seg_web"><input type="hidden" name="switch_account_redirect_uri"
 			value="undefined"></form>
-	<style>
-	</style>
 </html>
+<script>
+	var dstch = document.getElementById('dstch');
+	dstch.addEventListener('click', function () {
+		if (document.body.style.backgroundColor === "white" || document.body.style.backgroundColor === "") {
+			document.body.style.backgroundColor = "#000"; // Change to black background
+		} else {
+			document.body.style.backgroundColor = "white"; // Change to white background
+		}
+	});
+</script>
