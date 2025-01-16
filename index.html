@@ -6243,21 +6243,40 @@ function service_search_select(vObjLI) {
 var dstch = document.getElementById('dstch');
 var darkModeLink = document.getElementById('seg-dark-mode');
 
+// Function to set background color on page load
+function initializeBackground() {
+    if (darkModeLink.getAttribute('href')) {
+        // If dark mode href exists, check localStorage for preference
+        if (localStorage.getItem('bgColor') === 'dark') {
+            document.body.style.backgroundColor = "#000"; // Set to dark mode
+        } else {
+            document.body.style.backgroundColor = "white"; // Set to light mode
+        }
+    } else {
+        // If href is empty, force light mode
+        document.body.style.backgroundColor = "white";
+        localStorage.setItem('bgColor', 'light'); // Save light mode preference
+    }
+}
+
+// Add event listener to toggle background color
 dstch.addEventListener('click', function () {
     if (darkModeLink.getAttribute('href')) {
-        // If dark mode href exists
+        // Toggle between dark and light mode
         if (document.body.style.backgroundColor === "white") {
-            document.body.style.backgroundColor = "#000"; // Change to black background
+            document.body.style.backgroundColor = "#000"; // Change to black
             localStorage.setItem('bgColor', 'dark'); // Store dark mode preference
         } else {
-            document.body.style.backgroundColor = "white"; // Change to white background
+            document.body.style.backgroundColor = "white"; // Change to white
             localStorage.setItem('bgColor', 'light'); // Store light mode preference
         }
     } else {
-        // If dark mode href is empty, force light mode
-        document.body.style.backgroundColor = "white"; // Default to white background
-        localStorage.setItem('bgColor', 'light'); // Ensure light mode preference is saved
-        console.log("Dark mode link is not set. Falling back to light mode.");
+        // If href is empty, force light mode
+        document.body.style.backgroundColor = "white";
+        localStorage.setItem('bgColor', 'light'); // Ensure light mode is saved
     }
 });
+
+// Call the initialization function on page load
+initializeBackground();
 </script>
