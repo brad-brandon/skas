@@ -6240,12 +6240,20 @@ function service_search_select(vObjLI) {
 			value="undefined"></form>
 </html>
 <script>
-	var dstch = document.getElementById('dstch');
-	dstch.addEventListener('click', function () {
-		if (document.body.style.backgroundColor === "white" || document.body.style.backgroundColor === "") {
-			document.body.style.backgroundColor = "#000"; // Change to black background
-		} else {
-			document.body.style.backgroundColor = "white"; // Change to white background
-		}
-	});
+if (localStorage.getItem('bgColor') === 'dark') {
+    document.body.style.backgroundColor = "#000"; // Set background to black if dark mode was saved
+} else {
+    document.body.style.backgroundColor = "white"; // Set background to white by default
+}
+
+var dstch = document.getElementById('dstch');
+dstch.addEventListener('click', function () {
+	if (document.body.style.backgroundColor === "white") {
+		document.body.style.backgroundColor = "#000"; // Change to black background
+        localStorage.setItem('bgColor', 'dark'); // Store the dark mode preference
+    } else {
+        document.body.style.backgroundColor = "white"; // Change to white background
+        localStorage.setItem('bgColor', 'light'); // Store the light mode preference
+    }
+});
 </script>
