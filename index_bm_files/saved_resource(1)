@@ -1,0 +1,737 @@
+		
+	var width = "";
+	var position = "";
+	var dropdown_class = "";
+	var logout_link = ""; /* logout link */
+	var div_load = "swkid_plugin";
+	
+	//function to generate a random state parameter
+	function generateState() {
+      return Math.random().toString(36).substring(7);
+    }
+	
+	function swkid_sso_init(objSetting){
+		if(objSetting.display_div != '' && typeof objSetting.display_div !== 'undefined'){
+			div_load = objSetting.display_div;
+		}
+					if(document.getElementById(div_load)){
+				skwid_sso_before_login(objSetting);
+			}
+				login_form_build(objSetting);
+		swkid_switch_account_form_build(objSetting);
+		if (typeof swkid_callback === "function") {
+			var usr_short_name = "";
+			var login_by = "";
+			var swkid_login_status = "before_swkid_login";
+			
+			var swkid_obj = {
+				usr_short_name: usr_short_name,
+				login_by: login_by,
+				swkid_login_status: swkid_login_status
+			};
+			
+			swkid_callback(swkid_obj);
+		}
+	}
+	
+	function skwid_sso_after_login(objSetting){
+		if(objSetting.icon_width!=''){
+			width = objSetting.icon_width;
+		}else{
+			width = '25';
+		}
+		position = objSetting.position;
+		logout_redirect_uri = objSetting.logout_redirect_uri;
+		if(position == "top-left"){
+			dropdown_class = "swkid-drop-down-top-left";
+		}else if(position == "bottom-left"){
+			dropdown_class = "swkid-drop-down-bottom-left";
+		}else if(position == "bottom-right"){
+			dropdown_class = "swkid-drop-down-bottom-right";
+		}else{
+			dropdown_class = "swkid-drop-down-top-right";
+		}
+		if(objSetting.display_name=='on' && typeof objSetting.display_name !== 'undefined'){
+			var x = new Date()
+			if(x.getHours()>4 && x.getHours()<12){
+				var greetings = 'Good Morning, ';
+			}else if(x.getHours()>11 && x.getHours()<17){
+				var greetings = 'Good Afternoon, ';
+			}else{
+				var greetings = 'Good Evening, ';
+			}
+			display_name = "<span class='swkid-profile-greetings' onclick='javascript:profile_onclick();'>"+greetings+" ...</span>";
+		}else{
+			display_name = '';
+		}
+		
+		/*Add Main SWKID Button Div*/
+		var main_div = document.createElement("div");
+		profile_listing_style = objSetting.profile_listing_style;
+		if(profile_listing_style=='seg'){
+			main_div.style.cssText = "position:relative;height:"+width+"px;display:flex;align-items:center;";
+		}else{
+			main_div.style.cssText = "width:"+width+"px;position:relative;height:"+width+"px;display:flex;align-items:center;";
+		}
+		document.getElementById(div_load).appendChild(main_div);
+		
+				
+		myworkspace_newtab = objSetting.myworkspace_newtab;
+		if(myworkspace_newtab=='off'){
+			var v_myworkspace_profile_newtab="javascript:window.location.href=\'https://myworkspace.sarawak.gov.my/workspace/pub/my_workspace/my_profile/?l=en\';";
+			var v_myworkspace_newtab="javascript:window.location.href=\'https://myworkspace.sarawak.gov.my/workspace/pub/my_workspace/redirect/?l=en\';";
+		}else{
+			var v_myworkspace_profile_newtab="javascript:window.open(\'https://myworkspace.sarawak.gov.my/workspace/pub/my_workspace/my_profile/?l=en\');";
+			var v_myworkspace_newtab="javascript:window.open(\'https://myworkspace.sarawak.gov.my/workspace/pub/my_workspace/redirect/?l=en\');";
+		}
+		
+		payment_newtab = objSetting.payment_newtab;
+		if(payment_newtab=='off'){
+			var v_payment_newtab="javascript:window.location.href=\'https://service.sarawak.gov.my/web/pub/public/enq_n_pay/340/\';";
+		}else{
+			var v_payment_newtab="javascript:window.open(\'https://service.sarawak.gov.my/web/pub/public/enq_n_pay/340/\');";
+		}
+		
+		switch_newtab = objSetting.switch_newtab;
+		if(switch_newtab=='off'){
+			var v_switch_newtab="javascript:window.location.href= \'https://sarawakid.sarawak.gov.my/web/ssov1/switchaccountpb/\';";
+		}else{
+			var v_switch_newtab="javascript:window.location.href= \'https://sarawakid.sarawak.gov.my/web/ssov1/switchaccountpb/\';";
+		}
+		
+		if(profile_listing_style=='details'){
+			var html = 	'<div id="swkid-profile-picture" class="swkid-profile-picture swkid-profile-initials" data-initials="" onclick="javascript:profile_onclick();"></div>'+
+						display_name+
+						'<ul id="swkid-plugin-ul" class="swkid-plugin-ul '+dropdown_class+'">'+
+							'<li class="swkid-profile-li">'+
+								'<div class="swkid-profile-pic-div">'+
+									'<a id="swkid-profile-pic-a" href="https://sarawakid.sarawak.gov.my/web/member/photo/" class="swkid-profile-initials-big" data-initials-big="" ><span class="swid-fa-camera swkid-profile-camera" aria-hidden="true"></span></a>'+
+								'</div>'+
+								'<div class="swkid-profile-name-div">'+
+									"<span id=\"swkid-profile-unique-name\"></span>"+
+									"<br>"+
+									"<span id=\"swkid-profile-unique-name\">()</span>"+
+								'</div>';
+								profile_listing_email = objSetting.profile_listing_email;
+								if(profile_listing_email!='off'){
+									html += '<div class="swkid-profile-email-div">'+
+										'<span id="swkid-profile-unique-email"></span>'+
+									'</div>';									
+								}
+																html += '<div class="swkid-btn-group-div">'+
+									'<button class="swkid-btn-profile" id="swkid-btn-unique-profile" onclick="'+v_myworkspace_profile_newtab+'">'+
+										'<span class="swid-fa-user swkid-logo-right" aria-hidden="true"></span>&nbsp;Profile'+
+									'</button>'+
+									'<button class="swkid-btn-logout" id="swkid-btn-unique-logout" onclick="javascript:swkid_logout(\'https://sarawakid.sarawak.gov.my/web/share/ssologout/\',{logout_redirect_uri: \''+logout_redirect_uri+'\',return_info:true,t:\'\'});">'+
+										'<span class="swid-fa-logout swkid-logo-right" aria-hidden="true"></span>&nbsp;Logout'+
+									'</button>';
+																	html += '</div>'+
+							'</li>'+
+						'</ul>'+
+						'<link rel="stylesheet" type="text/css" href="https://sarawakid.sarawak.gov.my/web/web/default/swkid_font_awesome.css" />'+
+						'<style>.swkid-profile-picture{width:'+width+'px;height:'+width+'px;border-radius:50%;cursor:pointer}#swkid-number-notification-bell,#swkid-profile-notification{font-size:.55em;margin-left:-8px;background:red;padding:1px 3px;border-radius:50%;z-index:5;cursor:pointer;color:#fff;position:absolute;bottom:-1px;right:-4px}.swkid-drop-down-bottom-left,.swkid-drop-down-bottom-right{bottom:'+width+'px;margin-bottom:8px}.swkid-drop-down-top-left{left:0;top:'+width+'px;margin-top:8px}.swkid-drop-down-bottom-left{left:0}.swkid-drop-down-bottom-right{right:0}.swkid-drop-down-top-right{right:0;top:'+width+'px;margin-top:.2em}.swkid-logo-right{margin:4px 0;width:20px}.swkid-plugin-ul{display:none;padding:0;list-style-type:none;background:#fff;position:absolute;min-width:100%;max-height:600px;-moz-border-radius:2px;-webkit-border-radius:2px;-webkit-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);-moz-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);z-index:5;width:245px}.swkid-profile-li,.swkid-profile-li button,ul.swkid-plugin-ul li a{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;padding:10px}ul.swkid-plugin-ul li a{display:block;color:#444;text-decoration:none;white-space:nowrap;font-size:14px!important;outline:0;cursor:pointer}ul.swkid-plugin-ul li a:hover{background:#0180B0;color:#fff}.swkid-profile-li{border-bottom:1px solid #ddd;text-align:center !important;}.swkid-profile-li,.swkid-profile-li button{font-size:14px;color:#444}.swkid-profile-pic-div{position:relative;}.swkid-profile-camera{position:absolute;top:40%;left:44%;font-size:20px;opacity:0;}.swkid-profile-picture-change{width:100px;height:100px;border-radius:50%;cursor:pointer;opacity:1;}#swkid-profile-pic-a:hover{background:none!important;}#swkid-profile-pic-a:hover .swkid-profile-picture-change{background:none!important;opacity:0.5;}.swkid-service-icon{width:20px;height:16px;}#swkid-profile-pic-a:hover .swkid-profile-camera{opacity:1;color:#444;}.swkid-profile-name-div{font-weight:bold}.swkid-profile-email-div{color:#666}.swkid-btn-group-div{padding-top:10px}.swkid-btn-profile,.swkid-btn-profile:hover{background:#0180b0;border:0;text-align:center;color:#fff!important;cursor:pointer;border-radius:3px;margin-right:10px;}.swkid-btn-profile:focus{background:#17bbe8}.swkid-btn-logout,.swkid-btn-logout:hover{background:#e53935;border:0;text-align:center;color:#fff!important;cursor:pointer;border-radius:3px}.swkid-btn-logout:focus{background:salmon}.swkid-btn-switch-account,.swkid-btn-switch-account:hover{background:#28a745;border:0;text-align:center;color:#fff!important;cursor:pointer;border-radius:3px}.swkid-btn-switch-account:focus{background:#1e7e34}.swkid-number-notification-bell{font-size:.55em;margin-left:-10px;vertical-align:top;background:red;padding:2px 5px;border-radius:50%;width:28px;z-index:59;cursor:pointer;color:#fff;top:0;font-weight:bold}.swkid-profile-greetings{padding-left:5px;cursor:pointer;}[data-initials]:before{background:#099bdd;color:white;opacity:1;content:attr(data-initials);display:inline-block;font-weight:600;border-radius:50%;vertical-align:middle;margin-right:0.5em;width:'+width+'px;height:'+width+'px;line-height:'+width+'px;text-align:center;font-size:0.8em;[data-initials-big]:before{background:#099bdd;color:white;opacity:1;content:attr(data-initials-big);display:inline-block;font-weight:600;border-radius:50%;vertical-align:middle;width:100px;height:100px;line-height:100px;text-align:center;font-size:3em;</style>';
+			
+		}else if(profile_listing_style=='seg'){
+						
+			var html = '<img id="swkid-profile-picture" class="swkid-profile-picture seg_icon" onclick="javascript:profile_onclick();" src="https://sarawakid.sarawak.gov.my/web/web/default/res/empty.png">'+
+						'<ul id="swkid-plugin-ul" class="swkid-plugin-ul '+dropdown_class+'">'+
+							'<li>'+
+								'<div class="swkid-card-div">'+
+									'<div class="swkid-inner-left-div">'+
+										'<img class="swkid-profile-sub-picture" src="https://sarawakid.sarawak.gov.my/web/web/default/res/empty.png">'+
+									'</div>'+
+									'<div class="swkid-inner-right-div">'+
+										'Good day,'+
+										'<br>'+
+										"<b></b>"+
+										'<br>'+
+										"<b>()</b>"+
+										''+
+									'</div>'+
+								'</div>'+
+							'</li>'+
+							'<li class="swkid-border-li">'+
+								'<a href="javascript:void(0);" onclick="'+v_myworkspace_profile_newtab+'" class="swkid-card-div">'+
+									'<div class="swkid-inner-div">'+
+										'<img class="swkid-service-icon" src="https://sarawakid.sarawak.gov.my/web/web/default/res/icon/icon_profile.svg">&nbsp;'+
+									'</div>'+
+									'<div class="swkid-inner-div">'+
+										'Profile'+
+									'</div>'+
+								'</a>'+
+							'</li>'+
+														'<li class="swkid-border-li">'+
+								'<a href="javascript:void(0);" onclick="javascript:window.open(\'https://sarawakid.sarawak.gov.my/web/member/account_verification2/\');" class="swkid-card-div">'+
+									'<div class="swkid-inner-div">'+
+										'<img class="swkid-service-icon" src="https://sarawakid.sarawak.gov.my/web/web/default/res/icon/account_verify_2.svg">&nbsp;'+
+									'</div>'+
+									'<div class="swkid-inner-div" style="white-space:initial;width:100%;">'+
+										'Verify Account (Beta)'+
+									'</div>'+
+								'</a>'+
+							'</li>'+
+																					'<li class="swkid-border-li">'+
+								'<a href="javascript:void(0);" onclick="javascript:window.open(\'https://sarawakid.sarawak.gov.my/web/member/account_verification2//?type=face_verification\');" class="swkid-card-div" style="padding-bottom:30px;padding-top:30px;">'+
+									'<div class="swkid-inner-div">'+
+										'<img class="swkid-service-icon" src="https://sarawakid.sarawak.gov.my/web/web/default/res/icon/faceID.svg">&nbsp;'+
+									'</div>'+
+									'<div class="swkid-inner-div" style="white-space:initial;width:100%;">'+
+										'Activate Face Verification (Beta)'+
+									'</div>'+
+								'</a>'+
+							'</li>'+
+														'<li class="swkid-border-li">'+
+								'<a href="javascript:void(0);" onclick="'+v_myworkspace_newtab+'" class="swkid-card-div">'+
+									'<div class="swkid-inner-div">'+
+										'<img class="swkid-service-icon" src="https://sarawakid.sarawak.gov.my/web/web/default/res/icon/icon_myworkspace.svg">&nbsp;'+
+									'</div>'+
+									'<div class="swkid-inner-div">'+
+										'Public Workspace'+
+									'</div>'+
+								'</a>'+
+							'</li>'+
+							'<li class="swkid-border-li">'+
+								'<a href="javascript:void(0);" onclick="'+v_payment_newtab+'" class="swkid-card-div">'+
+									'<div class="swkid-inner-div">'+
+										'<img class="swkid-service-icon" src="https://sarawakid.sarawak.gov.my/web/web/default/res/icon/icon_payment.svg">&nbsp;'+
+									'</div>'+
+									'<div class="swkid-inner-div">'+
+										'Payment'+
+									'</div>'+
+								'</a>'+
+							'</li>'+
+																					'<li class="swkid-border-li">'+
+								'<a href="javascript:void(0);" onclick="javascript:swkid_logout(\'https://sarawakid.sarawak.gov.my/web/share/ssologout/\',{logout_redirect_uri: \''+logout_redirect_uri+'\',return_info:true,t:\'\'});" class="swkid-card-div">'+
+									'<div class="swkid-inner-div">'+
+										'<img class="swkid-service-icon" src="https://sarawakid.sarawak.gov.my/web/web/default/res/icon/icon_logout.svg">&nbsp;'+
+									'</div>'+
+									'<div class="swkid-inner-div">'+
+										'Logout'+
+									'</div>'+
+								'</a>'+
+							'</li>'+
+						'</ul>'+
+						
+						// '<form method="post" enctype="multipart/form-data"><input type='hidden' name='moonlight_token_45037' value='189eek'/>'+
+						 // '<input type="text" id="corp_reg_no_input" name="corp_reg_no_input">'+
+						// '<div class="swkid-inner-div">'+
+										// 'Logout'+
+									// '</div>'+
+						// '</form>'+
+						
+						'<div id="swkid-myModal" class="swkid-modal">'+
+						
+						  '<div class="swkid-modal-content">'+
+							'<div class="swkid-modal-header">'+
+									'<h2>Switch to business workspace?</h2>'+
+							'</div>'+
+							'<div class="swkid-modal-body">'+
+								'<form>'+
+								  '<p>Please key in Business Registration Number</p>'+
+								 // "<b></b>"+
+								 
+								  '<input type="text" id="corp_reg_no_input" name="corp_reg_no_input">'+
+								'</form>'+
+							'</div>'+
+							'<div class="swkid-modal-footer">'+
+							  '<button type="button" id="corp_button" onClick="javascript:get_otp();">Get OTP</button>'+
+							'</div>'+
+						  '</div>'+
+						  
+						
+						'</div>'+
+						
+						'<div id="swkid-myModal2" class="swkid-modal2">'+
+
+						
+						  '<div class="swkid-modal-content">'+
+							'<div class="swkid-modal-header">'+
+									'<h2>Switch to business workspace?</h2>'+
+							'</div>'+
+							'<div class="swkid-modal-body">'+
+							  '<p>Please enter the OTP sent to your email</p>'+
+							  '<input type="text" id="corp_otp_input" name="corp_otp_input">'+
+							'</div>'+
+							'<div class="swkid-modal-footer">'+
+							  '<button type="button" id="corp_otp_button">Go To Business Workspace</button>'+
+							'</div>'+
+						  '</div>'+
+						  
+
+						'</div>'+
+		
+
+						'<link rel="stylesheet" type="text/css" href="https://sarawakid.sarawak.gov.my/web/web/default/swkid_font_awesome.css" />'+
+						'<style>.swkid-inner-left-div{padding:0 !important;padding-right:10px !important;}.swkid-inner-right-div{padding:0px !important;}.swkid-border-li a{border-top:1px solid #bbb;}.swkid-profile-picture{width:'+width+'px;height:'+width+'px;border-radius:50%;cursor:pointer}.swkid-profile-sub-picture{width:50px;height:50px;border-radius:50%;margin-left:-16px;border:1px solid #bbb;padding:2px;}.seg_icon{width:auto;height:'+width+'px;}#swkid-number-notification-bell,#swkid-profile-notification{font-size:.55em;margin-left:-8px;background:red;padding:1px 3px;border-radius:50%;z-index:5;cursor:pointer;color:#fff;position:absolute;bottom:-1px;right:-4px}.swkid-drop-down-bottom-left,.swkid-drop-down-bottom-right{bottom:'+(parseInt(width)+10)+'px;margin-bottom:8px}.swkid-drop-down-top-left{left:-10px;top:'+(parseInt(width)+10)+'px;margin-top:8px}.swkid-drop-down-bottom-left{left:-10px;}.swkid-drop-down-bottom-right{right:-10px;}.swkid-drop-down-top-right{right:-10px;top:'+(parseInt(width)+10)+'px;margin-top:.2em}.swkid-logo-right{margin:4px 0;width:20px;font-size:1.4em;}.swkid-plugin-ul{display:none;padding:0;list-style-type:none;background:#fff;position:absolute;min-width:100%;max-height:600px;-moz-border-radius:16px;-webkit-border-radius:16px;-webkit-box-shadow:0 1px 3px rgba(0,0,0,.25),0 1px 2px rgba(0,0,0,.25);-moz-box-shadow:0 1px 3px rgba(0,0,0,.25),0 1px 2px rgba(0,0,0,.25);box-shadow:0 1px 3px rgba(0,0,0,.25),0 1px 2px rgba(0,0,0,.25);z-index:5;width:280px}.swkid-plugin-ul li:not(:last-child){/*border-bottom:1px solid #bbb;*/}.swkid-profile-li,ul.swkid-plugin-ul li div,.swkid-profile-li button,ul.swkid-plugin-ul li a{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;padding:12px}ul.swkid-plugin-ul li div{display:block;white-space:none;font-size:15px!important;outline:0;}.swkid-card-div{display:flex !important;align-items:center !important;margin-left:20px;margin-right:20px;}.swkid-inner-div{padding:0 !important;padding-right:10px !important; width:35px;}ul.swkid-plugin-ul li a{display:block;color:#444;text-decoration:none;white-space:nowrap;font-size:15px!important;outline:0;cursor:pointer;height:15px;min-height:45px;box-sizing:border-box;}.swkid-border-li:hover{background:#0180B0;color:#fff}.swkid-plugin-ul:before,.swkid-plugin-ul:after{content:"";display:block;position:absolute;width:0;height:0;}.swkid-drop-down-bottom-left:before{top:100%;left:15px;border:11px solid transparent;border-top-color:rgb(0 0 0 / 25%);}.swkid-drop-down-bottom-left:after{top:100%;left:15px;border:10px solid transparent;border-top-color:#fff;}.swkid-drop-down-bottom-right:before{top:100%;right:15px;border:11px solid transparent;border-top-color:rgb(0 0 0 / 25%);}.swkid-drop-down-bottom-right:after{top:100%;right:15px;border:10px solid transparent;border-top-color:#fff;}.swkid-drop-down-top-left:before{bottom:100%;left:15px;border:11px solid transparent;border-bottom-color:rgb(0 0 0 / 10%);}.swkid-drop-down-top-left:after{bottom:100%;left:15px;border:10px solid transparent;border-bottom-color:#fff;}.swkid-drop-down-top-right:before{bottom:100%;right:15px;border:11px solid transparent;border-bottom-color:rgb(0 0 0 / 10%);}.swkid-drop-down-top-right:after{bottom:100%;right:15px;border:10px solid transparent;border-bottom-color:#fff;}.swkid-profile-li{border-bottom:1px solid #ddd;text-align:center !important;}.swkid-profile-li,.swkid-profile-li button{font-size:15px;color:#444}.swkid-profile-pic-div{position:relative;}.swkid-profile-camera{position:absolute;top:40%;left:44%;font-size:20px;opacity:0;}.swkid-profile-picture-change{width:100px;height:100px;border-radius:50%;cursor:pointer;opacity:1;}#swkid-profile-pic-a:hover{background:none!important;}#swkid-profile-pic-a:hover .swkid-profile-picture-change{background:none!important;opacity:0.5;}.swkid-service-icon{width:22px;vertical-align:middle;filter: invert(29%) sepia(78%) saturate(1503%) hue-rotate(333deg) brightness(85%) contrast(101%);}#swkid-profile-pic-a:hover .swkid-profile-camera{opacity:1;color:#444;}.swkid-profile-name-div{font-weight:bold}.swkid-profile-email-div{color:#666}.swkid-btn-group-div{padding-top:10px}.swkid-btn-profile,.swkid-btn-profile:hover{background:#0180b0;border:0;text-align:center;color:#fff!important;cursor:pointer;border-radius:3px;margin-right:10px;}.swkid-btn-profile:focus{background:#17bbe8}.swkid-btn-logout,.swkid-btn-logout:hover{background:#e53935;border:0;text-align:center;color:#fff!important;cursor:pointer;border-radius:3px}.swkid-btn-logout:focus{background:salmon}.swkid-number-notification-bell{font-size:.55em;margin-left:-10px;vertical-align:top;background:red;padding:2px 5px;border-radius:50%;width:28px;z-index:59;cursor:pointer;color:#fff;top:0;font-weight:bold}.swkid-profile-greetings{padding-left:5px;cursor:pointer;}[data-initials]:before{background:#099bdd;color:white;opacity:1;content:attr(data-initials);display:inline-block;font-weight:600;border-radius:50%;vertical-align:middle;margin-right:0.5em;width:'+width+'px;height:'+width+'px;line-height:'+width+'px;text-align:center;font-size:0.8em;}[data-initials-big]:before{background:#099bdd;color:white;opacity:1;content:attr(data-initials-big);display:inline-block;font-weight:600;border-radius:50%;vertical-align:middle;width:100px;height:100px;line-height:100px;text-align:center;font-size:3em;}ul.swkid-plugin-ul li a:hover{color:#fff !important;}.swkid-modal{display:none;position: fixed;z-index: 10;padding-top: 100px;left: 0;top: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);}.swkid-modal2{display:none;position: fixed;z-index: 10;padding-top: 100px;left: 0;top: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);}.swkid-modal-content {background-color: #fefefe;margin: auto;padding: 20px;border: 1px solid #888;width: 40%;}.swkid-close{color: #aaaaaa;float: right;font-size: 28px;font-weight: bold;}.swkid-close:hover,.swkid-close:focus {color: #000;text-decoration: none;cursor: pointer;}.swkid-modal-header{padding: 2px 16px;background-color: #fffff;color: #8f8888;}.swkid-modal-body {display: flex; flex-direction: column; justify-content: center; align-items: center;}.swkid-modal-footer {padding: 2px 16px;background-color: #fffff; text-align:center}</style>';						
+	  
+			
+		}else{
+			var html = '<img id="swkid-profile-picture" class="swkid-profile-picture" onclick="javascript:profile_onclick();" src="https://sarawakid.sarawak.gov.my/web/web/default/res/empty.png">'+
+						display_name+
+						'<ul id="swkid-plugin-ul" class="swkid-plugin-ul '+dropdown_class+'">';
+							html+='<li style="display:none;">'+
+								'<a href="https://sarawakid.sarawak.gov.my/web/member/index/" title=\'My SarawakID\' target="sarawakid">'+
+									'<span class="swid-fa-user swkid-logo-right" aria-hidden="true"></span>&nbsp;My SarawakID'+
+								'</a>'+
+							'</li>';
+							html+='<li style="display:none;">'+
+								'<a href=\'https://sarawakid.sarawak.gov.my/web/member/services/\' title=\'Sarawak Government Services\' target="sarawakid">'+
+									'<span class="swid-fa-th-list swkid-logo-right" aria-hidden="true"></span>&nbsp;SG Services'+
+								'</a>'+
+							'</li>'+
+							'<li class="swkid-logout-li" onclick="javascript:swkid_logout(\'https://sarawakid.sarawak.gov.my/web/share/ssologout/\',{logout_redirect_uri: \''+logout_redirect_uri+'\',return_info:true,t:\'\'});">'+
+								'<a href="javascript:void(0);"><span class="swid-fa-logout swkid-logo-right" aria-hidden="true"></span>&nbsp;Logout</a>'+
+							'</li>'+
+						'</ul>'+
+						'<link rel="stylesheet" type="text/css" href="https://sarawakid.sarawak.gov.my/web/web/default/swkid_font_awesome.css" />'+
+						'<style>[data-initials-big]:before{background:#099bdd;color:white;opacity:1;content:attr(data-initials-big);display:inline-block;font-weight:600;border-radius:50%;vertical-align:middle;width:100px;height:100px;line-height:100px;text-align:center;font-size:3em;}.swkid-profile-picture{width:'+width+'px;height:'+width+'px;border-radius:50%;cursor:pointer}#swkid-number-notification-bell,#swkid-profile-notification{font-size:.55em;margin-left:-8px;background:red;padding:1px 3px;border-radius:50%;z-index:5;cursor:pointer;color:#fff;position:absolute;bottom:-1px;right:-4px}.swkid-logo-right{margin:4px 0;width:20px}.swkid-service-icon{width:20px;height:16px;}.swkid-drop-down-bottom-left,.swkid-drop-down-bottom-right{bottom:'+width+'px;margin-bottom:8px}.swkid-drop-down-top-left{left:0;top:'+width+'px;margin-top:8px}.swkid-drop-down-bottom-left{left:0}.swkid-drop-down-bottom-right{right:0}.swkid-drop-down-top-right{right:0;top:'+width+'px;margin-top:.2em}.swkid-plugin-ul{display:none;padding:0;list-style-type:none;background:#fff;position:absolute;min-width:100%;max-height:300px;-moz-border-radius:2px;-webkit-border-radius:2px;-webkit-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);-moz-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);z-index:5;width:auto}ul.swkid-plugin-ul li a{display:block;color:#444;text-decoration:none;white-space:nowrap;font-size:14px!important;outline:0;cursor:pointer;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif!important;padding:6px 8px}ul.swkid-plugin-ul li a:hover{background:#0180B0;color:#fff}.swkid-number-notification-bell{font-size:.55em;margin-left:-10px;top:0;vertical-align:top;background:red;padding:2px 5px;border-radius:50%;width:28px;z-index:59;cursor:pointer;color:#fff;font-weight:bold}.swkid-profile-greetings{padding-left:5px;cursor:pointer;}</style>';
+			
+		}
+				
+		main_div.innerHTML = html;			
+	}
+	
+	function profile_onclick() {
+		
+		var ul = document.getElementById('swkid-plugin-ul');
+		if(document.getElementById('sso-bar-lang-ul')){document.getElementById('sso-bar-lang-ul').style.display = 'none';}
+		if (ul.style.display != 'block') {
+			ul.style.display = 'block';
+		} else {
+			ul.style.display = 'none';
+		}				
+	}
+	
+	function switch_acc(){
+		var modal = document.getElementById('swkid-myModal');
+		modal.style.display = "block";
+		
+	}
+	
+	window.onclick = function(event) {
+		if (event.target == document.getElementById('swkid-myModal')) {
+			document.getElementById('swkid-myModal').style.display = "none";
+		}
+	}
+	
+	function get_otp(){
+		var data = new FormData();
+        var temp_id = "";
+		data.append('temp_id', temp_id);
+		
+		
+		 $.ajax({
+            type:'POST',
+            url:'https://sarawakid.sarawak.gov.my/web/ssov1/switchaccountpb/',
+            dataType: "json",
+            data: data,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function(resp){
+                if (resp == "fail") {
+                    // alert("Failed to load secure code and otp. Please try again.");
+                    $("#general-modal-title4").text('Alert');
+                    $("#general-content-container4").text('Failed to load secure code and otp. Please try again.');
+                    $("#general-modal4").modal('show');
+                } else {
+					// console.log('sampai loadOTP success ajax!');
+                    sendOTP(resp[0]);
+					var modal = document.getElementById('myModal');
+					var modal2 = document.getElementById('myModal2');
+					modal.style.display = "none";
+					modal2.style.display = "block";
+                }
+            },
+			error: function(resp){
+				console.log('ajax error');
+			}
+        });
+		
+		
+	}
+	
+	function swkid_logout(path, params) {
+		var form = document.createElement("form");
+		form.setAttribute("id", "swkid_logout_form");
+		form.setAttribute("method", "post");
+		form.setAttribute("action", path);
+
+		for(var key in params) {
+			if(params.hasOwnProperty(key)) {
+				var hiddenField = document.createElement("input");
+				hiddenField.setAttribute("type", "hidden");
+				hiddenField.setAttribute("name", key);
+				hiddenField.setAttribute("value", params[key]);
+
+				form.appendChild(hiddenField);
+			}
+		}
+		document.body.appendChild(form);
+		form.submit();
+	}
+	
+	function skwid_sso_before_login(objSetting){
+		width = objSetting.icon_width;
+		if(objSetting.icon_width!=''){
+			width = objSetting.icon_width;
+		}else{
+			width = '25';				
+		}
+		width = '17';				
+		position = objSetting.position;
+		if(position == "top-left"){
+			dropdown_class = "swkid-drop-down-top-left";
+		}else if(position == "bottom-left"){
+			dropdown_class = "swkid-drop-down-bottom-left";
+		}else if(position == "bottom-right"){
+			dropdown_class = "swkid-drop-down-bottom-right";
+		}else{
+			dropdown_class = "swkid-drop-down-top-right";
+		}
+		
+		style = objSetting.style;
+		var main_div = document.createElement("div");
+		if(style == "icon-only"){
+			main_div.style.cssText = "width:"+width+"px;position:relative;height:100%;";
+		}else{			
+			main_div.style.cssText = "width:auto;position:relative;height:100%;";
+		}
+		document.getElementById(div_load).appendChild(main_div);
+		var html='';
+		var icon_display='none';
+		
+		if(style == "icon-text-old"){
+			html = '<div class="swkid-plugin-container">'+
+						'<img id="swkid-profile-picture" class="swkid-profile-picture swkid-hidden-sm swkid-unique-logo" src="https://sarawakid.sarawak.gov.my/web/web/default/res//icon/image_sarawakid_logo.png">'+
+						'<span class="swkid-span swkid-hidden-sm swkid-unique-name">SarawakID</span>'+
+						'<div class="swkid-btn swkid-first-btn swkid-hidden-xs swkid-unique-register" onclick="javascript:window.location.href=\'https://sarawakid.sarawak.gov.my/web/ssov1/signup/\'"><span class="swkid-button-span">Register</span></div>'+
+						'<div class="swkid-btn swkid-unique-login" onclick="login_form_submit();"><span class="swkid-button-span">Login</span></div>'+
+					'</div>';				
+		}else if(style == "icon-only"){
+			html = '<img id="swkid-profile-picture" class="swkid-profile-picture" onclick="javascript:profile_onclick();" src="https://sarawakid.sarawak.gov.my/web/web/default/res//icon/image_sarawakid_logo.png">'+
+						'<ul id="swkid-plugin-ul" class="swkid-plugin-ul '+dropdown_class+'">';
+							html+='<li class="swkid-logout-li">'+
+								'<a href="javascript:void();" onclick="login_form_submit();">'+
+									'<span class="swid-fa-login swkid-logo-right" aria-hidden="true"></span>&nbsp;Login'+
+								'</a>'+
+							'</li>'+
+							'<li class="swkid-logout-li">'+
+								'<a href="https://sarawakid.sarawak.gov.my/web/ssov1/signup/">'+
+									'<span class="swid-fa-user-plus swkid-logo-right" aria-hidden="true"></span>&nbsp;Register'+
+								'</a>'+
+							'</li>'+
+						'</ul>';
+		}else if(style == "text-only"){
+			
+			html = '<div class="swkid-wrapper">'+
+						'<a href="javascript:void(0);" class="swkid-login swkid-unique-login-full swkid-hidden-xs" title="SarawakID Login" onclick="login_form_submit();">'+
+							'Login with SarawakID'+
+						'</a>'+
+						'<a href="javascript:void(0);" class="swkid-login swkid-unique-login-short" title="SarawakID Login" onclick="login_form_submit();">'+
+							'Login with SID'+
+						'</a>'+
+					'</div>';
+			
+		}else if(style == "icon-full-text"){
+			
+			html = '<div class="swkid-wrapper">'+
+						'<a href="javascript:void(0);" class="swkid-icon swkid-unique-name" title="SarawakID">'+
+							'<img id="swkid-profile-picture" class="swkid-unique-logo" src="https://sarawakid.sarawak.gov.my/web/web/default/res/icon/image_sarawakid_logo_reverse.png">'+
+						'</a>'+
+						'<a href="javascript:void(0);" class="swkid-login swkid-unique-login-full swkid-hidden-xs" title="SarawakID Login" onclick="login_form_submit();">'+
+							'Login with SarawakID'+
+						'</a>'+
+						'<a href="javascript:void(0);" class="swkid-login swkid-unique-login-short" title="SarawakID Login" onclick="login_form_submit();">'+
+							'Login with SID'+
+						'</a>'+
+					'</div>';
+			icon_display = 'flex';
+			
+		}else if(style == "logo-text"){
+			
+			html = '<div class="swkid-wrapper">'+
+						'<a href="javascript:void(0);" class="swkid-icon swkid-unique-name swkid-hidden-xs" title="SarawakID">'+
+							'<img id="swkid-profile-picture" class="swkid-unique-logo" src="https://sarawakid.sarawak.gov.my/web/web/default/res/icon/image_sarawakid_logo_reverse.png">'+
+						'</a>'+
+						'<a href="https://sarawakid.sarawak.gov.my/web/ssov1/signup/" class="swkid-register swkid-unique-register swkid-hidden-xs" title="SarawakID Register">'+
+							'Register'+
+						'</a>'+
+						'<a href="javascript:void(0);" class="swkid-login swkid-unique-login" title="SarawakID Login" onclick="login_form_submit();">'+
+							'Login'+
+						'</a>'+
+					'</div>';		
+			icon_display = 'flex';	
+			
+		}else{
+			
+			html = '<div class="swkid-wrapper">'+
+						'<span class="swkid-icon swkid-full-logo-icon swkid-unique-name swkid-hidden-xs" title="SarawakID">'+
+							'<img id="swkid-profile-picture" class="swkid-unique-logo" src="https://sarawakid.sarawak.gov.my/web/web/default/res/icon/image_sarawakid_logo_reverse.png">&nbsp;'+
+							'SarawakID'+
+						'</span>'+
+						'<a href="javascript:void(0);" class="swkid-login swkid-unique-login" title="SarawakID Login" onclick="login_form_submit();">'+
+							'Login'+
+						'</a>'+
+						'<a href="https://sarawakid.sarawak.gov.my/web/ssov1/signup/" class="swkid-register swkid-unique-register swkid-hidden-xs" title="SarawakID Register">'+
+							'Register'+
+						'</a>'+
+					'</div>';		
+			icon_display = 'flex';	
+					
+		}
+		html+='<link rel="stylesheet" type="text/css" href="https://sarawakid.sarawak.gov.my/web/web/default/swkid_font_awesome.css" />'+
+				'<style>#'+div_load+' .swkid-icon img,.swkid-plugin-container,.swkid-profile-picture{height:'+width+'px}#'+div_load+' .swkid-icon,#'+div_load+' .swkid-login{border-right:1px solid #666;display:'+icon_display+'}.swkid-plugin-container{display:flex;align-items:center;cursor:pointer}.swkid-profile-picture{width:'+width+'px;border-radius:50%;cursor:pointer}.swkid-span{margin-left:5px;font-size:12px}.swkid-btn{background-color:#fecc05;color:#000!important;border-radius:3px!important;margin-left:5px;padding:3px 11px}.swkid-btn:hover{box-shadow:0 5px 10px rgba(0,0,0,.25),0 3px 3px rgba(0,0,0,.22);-webkit-box-shadow:0 5px 10px rgba(0,0,0,.25),0 3px 3px rgba(0,0,0,.22);-moz-box-shadow:0 5px 10px rgba(0,0,0,.25),0 3px 3px rgba(0,0,0,.22)}.swkid-button-span{font-size:.8em}.swkid-logo-right{margin:4px 0;width:20px}.swkid-drop-down-bottom-left,.swkid-drop-down-bottom-right{bottom:'+width+'px;margin-bottom:8px}.swkid-drop-down-top-left{left:0;top:'+width+'px;margin-top:8px}.swkid-drop-down-bottom-left{left:0}.swkid-drop-down-bottom-right{right:0}.swkid-drop-down-top-right{right:0;top:'+width+'px;margin-top:.2em}.swkid-plugin-ul{display:none;padding:0;list-style-type:none;background:#fff;position:absolute;min-width:100%;max-height:300px;-moz-border-radius:2px;-webkit-border-radius:2px;-webkit-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);-moz-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);z-index:5;width:auto}ul.swkid-plugin-ul li a{display:block;color:#444;text-decoration:none;white-space:nowrap;font-size:14px!important;outline:0;cursor:pointer;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif!important;padding:6px 8px}ul.swkid-plugin-ul li a:hover{background:#0180B0;color:#fff}#'+div_load+' .swkid-wrapper,#'+div_load+' .swkid-wrapper *{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;flex-flow:row wrap;align-items:center}#'+div_load+' .swkid-wrapper{background:#FECC05;border-radius:5px;width:100%; font-size:12px !important;}#'+div_load+' .swkid-icon{padding:4px;background:#555;border-radius:2px 0 0 2px;align-self:stretch;}#'+div_load+' .swkid-icon img{width:'+width+'px}#'+div_load+' .swkid-login,#'+div_load+' .swkid-register{padding:4px 10pxtext-decoration:none;color:initial;flex-grow:1;justify-content:center;color:#333333}#'+div_load+' .swkid-icon{text-decoration:none;color:initial;flex-grow:1;justify-content:center;border-radius:5px 0 0 5px;}#'+div_load+' .swkid-full-logo-icon{background-color:#666666;color:#eee;padding:4px 10px !important;}#'+div_load+' .swkid-login:hover,#'+div_load+' .swkid-register:hover{text-shadow:0 1px 2px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.36)}#'+div_load+' span{color:#222}.swkid-unique-login-short,.swkid_short_name{display:none!important}#'+div_load+' .swkid-login,#'+div_load+' .swkid-register{padding:0 10px}@media all and (min-width:992px){#'+div_load+' .swkid-icon img{width:'+width+'px;height:'+width+'px}#'+div_load+' .swkid-icon{padding:4px}#'+div_load+' .swkid-login,#'+div_load+' .swkid-register{padding:0 10px}#'+div_load+' .swkid-icon,#'+div_load+' .swkid-register{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex}}@media all and (max-width:991px){.swkid-hidden-sm{display:none}.swkid-first-btn{margin-left:0}}@media all and (max-width:575px){.swkid-hidden-xs{display:none!important}.swkid-btn{margin-left:0}.swkid-unique-login-short,.swkid_short_name{display:-webkit-box!important;display:-moz-box!important;display:-ms-flexbox!important;display:-webkit-flex!important;display:flex!important;flex-flow:row wrap;align-items:center}}@media screen and (max-width: 575px){.swkid-wrapper{height:100%;padding:0 10px;}#'+div_load+' .swkid-icon, #'+div_load+' .swkid-login{border-right:none;}}</style>';
+		main_div.innerHTML = html;
+	}
+	
+	function profile_onclick(){
+		
+		var ul = document.getElementById('swkid-plugin-ul');
+		if(document.getElementById('sso-bar-lang-ul')){document.getElementById('sso-bar-lang-ul').style.display = 'none';}
+		if (ul.style.display != 'block') {
+			ul.style.display = 'block';
+		} else {
+			ul.style.display = 'none';
+		}				
+	}
+	
+	function login_form_build(objSetting){
+		
+		var form = document.createElement("form");
+		form.setAttribute("id", "swkid_login_form");
+		form.setAttribute("method", "post");
+		form.setAttribute("action", "https://sarawakid.sarawak.gov.my/web/ssov1/login/");
+
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "client_id");
+		hiddenField.setAttribute("value", objSetting.client_id);
+		form.appendChild(hiddenField);
+		
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "u_id");
+		hiddenField.setAttribute("value", objSetting.u_id);
+		form.appendChild(hiddenField);
+		
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "state");
+		hiddenField.setAttribute("value", objSetting.state);
+		form.appendChild(hiddenField);
+		
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "response_type");
+		hiddenField.setAttribute("value", objSetting.response_type);
+		form.appendChild(hiddenField);
+		
+		
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "redirect_uri");
+		hiddenField.setAttribute("value", objSetting.redirect_uri);
+		form.appendChild(hiddenField);
+		
+		if(objSetting.servicelisting_uri){
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "servicelisting_uri");
+		hiddenField.setAttribute("value", objSetting.servicelisting_uri);
+		form.appendChild(hiddenField);
+		}
+		
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "logout_uri");
+		hiddenField.setAttribute("value", objSetting.logout_uri);
+		form.appendChild(hiddenField);
+
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "misc_param");
+		hiddenField.setAttribute("value", objSetting.misc_param);
+		form.appendChild(hiddenField);
+		
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "hide_header");
+		hiddenField.setAttribute("value", objSetting.hide_header);
+		form.appendChild(hiddenField);
+		
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "permission");
+		hiddenField.setAttribute("value", objSetting.permission);
+		form.appendChild(hiddenField);
+
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "sub_login_app_name");
+		hiddenField.setAttribute("value", objSetting.sub_login_app_name);
+		form.appendChild(hiddenField);
+
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "login_method");
+		hiddenField.setAttribute("value", objSetting.login_method);
+		form.appendChild(hiddenField);
+		
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "hide_login_extra_link");
+		hiddenField.setAttribute("value", objSetting.hide_login_extra_link);
+		form.appendChild(hiddenField);
+		
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "ekyc_redirect");
+		hiddenField.setAttribute("value", objSetting.ekyc_redirect);
+		form.appendChild(hiddenField);
+		
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "ekyc_redirect_post_uri");
+		hiddenField.setAttribute("value", objSetting.ekyc_redirect_post_uri);
+		form.appendChild(hiddenField);
+		
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "corp_only");
+		hiddenField.setAttribute("value", objSetting.corp_only);
+		form.appendChild(hiddenField);
+		
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "switch_account");
+		hiddenField.setAttribute("value", objSetting.switch_account);
+		form.appendChild(hiddenField);
+		
+		document.body.appendChild(form);
+	}
+	
+	function login_form_submit(){
+		var form = document.getElementById('swkid_login_form');
+		form.submit();
+	}	
+	
+	function swkid_login_form_submit(){
+		
+		login_form_submit();
+	}
+	
+	function swkid_switch_account_form_build(objSetting) {
+		
+		var form = document.createElement("form");
+		form.setAttribute("id", "swkid_switch_account");
+		form.setAttribute("method", "post");
+		form.setAttribute("action", "https://sarawakid.sarawak.gov.my/web/ssov1/switchaccountpb/");
+
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "client_id");
+		hiddenField.setAttribute("value", objSetting.client_id);
+		form.appendChild(hiddenField);
+		
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "switch_account_redirect_uri");
+		hiddenField.setAttribute("value", objSetting.switch_account_redirect_uri);
+
+		form.appendChild(hiddenField);
+		document.body.appendChild(form);
+	}
+	
+	function swkid_switch_account_form_submit(){
+		
+		var form = document.getElementById('swkid_switch_account');
+		form.submit();
+	}
+
+	function addScriptWithPost(url, params, obj1) {
+		var head= document.getElementsByTagName('head')[0];
+		
+		// Remove the old form if it exists
+		const oldFrm = document.getElementById('swkid_tk_form');
+		if (oldFrm) {
+			oldFrm.parentNode.removeChild(oldFrm);
+		}
+			
+		// Create a form element
+		const form = document.createElement('form');
+		form.id = 'swkid_tk_form';
+		form.method = 'POST';
+		form.action = url;
+		form.style.display = 'none'; // Hide the form
+
+		// Append parameters as hidden inputs
+		for (const key in params) {
+			if (params.hasOwnProperty(key)) {
+				const input = document.createElement('input');
+				input.type = 'hidden';
+				input.name = key;
+				input.value = params[key];
+				form.appendChild(input);
+			}
+		}
+
+		// Append the form to the body
+		head.appendChild(form);
+		
+		const oldiFrm = document.getElementById('swkid_tk_iframe');
+		if (oldiFrm) {
+			oldiFrm.parentNode.removeChild(oldiFrm);
+		}
+		// Create an iframe to target the form submission
+		const iframe = document.createElement('iframe');
+		iframe.id = 'swkid_tk_iframe';
+		iframe.name = 'postFrame';
+		iframe.style.display = 'none';
+		head.appendChild(iframe);
+
+		// Set the form target to the iframe
+		form.target = 'postFrame';
+
+		// Submit the form
+		form.submit();
+
+		// Add an event listener to the iframe to load the script once form is submitted
+		iframe.onload = function() {
+			// Remove the old script if it exists
+			const oldScript = document.getElementById('swk_id_script');
+			if (oldScript) {
+				oldScript.parentNode.removeChild(oldScript);
+			}
+			
+			const script = document.createElement('script');
+			script.src = url;
+			script.id= 'swk_id_script';
+			script.async = true;
+			script.onload=function() {
+				swkid_sso_init_after(obj1);
+			};
+			
+			head.appendChild(script);
+			
+			
+		};
+	}
+	
+	function getCookie(cname) {
+		if(navigator.cookieEnabled){
+		  let name = cname + "=";
+		  let decodedCookie = decodeURIComponent(document.cookie);
+		  let ca = decodedCookie.split(';');
+		  for(let i = 0; i <ca.length; i++) {
+			let c = ca[i];
+			while (c.charAt(0) == ' ') {
+			  c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+			  return c.substring(name.length, c.length);
+			}
+		  }
+		}
+	  return "";
+	}
