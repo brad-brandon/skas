@@ -5281,11 +5281,100 @@ function service_search_select(vObjLI) {
 	<div id="lan_berambeh" href="#" class="btn btn-primary btn-circle btn-lg lan_berambeh"  title="Click to join Lan Berambeh" data-toggle="tooltip" data-placement="left">
 	</div></a-->
 
-	<a role="button" href="https://sarawak.gov.my/skas" title="Click to return on the top page"
-		style="padding: 0px 0px;">
+	<a role="button" title="Click to return to the top page"
+		style="padding: 0px 0px;" onclick="toggleContainer()">
 		<div id="skas" class="btn btn-primary btn-circle btn-lg skas" title="Click to SKSS" style="display: block;">
 		</div>
 	</a>
+
+	<div class="skas-container" style="display: none;">
+		<ol>
+			<li>
+				<a href="#">
+					Semak Kelayakan
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					Borang Permohonan
+				</a>
+			</li>
+		</ol>
+	</div>
+
+	<script>
+		function toggleContainer() {
+			const container = document.querySelector('.skas-container');
+			if (container.style.display === 'none' || container.style.display === '') {
+				container.style.display = 'block';
+			} else {
+				container.style.display = 'none';
+			}
+		}
+		document.addEventListener('click', function (event) {
+			const container = document.querySelector('.skas-container');
+			const button = document.querySelector('#skas');
+			if (container.style.display === 'block' && !container.contains(event.target) && !button.contains(event.target)) {
+				container.style.display = 'none';
+			}
+		});
+	</script>
+	<style>
+		.skas-container {
+			position: fixed;
+			display: flex;
+			flex-direction: column;
+			padding: 15px;
+			background-color: white;
+			bottom: 150px;
+			right: 100px;
+			border: 2px solid black;
+			border-radius: 15px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			max-width: 250px;
+		}
+	
+		.skas-container:before {
+			content: '';
+			position: absolute;
+			bottom: 37px;
+			right: -25px;
+			width: 0;
+			height: 0;
+			border-width: 12px;
+			border-style: solid;
+			border-color: transparent transparent transparent black;
+		}
+
+		.skas-container:after {
+			content: '';
+			position: absolute;
+			bottom: 40px;
+			right: -20px;
+			width: 0;
+			height: 0;
+			border-width: 10px;
+			border-style: solid;
+			border-color: transparent transparent transparent #ffffff;
+		}
+	
+		.skas-container ol {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+	
+		.skas-container li {
+			padding: 10px 0;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			color: #333;
+		}
+		.skas-container li a:hover{
+			color: #0099A1;
+		}
+	</style>
+	
 
 	<style>
 		.skas {
